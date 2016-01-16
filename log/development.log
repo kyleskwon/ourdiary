@@ -1259,3 +1259,11 @@ Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dd
 
 
 Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-01-15 15:27:57 -0800
+
+
+Started GET "/" for ::1 at 2016-01-15 16:04:33 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomebaseController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered homebase/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 362ms (Views: 336.1ms | ActiveRecord: 0.6ms)
