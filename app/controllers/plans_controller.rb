@@ -21,7 +21,7 @@ class PlansController < ApplicationController
 
   # POST /plans
   def create
-    @plan = Plan.new(plan_params)
+    @plan = current_user.plans.new(plan_params)
 
     if @plan.save
       redirect_to @plan, notice: 'Plan was successfully created.'

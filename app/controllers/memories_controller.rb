@@ -21,10 +21,10 @@ class MemoriesController < ApplicationController
 
   # POST /memories
   def create
-    @memory = Memory.new(memory_params)
+    @memory = current_user.memories.new(memory_params)
 
     if @memory.save
-      redirect_to @memory, notice: 'Memory was successfully created.'
+      redirect_to @memory, notice: 'Item was successfully updated.'
     else
       render :new
     end

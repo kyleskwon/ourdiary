@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160117052426) do
+ActiveRecord::Schema.define(version: 20160117064149) do
 
   create_table "homebases", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -23,21 +23,30 @@ ActiveRecord::Schema.define(version: 20160117052426) do
     t.text     "caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "items", ["user_id"], name: "index_items_on_user_id"
 
   create_table "memories", force: :cascade do |t|
     t.string   "title"
     t.text     "caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "memories", ["user_id"], name: "index_memories_on_user_id"
 
   create_table "plans", force: :cascade do |t|
     t.string   "title"
     t.text     "caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "plans", ["user_id"], name: "index_plans_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
