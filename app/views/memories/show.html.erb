@@ -1,0 +1,12 @@
+<p>
+  <strong>Title:</strong>
+  <%= @memory.title %>
+</p>
+
+<p>
+  <strong>Caption:</strong>
+  <%= @memory.caption %>
+</p>
+
+<%= link_to 'Edit', edit_memory_path(@memory), class: 'btn btn-default' %>
+<%= link_to 'Back', memories_path, class: 'btn btn-default' %>

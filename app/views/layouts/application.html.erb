@@ -11,15 +11,17 @@
 <body>
   <br>
     <div class="container">
+      <ul class="nav nav-tabs">
       <% if user_signed_in? %>
-       <%= link_to 'HomeBase', homebase_index_path %> |
-        Signed in as: <strong><%= current_user.email %></strong> |
-        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> - <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+       <li><%= link_to 'HomeBase', homebase_index_path %></li>
+        <!-- Signed in as: <strong><%= current_user.email %></strong> -->
+        <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li><li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
      <% else %>
-       <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link' %> or
-       <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %>
+       <li><%= link_to "Sign In", new_user_session_path, :class => 'navbar-link' %></li>
+       <li><%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %></li>
      <% end %>
-
+      </ul>
+<br>
     <div class="flash">
       <% if flash[:notice] %>
         <div class="alert alert-success">
