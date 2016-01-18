@@ -5,6 +5,7 @@ source 'https://rubygems.org'
  gem 'rspec-rails'
  gem 'devise'
  gem 'bootstrap-sass'
+ gem 'pundit'
 
  group :production do
    gem 'pg'
