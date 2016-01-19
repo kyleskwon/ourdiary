@@ -9501,3 +9501,552 @@ Processing by MemoriesController#index as HTML
   Rendered memories/index.html.erb within layouts/application (1.2ms)
 Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.2ms)
   [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories"  ORDER BY "memories"."id" DESC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddLatitudeAndLongitudeToMemories (20160119183527)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "memories" ADD "latitude" float[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "memories" ADD "longitude" float
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160119183527"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_memories_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_memories_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plans_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plans_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAddressToMemories (20160119184130)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "memories" ADD "address" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160119184130"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_memories_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_memories_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plans_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plans_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/" for ::1 at 2016-01-19 10:45:51 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomebaseController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 342ms (Views: 306.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-19 10:45:53 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories"
+  Rendered memories/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 71ms (Views: 62.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/memories/4" for ::1 at 2016-01-19 10:45:55 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.2ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered memories/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 59ms (Views: 52.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories/4/edit" for ::1 at 2016-01-19 10:46:14 -0800
+Processing by MemoriesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered memories/_form.html.erb (26.9ms)
+  Rendered memories/edit.html.erb within layouts/application (32.5ms)
+Completed 200 OK in 70ms (Views: 67.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-19 10:46:16 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories"
+  Rendered memories/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 63ms (Views: 61.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories/4" for ::1 at 2016-01-19 10:46:17 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered memories/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 38ms (Views: 35.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-19 10:46:19 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories"
+  Rendered memories/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories/new" for ::1 at 2016-01-19 10:46:19 -0800
+Processing by MemoriesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered memories/_form.html.erb (1.9ms)
+  Rendered memories/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-19 10:46:22 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories"[0m
+  Rendered memories/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories/4" for ::1 at 2016-01-19 10:46:25 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered memories/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories/4" for ::1 at 2016-01-19 10:46:52 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered memories/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 44ms (Views: 42.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-19 10:46:52 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-19 10:46:52 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-19 10:46:52 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-19 10:46:52 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-19 10:46:52 -0800
+
+
+Started GET "/assets/application.self-481382a76b26180a6f2abea88440cc0a6a2b3e575ee935563d60d269145091d6.css?body=1" for ::1 at 2016-01-19 10:46:52 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-19 10:46:52 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-19 10:46:52 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-19 10:46:52 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-19 10:46:52 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-19 10:46:52 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-19 10:46:52 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-19 10:46:52 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-01-19 10:46:52 -0800
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories"  ORDER BY "memories"."id" DESC LIMIT 1[0m
+
+
+Started GET "/memories/4/edit" for ::1 at 2016-01-19 10:47:06 -0800
+Processing by MemoriesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered memories/_form.html.erb (1.8ms)
+  Rendered memories/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/memories/4" for ::1 at 2016-01-19 10:47:43 -0800
+Processing by MemoriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eGBBY1271z75nFGNECEriDbmR+xYHkAAAsL6BioFQdHLaWBFnwFO4b/uukmL/JmZrRajemrbhB1NRYdcVdAzBw==", "memory"=>{"date"=>"2010-01-01", "title"=>"TAO", "caption"=>"First", "label"=>"NYE", "address"=>"Los Angeles Memorial Coliseum"}, "commit"=>"Save", "id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+NoMethodError (undefined method `full_street_address' for #<Memory:0x007f8f847eb3a8>):
+  app/controllers/memories_controller.rb:35:in `update'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.4ms)
+
+
+Started PATCH "/memories/4" for ::1 at 2016-01-19 10:48:27 -0800
+Processing by MemoriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eGBBY1271z75nFGNECEriDbmR+xYHkAAAsL6BioFQdHLaWBFnwFO4b/uukmL/JmZrRajemrbhB1NRYdcVdAzBw==", "memory"=>{"date"=>"2010-01-01", "title"=>"TAO", "caption"=>"First", "label"=>"NYE", "address"=>"Los Angeles Memorial Coliseum"}, "commit"=>"Save", "id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.2ms)
+
+NoMethodError (undefined method `full_street_address' for #<Memory:0x007f8f82f69c30>):
+  app/controllers/memories_controller.rb:35:in `update'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.6ms)
+
+
+Started PATCH "/memories/4" for ::1 at 2016-01-19 10:48:30 -0800
+Processing by MemoriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UuEfTPGB+wknwUdyIGDIlAm5lx640a/wLpaSpi2Uxjnh6D5qMzti1mGzrLa7vXqFkklziIoUa+1hEe/8UkG07w==", "memory"=>{"date"=>"2010-01-01", "title"=>"TAO", "caption"=>"First", "label"=>"NYE", "address"=>"Los Angeles Memorial Coliseum"}, "commit"=>"Save", "id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+NoMethodError (undefined method `full_street_address' for #<Memory:0x007f8f894c4698>):
+  app/controllers/memories_controller.rb:35:in `update'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.0ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (43.5ms)
+
+
+Started PATCH "/memories/4" for ::1 at 2016-01-19 10:49:01 -0800
+Processing by MemoriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UuEfTPGB+wknwUdyIGDIlAm5lx640a/wLpaSpi2Uxjnh6D5qMzti1mGzrLa7vXqFkklziIoUa+1hEe/8UkG07w==", "memory"=>{"date"=>"2010-01-01", "title"=>"TAO", "caption"=>"First", "label"=>"NYE", "address"=>"3911 S Figueroa St, Los Angeles, CA 90037"}, "commit"=>"Save", "id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+NoMethodError (undefined method `full_street_address' for #<Memory:0x007f8f8bc94f38>):
+  app/controllers/memories_controller.rb:35:in `update'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.1ms)
+
+
+Started PATCH "/memories/4" for ::1 at 2016-01-19 10:49:36 -0800
+Processing by MemoriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UuEfTPGB+wknwUdyIGDIlAm5lx640a/wLpaSpi2Uxjnh6D5qMzti1mGzrLa7vXqFkklziIoUa+1hEe/8UkG07w==", "memory"=>{"date"=>"2010-01-01", "title"=>"TAO", "caption"=>"First", "label"=>"NYE", "address"=>"3911 S Figueroa St, Los Angeles, CA 90037"}, "commit"=>"Save", "id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.7ms)
+
+NoMethodError (undefined method `attr_accessible' for #<Class:0x007f8f8bb53e08>):
+  app/models/memory.rb:3:in `<class:Memory>'
+  app/models/memory.rb:1:in `<top (required)>'
+  app/controllers/memories_controller.rb:51:in `set_memory'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.0ms)
+
+
+Started PATCH "/memories/4" for ::1 at 2016-01-19 10:49:49 -0800
+Processing by MemoriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UuEfTPGB+wknwUdyIGDIlAm5lx640a/wLpaSpi2Uxjnh6D5qMzti1mGzrLa7vXqFkklziIoUa+1hEe/8UkG07w==", "memory"=>{"date"=>"2010-01-01", "title"=>"TAO", "caption"=>"First", "label"=>"NYE", "address"=>"3911 S Figueroa St, Los Angeles, CA 90037"}, "commit"=>"Save", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.9ms)
+
+NoMethodError (undefined method `full_street_address' for #<Memory:0x007f8f894e6e50>):
+  app/controllers/memories_controller.rb:35:in `update'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.0ms)
+
+
+Started PATCH "/memories/4" for ::1 at 2016-01-19 10:50:05 -0800
+Processing by MemoriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UuEfTPGB+wknwUdyIGDIlAm5lx640a/wLpaSpi2Uxjnh6D5qMzti1mGzrLa7vXqFkklziIoUa+1hEe/8UkG07w==", "memory"=>{"date"=>"2010-01-01", "title"=>"TAO", "caption"=>"First", "label"=>"NYE", "address"=>"3911 S Figueroa St, Los Angeles, CA 90037"}, "commit"=>"Save", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "memories" SET "address" = ?, "latitude" = ?, "longitude" = ?, "updated_at" = ? WHERE "memories"."id" = ?  [["address", "3911 S Figueroa St, Los Angeles, CA 90037"], ["latitude", 34.0128523], ["longitude", -118.2845395], ["updated_at", "2016-01-19 18:50:06.722841"], ["id", 4]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/memories/4
+Completed 302 Found in 687ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/memories/4" for ::1 at 2016-01-19 10:50:06 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered memories/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-19 10:50:06 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-19 10:50:06 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-19 10:50:06 -0800
+
+
+Started GET "/assets/application.self-481382a76b26180a6f2abea88440cc0a6a2b3e575ee935563d60d269145091d6.css?body=1" for ::1 at 2016-01-19 10:50:06 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-19 10:50:06 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-19 10:50:06 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-19 10:50:06 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-19 10:50:06 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-19 10:50:06 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-19 10:50:06 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-19 10:50:06 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-19 10:50:06 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-19 10:50:06 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-01-19 10:50:06 -0800
+  [1m[35mMemory Load (0.3ms)[0m  SELECT  "memories".* FROM "memories"  ORDER BY "memories"."id" DESC LIMIT 1
+
+
+Started GET "/memories/4" for ::1 at 2016-01-19 10:50:55 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered memories/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 44ms (Views: 42.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-19 10:50:55 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-19 10:50:55 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-19 10:50:55 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-19 10:50:55 -0800
+
+
+Started GET "/assets/application.self-481382a76b26180a6f2abea88440cc0a6a2b3e575ee935563d60d269145091d6.css?body=1" for ::1 at 2016-01-19 10:50:55 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-19 10:50:55 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-19 10:50:55 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-19 10:50:55 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-19 10:50:55 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-19 10:50:55 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-19 10:50:55 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-19 10:50:55 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-19 10:50:55 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-01-19 10:50:55 -0800
+
+
+Started GET "/memories/4/edit" for ::1 at 2016-01-19 10:50:57 -0800
+Processing by MemoriesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered memories/_form.html.erb (2.1ms)
+  Rendered memories/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 34ms (Views: 32.1ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/memories/4" for ::1 at 2016-01-19 10:51:16 -0800
+Processing by MemoriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3mHo41Z7+3vC/8Lf8vt2vmY8/zyXo7km2Mq7N65ijJxtaMnFlMFipISNKRtpJsSv/cwbqqVmfTuXTcZt0bf+Sg==", "memory"=>{"date"=>"2010-01-01", "title"=>"TAO", "caption"=>"First", "label"=>"NYE", "address"=>"Los Angeles Memorial Coliseum"}, "commit"=>"Save", "id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "memories" SET "address" = ?, "latitude" = ?, "longitude" = ?, "updated_at" = ? WHERE "memories"."id" = ?[0m  [["address", "Los Angeles Memorial Coliseum"], ["latitude", 34.0522342], ["longitude", -118.2436849], ["updated_at", "2016-01-19 18:51:16.861288"], ["id", 4]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/memories/4
+Completed 302 Found in 551ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/memories/4" for ::1 at 2016-01-19 10:51:16 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered memories/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-19 10:51:29 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories"
+  Rendered memories/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories/3" for ::1 at 2016-01-19 10:51:30 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered memories/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories/3/edit" for ::1 at 2016-01-19 10:51:32 -0800
+Processing by MemoriesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered memories/_form.html.erb (1.6ms)
+  Rendered memories/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/memories/3" for ::1 at 2016-01-19 10:51:44 -0800
+Processing by MemoriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bC9I0RVxQ2b8srx4hRYJ8ZNWCaQxj8mpCGHPPeGjS9ffJmn318vaubrAV7wey7vgCKbtMgNKDbRH5rJnnnY5AQ==", "memory"=>{"date"=>"", "title"=>"Thailand", "caption"=>"Rode an elephant", "label"=>"", "address"=>"Chiang Mai, Thailand"}, "commit"=>"Save", "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "memories" SET "label" = ?, "address" = ?, "latitude" = ?, "longitude" = ?, "updated_at" = ? WHERE "memories"."id" = ?  [["label", ""], ["address", "Chiang Mai, Thailand"], ["latitude", 18.787747], ["longitude", 98.99312839999999], ["updated_at", "2016-01-19 18:51:44.222822"], ["id", 3]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/memories/3
+Completed 302 Found in 145ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/memories/3" for ::1 at 2016-01-19 10:51:44 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered memories/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.1ms)

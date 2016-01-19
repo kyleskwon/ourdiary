@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119040924) do
+ActiveRecord::Schema.define(version: 20160119184130) do
 
   create_table "homebases", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -36,6 +36,9 @@ ActiveRecord::Schema.define(version: 20160119040924) do
     t.integer  "user_id"
     t.date     "date"
     t.string   "label"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "address"
   end
 
   add_index "memories", ["user_id"], name: "index_memories_on_user_id"

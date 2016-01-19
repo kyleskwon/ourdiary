@@ -18,5 +18,20 @@
   <%= @memory.label %>
 </p>
 
+<p>
+  <strong>Address:</strong>
+  <%= @memory.address %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @memory.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @memory.longitude %>
+</p>
+
 <%= link_to 'Edit', edit_memory_path(@memory), class: 'btn btn-default' %>
 <%= link_to 'Back', memories_path, class: 'btn btn-default' %>

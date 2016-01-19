@@ -6,6 +6,7 @@ source 'https://rubygems.org'
  gem 'devise'
  gem 'bootstrap-sass'
  gem 'pundit'
+ gem 'geocoder'
 
  group :production do
    gem 'pg'
