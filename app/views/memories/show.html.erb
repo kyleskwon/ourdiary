@@ -13,5 +13,10 @@
   <%= @memory.caption %>
 </p>
 
+<p>
+  <strong>Label:</strong>
+  <%= @memory.label %>
+</p>
+
 <%= link_to 'Edit', edit_memory_path(@memory), class: 'btn btn-default' %>
 <%= link_to 'Back', memories_path, class: 'btn btn-default' %>
