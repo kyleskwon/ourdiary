@@ -8,6 +8,8 @@ source 'https://rubygems.org'
  gem 'pundit'
  gem 'geocoder'
  gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+ gem 'stripe'
+ gem 'figaro'
 
  group :production do
    gem 'pg'
