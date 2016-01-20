@@ -21,10 +21,10 @@ class MemoriesController < ApplicationController
 
   # POST /memories
   def create
-    @memory = current_user.memories.new(memory_params)
+    @memory = current_user.memories.create(memory_params)
 
     if @memory.save
-      redirect_to @memory, notice: 'Item was successfully updated.'
+      redirect_to @memory, notice: 'Item was successfully created.'
     else
       render :new
     end
@@ -53,6 +53,6 @@ class MemoriesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def memory_params
-      params.require(:memory).permit(:title, :caption, :date, :label, :address, :latitude, :longitude)
+      params.require(:memory).permit(:title, :caption, :date, :label, :address, :latitude, :longitude, :avatar)
     end
 end

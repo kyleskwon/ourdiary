@@ -7,6 +7,7 @@ source 'https://rubygems.org'
  gem 'bootstrap-sass'
  gem 'pundit'
  gem 'geocoder'
+ gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
  group :production do
    gem 'pg'
