@@ -8,5 +8,10 @@
   <%= @item.caption %>
 </p>
 
+<p>
+  <strong>Location or Address:</strong>
+  <%= @item.address %>
+</p>
+
 <%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-default' %>
 <%= link_to 'Back', items_path, class: 'btn btn-default' %>

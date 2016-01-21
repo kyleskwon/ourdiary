@@ -15254,3 +15254,477 @@ Processing by PlansController#index as HTML
   [1m[35mPlan Load (0.1ms)[0m  SELECT "plans".* FROM "plans"
   Rendered plans/index.html.erb within layouts/application (1.8ms)
 Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-01-21 12:02:47 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomebaseController#index as HTML
+Completed 401 Unauthorized in 19ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-01-21 12:02:48 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 409ms (Views: 396.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-01-21 12:02:50 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NE0kef1wvwpSbA9Dg0GVOIK/Qsd9vnGYV+0BIIhjYAMIlxm8b37qHSntFkqg8yhP+yAVIiCgshCy5vgCQorqqA==", "user"=>{"email"=>"kyle@kyle.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "kyle@kyle.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-01-21 06:04:42.155410"], ["current_sign_in_at", "2016-01-21 20:02:50.320292"], ["sign_in_count", 12], ["updated_at", "2016-01-21 20:02:50.321932"], ["id", 2]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 112ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2016-01-21 12:02:50 -0800
+Processing by HomebaseController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 53ms (Views: 50.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:02:52 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.3ms)[0m  SELECT "memories".* FROM "memories"
+  Rendered memories/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 55ms (Views: 42.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/memories/3" for ::1 at 2016-01-21 12:02:53 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.3ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered memories/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 36ms (Views: 30.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:02:56 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.2ms)[0m  SELECT "memories".* FROM "memories"
+  Rendered memories/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:02:58 -0800
+Processing by HomebaseController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 32.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-21 12:02:58 -0800
+Processing by PlansController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.2ms)[0m  [1mSELECT "plans".* FROM "plans"[0m
+  Rendered plans/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 62ms (Views: 58.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/plans/new" for ::1 at 2016-01-21 12:02:59 -0800
+Processing by PlansController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered plans/_form.html.erb (7.7ms)
+  Rendered plans/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-21 12:03:02 -0800
+Processing by PlansController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT "plans".* FROM "plans"
+  Rendered plans/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/7" for ::1 at 2016-01-21 12:03:02 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered plans/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-21 12:03:04 -0800
+Processing by PlansController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT "plans".* FROM "plans"
+  Rendered plans/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:03:05 -0800
+Processing by HomebaseController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:03:06 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 49ms (Views: 44.5ms | ActiveRecord: 0.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddLatitudeAndLongitudeToItems (20160121200419)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "items" ADD "latitude" float[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "items" ADD "longitude" float
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160121200419"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_memories_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_memories_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plans_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plans_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAddressToItems (20160121200449)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "items" ADD "address" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160121200449"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_memories_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_memories_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plans_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plans_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:07:24 -0800
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by HomebaseController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 45ms (Views: 30.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:07:24 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 36ms (Views: 32.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/items/3" for ::1 at 2016-01-21 12:07:25 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered items/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 39ms (Views: 36.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:07:28 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/new" for ::1 at 2016-01-21 12:07:28 -0800
+Processing by ItemsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered items/_form.html.erb (1.9ms)
+  Rendered items/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:07:33 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items/1" for ::1 at 2016-01-21 12:09:04 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered items/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/1/edit" for ::1 at 2016-01-21 12:09:06 -0800
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (6.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered items/_form.html.erb (1.3ms)
+  Rendered items/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 39ms (Views: 31.1ms | ActiveRecord: 6.4ms)
+
+
+Started PATCH "/items/1" for ::1 at 2016-01-21 12:09:14 -0800
+Processing by ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G4+svSw21IwsikAbgE94XHt26OMV4Jz9ne7CSUYCUgVnHJL29OyinIMCXeKBYNndoMI6+ZZsP1MDA23BdbQqaw==", "item"=>{"title"=>"Sky Dive", "caption"=>"When we get old.. like really old", "address"=>"Somewhere beautiful"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "items" SET "address" = ?, "updated_at" = ? WHERE "items"."id" = ?  [["address", "Somewhere beautiful"], ["updated_at", "2016-01-21 20:09:15.079418"], ["id", 1]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/items/1
+Completed 302 Found in 552ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/items/1" for ::1 at 2016-01-21 12:09:15 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered items/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 0.2ms)
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items"  ORDER BY "items"."id" DESC LIMIT 1[0m
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:09:37 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/3" for ::1 at 2016-01-21 12:09:38 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered items/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/3/edit" for ::1 at 2016-01-21 12:09:39 -0800
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered items/_form.html.erb (1.4ms)
+  Rendered items/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/items/3" for ::1 at 2016-01-21 12:09:43 -0800
+Processing by ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UH3Vl3RR4+kzjwKBTBUcSAzKOrwq29naCqhfT8y3ivws7uvcrIuV+ZwHH3hNOr3J137opqlXenSURfDH/wHykg==", "item"=>{"title"=>"Hot Air Balloon", "caption"=>"Rise above", "address"=>"Somewhere beautiful"}, "commit"=>"Save", "id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "items" SET "address" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["address", "Somewhere beautiful"], ["updated_at", "2016-01-21 20:09:43.930390"], ["id", 3]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/items/3
+Completed 302 Found in 100ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/items/3" for ::1 at 2016-01-21 12:09:43 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered items/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:09:44 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.2ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items"  ORDER BY "items"."id" DESC LIMIT 1
+
+
+Started GET "/items/2" for ::1 at 2016-01-21 12:09:50 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered items/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 34ms (Views: 31.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/2/edit" for ::1 at 2016-01-21 12:09:51 -0800
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered items/_form.html.erb (1.2ms)
+  Rendered items/edit.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/items/2" for ::1 at 2016-01-21 12:09:54 -0800
+Processing by ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bB5GAl46c1oeJbHu8pqDQuCzy3mskgr1VlhNEtzmiaQQjXhJhuAFSrGtrBfztSLDOwcZYy8eqVvIteKa71Dxyg==", "item"=>{"title"=>"Go to Africa", "caption"=>"A safari is a must", "address"=>"Africa"}, "commit"=>"Save", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "items" SET "address" = ?, "latitude" = ?, "longitude" = ?, "updated_at" = ? WHERE "items"."id" = ?  [["address", "Africa"], ["latitude", -8.783195], ["longitude", 34.508523], ["updated_at", "2016-01-21 20:09:54.936788"], ["id", 2]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/items/2
+Completed 302 Found in 92ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/items/2" for ::1 at 2016-01-21 12:09:54 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered items/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 39ms (Views: 36.9ms | ActiveRecord: 0.2ms)
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items"  ORDER BY "items"."id" ASC LIMIT 1 OFFSET 1[0m
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:10:09 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items/new" for ::1 at 2016-01-21 12:10:10 -0800
+Processing by ItemsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered items/_form.html.erb (1.4ms)
+  Rendered items/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/items" for ::1 at 2016-01-21 12:10:18 -0800
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C/EO2IiQh2CUrNgKnqcEiZ7eT70CluCphIHuR4MiX1t3YjCTUErxcDskxfOfiKUIRWqdp4EaQwcabEHPsJQnNQ==", "item"=>{"title"=>"1", "caption"=>"1", "address"=>"Redondo Beach, CA"}, "commit"=>"Save"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "items" ("title", "caption", "address", "user_id", "latitude", "longitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "1"], ["caption", "1"], ["address", "Redondo Beach, CA"], ["user_id", 2], ["latitude", 33.8491816], ["longitude", -118.3884078], ["created_at", "2016-01-21 20:10:18.703521"], ["updated_at", "2016-01-21 20:10:18.703521"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/items/5
+Completed 302 Found in 115ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/items/5" for ::1 at 2016-01-21 12:10:18 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered items/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 37ms (Views: 35.2ms | ActiveRecord: 0.1ms)
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items"  ORDER BY "items"."id" DESC LIMIT 1
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:10:26 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 44ms (Views: 42.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/items/5" for ::1 at 2016-01-21 12:10:28 -0800
+Processing by ItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CkiO53UnrmpnCyAi6vdRn2rhOk2HwWNlrH2FEDqbMXl227Csrf3YesiDPdvr2PAesVXoVwRNwMsykCqYCS1JFw==", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "items" WHERE "items"."id" = ?  [["id", 5]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:10:28 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:10:31 -0800
+Processing by HomebaseController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.1ms)
