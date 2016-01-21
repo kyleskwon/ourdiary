@@ -13,5 +13,11 @@
   <%= @item.address %>
 </p>
 
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag @item.avatar.url(:medium) %>
+</p>
+
+
 <%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-default' %>
 <%= link_to 'Back', items_path, class: 'btn btn-default' %>

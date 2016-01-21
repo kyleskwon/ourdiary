@@ -21,7 +21,7 @@ class PlansController < ApplicationController
 
   # POST /plans
   def create
-    @plan = current_user.plans.new(plan_params)
+    @plan = current_user.plans.create(plan_params)
 
     if @plan.save
       redirect_to @plan, notice: 'Plan was successfully created.'
@@ -53,6 +53,6 @@ class PlansController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def plan_params
-      params.require(:plan).permit(:title, :caption, :date, :address, :latitude, :longitude)
+      params.require(:plan).permit(:title, :caption, :date, :address, :latitude, :longitude, :avatar)
     end
 end

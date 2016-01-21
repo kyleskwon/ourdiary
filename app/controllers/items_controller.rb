@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
 
   # POST /items
   def create
-    @item = current_user.items.new(item_params)
+    @item = current_user.items.create(item_params)
 
     if @item.save
       redirect_to @item, notice: 'Item was successfully created.'
@@ -53,6 +53,6 @@ class ItemsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def item_params
-      params.require(:item).permit(:title, :caption, :address, :latitude, :longitude)
+      params.require(:item).permit(:title, :caption, :address, :latitude, :longitude, :avatar)
     end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160121200449) do
+ActiveRecord::Schema.define(version: 20160121202941) do
 
   create_table "homebases", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -21,12 +21,16 @@ ActiveRecord::Schema.define(version: 20160121200449) do
   create_table "items", force: :cascade do |t|
     t.string   "title"
     t.text     "caption"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "address"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "items", ["user_id"], name: "index_items_on_user_id"
@@ -61,13 +65,17 @@ ActiveRecord::Schema.define(version: 20160121200449) do
   create_table "plans", force: :cascade do |t|
     t.string   "title"
     t.text     "caption"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "user_id"
     t.date     "date"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "address"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "plans", ["user_id"], name: "index_plans_on_user_id"

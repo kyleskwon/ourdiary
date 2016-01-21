@@ -15728,3 +15728,1762 @@ Processing by HomebaseController#index as HTML
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
   Rendered homebase/index.html.erb within layouts/application (0.3ms)
 Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentAvatarToItems (20160121201545)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "items" ADD "avatar_file_name" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "items" ADD "avatar_content_type" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "items" ADD "avatar_file_size" integer[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "items" ADD "avatar_updated_at" datetime
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160121201545"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_memories_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_memories_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plans_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plans_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:17:08 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 335ms (Views: 297.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/items/new" for ::1 at 2016-01-21 12:17:09 -0800
+Processing by ItemsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered items/_form.html.erb (18.7ms)
+  Rendered items/new.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 56ms (Views: 54.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/items" for ::1 at 2016-01-21 12:18:01 -0800
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yz7x/yUfgPjYYro5TEAe5U370j4W+ERVdu7rtTYmNAi3rc+0/cX26Hfqp8BNb79klk8AJJV05/voA0Q9BZBMZg==", "item"=>{"title"=>"Yosemite", "caption"=>"A must", "address"=>"Yosemite", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fcedc7179a8 @tempfile=#<Tempfile:/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/RackMultipart20160121-871-wq0w8p.jpg>, @original_filename="IMG_9171.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[avatar]\"; filename=\"IMG_9171.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Save"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::UnknownAttributeError (unknown attribute 'avatar' for Item.):
+  app/controllers/items_controller.rb:24:in `create'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.5ms)
+
+
+Started POST "/items" for ::1 at 2016-01-21 12:19:54 -0800
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yz7x/yUfgPjYYro5TEAe5U370j4W+ERVdu7rtTYmNAi3rc+0/cX26Hfqp8BNb79klk8AJJV05/voA0Q9BZBMZg==", "item"=>{"title"=>"Yosemite", "caption"=>"A must", "address"=>"Yosemite", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fcedce07c68 @tempfile=#<Tempfile:/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/RackMultipart20160121-871-4rwhn7.jpg>, @original_filename="IMG_9171.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[avatar]\"; filename=\"IMG_9171.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Save"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.0ms)
+
+ActiveRecord::UnknownAttributeError (unknown attribute 'avatar' for Item.):
+  app/controllers/items_controller.rb:24:in `create'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (50.3ms)
+
+
+Started POST "/items" for ::1 at 2016-01-21 12:19:57 -0800
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JTwCDf7LMDwNlxsx6z1eGcb2/ovvWdbUxzk1k4fNEldZrzxGJhFGLKIfBsjqEv+YHUIskWzVdXpZ1JobtHtqOQ==", "item"=>{"title"=>"Yosemite", "caption"=>"A must", "address"=>"Yosemite", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fcedbd85458 @tempfile=#<Tempfile:/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/RackMultipart20160121-871-1ywgcun.jpg>, @original_filename="IMG_9171.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[avatar]\"; filename=\"IMG_9171.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Save"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::UnknownAttributeError (unknown attribute 'avatar' for Item.):
+  app/controllers/items_controller.rb:24:in `create'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.7ms)
+
+
+Started POST "/items" for ::1 at 2016-01-21 12:22:09 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JTwCDf7LMDwNlxsx6z1eGcb2/ovvWdbUxzk1k4fNEldZrzxGJhFGLKIfBsjqEv+YHUIskWzVdXpZ1JobtHtqOQ==", "item"=>{"title"=>"Yosemite", "caption"=>"A must", "address"=>"Yosemite", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f9999b70f68 @tempfile=#<Tempfile:/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/RackMultipart20160121-901-whxlzq.jpg>, @original_filename="IMG_9171.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[avatar]\"; filename=\"IMG_9171.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Save"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.8ms)
+
+ActiveRecord::UnknownAttributeError (unknown attribute 'avatar' for Item.):
+  app/controllers/items_controller.rb:24:in `create'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (43.9ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:22:13 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 266ms (Views: 264.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/3" for ::1 at 2016-01-21 12:22:15 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered items/show.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `avatar' for #<Item:0x007f99a275fcb8>):
+    15: 
+    16: <p>
+    17:   <strong>Photo:</strong>
+    18:   <%= image_tag @item.avatar.url(:medium) %>
+    19: </p>
+    20: 
+    21: 
+  app/views/items/show.html.erb:18:in `_app_views_items_show_html_erb___1745318927335934357_70148916179300'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (40.9ms)
+
+
+Started GET "/items/3" for ::1 at 2016-01-21 12:22:15 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered items/show.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `avatar' for #<Item:0x007f99998a8470>):
+    15: 
+    16: <p>
+    17:   <strong>Photo:</strong>
+    18:   <%= image_tag @item.avatar.url(:medium) %>
+    19: </p>
+    20: 
+    21: 
+  app/views/items/show.html.erb:18:in `_app_views_items_show_html_erb___1745318927335934357_70148841327840'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (45.9ms)
+
+
+Started GET "/items/3" for ::1 at 2016-01-21 12:23:59 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered items/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 68ms (Views: 30.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-21 12:23:59 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-21 12:23:59 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-21 12:23:59 -0800
+
+
+Started GET "/assets/application.self-08e4e13dc376eb87c152710d12041c53bdc5a3b17a974bc3691d9f9f18bd72ba.css?body=1" for ::1 at 2016-01-21 12:23:59 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-21 12:23:59 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-21 12:23:59 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-21 12:23:59 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-21 12:23:59 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-21 12:23:59 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-21 12:23:59 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-21 12:23:59 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-21 12:23:59 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-21 12:23:59 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-21 12:23:59 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-21 12:23:59 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-01-21 12:23:59 -0800
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-01-21 12:23:59 -0800
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (9.0ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (82.8ms)
+
+
+Started GET "/items/3/edit" for ::1 at 2016-01-21 12:24:01 -0800
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered items/_form.html.erb (12.6ms)
+  Rendered items/edit.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 45ms (Views: 43.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:24:03 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 38ms (Views: 36.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/new" for ::1 at 2016-01-21 12:24:04 -0800
+Processing by ItemsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered items/_form.html.erb (2.0ms)
+  Rendered items/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 41ms (Views: 39.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:24:06 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/3" for ::1 at 2016-01-21 12:24:08 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered items/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-01-21 12:24:08 -0800
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.6ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (60.7ms)
+
+
+Started GET "/items/3/edit" for ::1 at 2016-01-21 12:24:09 -0800
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered items/_form.html.erb (1.5ms)
+  Rendered items/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/items/3" for ::1 at 2016-01-21 12:25:10 -0800
+Processing by ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IGlojn7B+iP7Kc2mm347YgTh90XxbBaPF8M7ikHHbLlc+lbFphuMM1Sh0F+aUZrj31UlX3LgtSGJLpQCcnEU1w==", "item"=>{"title"=>"Hot Air Balloon", "caption"=>"Rise above", "address"=>"Somewhere beautiful", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f99a2cbbcc0 @tempfile=#<Tempfile:/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/RackMultipart20160121-901-1vcutx4.jpg>, @original_filename="Balloon.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[avatar]\"; filename=\"Balloon.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Save", "id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  begin transaction
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/502dd302b6d8d3c24b20ee49e2d51bd120160121-901-1adosir.jpg'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/502dd302b6d8d3c24b20ee49e2d51bd120160121-901-1w96znh.jpg[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/502dd302b6d8d3c24b20ee49e2d51bd120160121-901-1w96znh.jpg[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/502dd302b6d8d3c24b20ee49e2d51bd120160121-901-1w96znh.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/1bd65c45c7c72884944d68ee604785d720160121-901-s2xicp'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/502dd302b6d8d3c24b20ee49e2d51bd120160121-901-1w96znh.jpg[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/502dd302b6d8d3c24b20ee49e2d51bd120160121-901-1w96znh.jpg[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/502dd302b6d8d3c24b20ee49e2d51bd120160121-901-1w96znh.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/1bd65c45c7c72884944d68ee604785d720160121-901-pp0gc8'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/502dd302b6d8d3c24b20ee49e2d51bd120160121-901-8bgilt.jpg'
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "items" SET "avatar_file_name" = ?, "avatar_content_type" = ?, "avatar_file_size" = ?, "avatar_updated_at" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["avatar_file_name", "Balloon.jpg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 211959], ["avatar_updated_at", "2016-01-21 20:25:10.472588"], ["updated_at", "2016-01-21 20:25:10.840722"], ["id", 3]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/items/3
+Completed 302 Found in 383ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/items/3" for ::1 at 2016-01-21 12:25:10 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered items/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:25:17 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:25:20 -0800
+Processing by HomebaseController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:25:21 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.2ms)[0m  [1mSELECT "memories".* FROM "memories"[0m
+  Rendered memories/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 64ms (Views: 58.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/memories/1" for ::1 at 2016-01-21 12:25:22 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered memories/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 40ms (Views: 37.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:25:23 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories"[0m
+  Rendered memories/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/memories/2" for ::1 at 2016-01-21 12:25:23 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered memories/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:25:24 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories"[0m
+  Rendered memories/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/memories/3" for ::1 at 2016-01-21 12:25:25 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered memories/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:25:26 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories"[0m
+  Rendered memories/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:25:27 -0800
+Processing by HomebaseController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-21 12:25:28 -0800
+Processing by PlansController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT "plans".* FROM "plans"
+  Rendered plans/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 41ms (Views: 37.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/plans/3" for ::1 at 2016-01-21 12:25:29 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered plans/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/3/edit" for ::1 at 2016-01-21 12:25:39 -0800
+Processing by PlansController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered plans/_form.html.erb (4.9ms)
+  Rendered plans/edit.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 46ms (Views: 44.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/plans/3" for ::1 at 2016-01-21 12:26:01 -0800
+Processing by PlansController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aS+SMZEhuQ2MaGCDI4P5XzW+KpJuLpPEdcAzyS0dh/kVvKx6SfvPHSPgfXoirFje7gr4iO2iMGrrLZxBHqv/lw==", "plan"=>{"date"=>"2016-09-01", "title"=>"Move to New York", "caption"=>"For school and work", "address"=>"Manhattan, New York"}, "commit"=>"Save", "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "plans" SET "date" = ?, "address" = ?, "latitude" = ?, "longitude" = ?, "updated_at" = ? WHERE "plans"."id" = ?  [["date", "2016-09-01"], ["address", "Manhattan, New York"], ["latitude", 40.7830603], ["longitude", -73.9712488], ["updated_at", "2016-01-21 20:26:01.246109"], ["id", 3]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/plans/3
+Completed 302 Found in 127ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/plans/3" for ::1 at 2016-01-21 12:26:01 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered plans/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-21 12:26:03 -0800
+Processing by PlansController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.2ms)[0m  [1mSELECT "plans".* FROM "plans"[0m
+  Rendered plans/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/5" for ::1 at 2016-01-21 12:26:04 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered plans/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 31ms (Views: 29.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/5/edit" for ::1 at 2016-01-21 12:26:06 -0800
+Processing by PlansController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered plans/_form.html.erb (1.5ms)
+  Rendered plans/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/plans/5" for ::1 at 2016-01-21 12:26:31 -0800
+Processing by PlansController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7RLCoRBNykhI/rmmDtoYe0nfj5t3uWwWXQOc6zdXKdORgfzqyJe8WOd2pF8P9bn6kmtdgfQ1z7jD7jNjBOFRvQ==", "plan"=>{"date"=>"2017-01-01", "title"=>"Buy first car", "caption"=>"Preferably a hybrid with good seats for posture", "address"=>"Los Angeles"}, "commit"=>"Save", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "plans" SET "caption" = ?, "date" = ?, "address" = ?, "latitude" = ?, "longitude" = ?, "updated_at" = ? WHERE "plans"."id" = ?[0m  [["caption", "Preferably a hybrid with good seats for posture"], ["date", "2017-01-01"], ["address", "Los Angeles"], ["latitude", 34.0522342], ["longitude", -118.2436849], ["updated_at", "2016-01-21 20:26:31.740083"], ["id", 5]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/plans/5
+Completed 302 Found in 99ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/plans/5" for ::1 at 2016-01-21 12:26:31 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered plans/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-21 12:26:33 -0800
+Processing by PlansController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT "plans".* FROM "plans"
+  Rendered plans/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/7" for ::1 at 2016-01-21 12:26:34 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered plans/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-21 12:26:36 -0800
+Processing by PlansController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.2ms)[0m  SELECT "plans".* FROM "plans"
+  Rendered plans/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:26:38 -0800
+Processing by HomebaseController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:26:39 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.2ms)[0m  [1mSELECT "memories".* FROM "memories"[0m
+  Rendered memories/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/memories/1" for ::1 at 2016-01-21 12:26:40 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered memories/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:26:42 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.2ms)[0m  [1mSELECT "memories".* FROM "memories"[0m
+  Rendered memories/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/memories/2" for ::1 at 2016-01-21 12:26:42 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered memories/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:26:45 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories"[0m
+  Rendered memories/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/memories/3" for ::1 at 2016-01-21 12:26:46 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered memories/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:26:50 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories"[0m
+  Rendered memories/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:26:51 -0800
+Processing by HomebaseController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:26:51 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 39ms (Views: 37.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:26:53 -0800
+Processing by HomebaseController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:26:53 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories"[0m
+  Rendered memories/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 40ms (Views: 38.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories/1" for ::1 at 2016-01-21 12:26:54 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered memories/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories/1" for ::1 at 2016-01-21 12:27:19 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered memories/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-21 12:27:19 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-21 12:27:19 -0800
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-21 12:27:19 -0800
+
+
+Started GET "/assets/application.self-08e4e13dc376eb87c152710d12041c53bdc5a3b17a974bc3691d9f9f18bd72ba.css?body=1" for ::1 at 2016-01-21 12:27:19 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-21 12:27:19 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-21 12:27:19 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-21 12:27:19 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-21 12:27:19 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-21 12:27:19 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-21 12:27:19 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-21 12:27:19 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-21 12:27:19 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-21 12:27:19 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-21 12:27:19 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-21 12:27:19 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-01-21 12:27:19 -0800
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:27:21 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.2ms)[0m  [1mSELECT "memories".* FROM "memories"[0m
+  Rendered memories/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/memories/3" for ::1 at 2016-01-21 12:27:22 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered memories/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:27:23 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories"[0m
+  Rendered memories/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 38ms (Views: 36.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:27:24 -0800
+Processing by HomebaseController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 37ms (Views: 36.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:27:25 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 45ms (Views: 42.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items/1" for ::1 at 2016-01-21 12:27:25 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered items/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 35ms (Views: 33.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-01-21 12:27:25 -0800
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (58.4ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:28:05 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 32ms (Views: 30.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/2" for ::1 at 2016-01-21 12:28:28 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered items/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-01-21 12:28:28 -0800
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (64.8ms)
+
+
+Started GET "/items/2/edit" for ::1 at 2016-01-21 12:28:28 -0800
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered items/_form.html.erb (2.7ms)
+  Rendered items/edit.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 46ms (Views: 44.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/items/2" for ::1 at 2016-01-21 12:28:35 -0800
+Processing by ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wKecRraQkt/RTmudqKOUXhpQbFDiDaylQasChIVkpYW8NKINbkrkz37GdmSpjDXfweS+SmGBDwvfRq0MttLd6w==", "item"=>{"title"=>"Go to Africa", "caption"=>"A safari is a must", "address"=>"Africa", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f99a2662798 @tempfile=#<Tempfile:/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/RackMultipart20160121-901-10mym49.jpg>, @original_filename="Safari.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[avatar]\"; filename=\"Safari.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Save", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/50de9bc68c93dc32d8c7c9059347176020160121-901-11917az.jpg'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/50de9bc68c93dc32d8c7c9059347176020160121-901-1o5oeoh.jpg[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/50de9bc68c93dc32d8c7c9059347176020160121-901-1o5oeoh.jpg[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/50de9bc68c93dc32d8c7c9059347176020160121-901-1o5oeoh.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/e3adf6b69540d9980f853fc5653d4f0420160121-901-ptvj3c'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/50de9bc68c93dc32d8c7c9059347176020160121-901-1o5oeoh.jpg[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/50de9bc68c93dc32d8c7c9059347176020160121-901-1o5oeoh.jpg[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/50de9bc68c93dc32d8c7c9059347176020160121-901-1o5oeoh.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/e3adf6b69540d9980f853fc5653d4f0420160121-901-7up9ei'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/50de9bc68c93dc32d8c7c9059347176020160121-901-19d3eq4.jpg'
+  [1m[35mSQL (0.3ms)[0m  UPDATE "items" SET "avatar_file_name" = ?, "avatar_content_type" = ?, "avatar_file_size" = ?, "avatar_updated_at" = ?, "updated_at" = ? WHERE "items"."id" = ?  [["avatar_file_name", "Safari.jpg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 59527], ["avatar_updated_at", "2016-01-21 20:28:35.093244"], ["updated_at", "2016-01-21 20:28:35.679090"], ["id", 2]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/items/2
+Completed 302 Found in 598ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/items/2" for ::1 at 2016-01-21 12:28:35 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered items/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:28:37 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/3" for ::1 at 2016-01-21 12:28:38 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered items/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:28:39 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 48ms (Views: 46.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/1" for ::1 at 2016-01-21 12:28:39 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered items/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 38ms (Views: 36.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-01-21 12:28:40 -0800
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (61.7ms)
+
+
+Started GET "/items/1/edit" for ::1 at 2016-01-21 12:28:41 -0800
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered items/_form.html.erb (1.7ms)
+  Rendered items/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/items/1" for ::1 at 2016-01-21 12:28:50 -0800
+Processing by ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iHtW8BMZZUzKwse/bEMLb+UKv36eGPw9wY3rZu4Ev1T06Gi7y8MTXGVK2kZtbKruPr5tZB2UX5NfYETu3bLHOg==", "item"=>{"title"=>"Sky Dive", "caption"=>"When we get old.. like really old", "address"=>"Somewhere beautiful", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f999bfddce8 @tempfile=#<Tempfile:/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/RackMultipart20160121-901-1ct33e8.jpg>, @original_filename="Skydive.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[avatar]\"; filename=\"Skydive.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Save", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/9a1d293f72d8256b7953ef2902eb21c720160121-901-27tzwd.jpg'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/9a1d293f72d8256b7953ef2902eb21c720160121-901-1x1ck4w.jpg[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/9a1d293f72d8256b7953ef2902eb21c720160121-901-1x1ck4w.jpg[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/9a1d293f72d8256b7953ef2902eb21c720160121-901-1x1ck4w.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/a220666bfb703c122126d32079c4147d20160121-901-thukvy'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/9a1d293f72d8256b7953ef2902eb21c720160121-901-1x1ck4w.jpg[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/9a1d293f72d8256b7953ef2902eb21c720160121-901-1x1ck4w.jpg[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/9a1d293f72d8256b7953ef2902eb21c720160121-901-1x1ck4w.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/a220666bfb703c122126d32079c4147d20160121-901-1xwv09u'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/9a1d293f72d8256b7953ef2902eb21c720160121-901-lsrtn.jpg'
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "items" SET "avatar_file_name" = ?, "avatar_content_type" = ?, "avatar_file_size" = ?, "avatar_updated_at" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["avatar_file_name", "Skydive.jpg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 271506], ["avatar_updated_at", "2016-01-21 20:28:50.955962"], ["updated_at", "2016-01-21 20:28:51.176973"], ["id", 1]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/items/1
+Completed 302 Found in 233ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/items/1" for ::1 at 2016-01-21 12:28:51 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered items/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 42ms (Views: 39.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:28:53 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 46ms (Views: 44.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:28:54 -0800
+Processing by HomebaseController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-21 12:28:55 -0800
+Processing by PlansController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT "plans".* FROM "plans"[0m
+  Rendered plans/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/3" for ::1 at 2016-01-21 12:28:56 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered plans/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-21 12:28:58 -0800
+Processing by PlansController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT "plans".* FROM "plans"[0m
+  Rendered plans/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 39ms (Views: 37.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/5" for ::1 at 2016-01-21 12:28:59 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered plans/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-21 12:29:00 -0800
+Processing by PlansController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT "plans".* FROM "plans"[0m
+  Rendered plans/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 37ms (Views: 35.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/7" for ::1 at 2016-01-21 12:29:01 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered plans/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-21 12:29:03 -0800
+Processing by PlansController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT "plans".* FROM "plans"[0m
+  Rendered plans/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:29:06 -0800
+Processing by HomebaseController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 41ms (Views: 39.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:29:08 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories"
+  Rendered memories/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories/3" for ::1 at 2016-01-21 12:29:09 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered memories/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 36ms (Views: 34.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:29:10 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.2ms)[0m  SELECT "memories".* FROM "memories"
+  Rendered memories/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 38ms (Views: 36.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:29:13 -0800
+Processing by HomebaseController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:29:14 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 43ms (Views: 41.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items/1" for ::1 at 2016-01-21 12:29:15 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered items/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:29:16 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentAvatarToPlans (20160121202941)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "plans" ADD "avatar_file_name" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "plans" ADD "avatar_content_type" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "plans" ADD "avatar_file_size" integer[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "plans" ADD "avatar_updated_at" datetime
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160121202941"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_memories_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_memories_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plans_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plans_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:31:23 -0800
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by HomebaseController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 57ms (Views: 43.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-21 12:31:24 -0800
+Processing by PlansController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.2ms)[0m  [1mSELECT "plans".* FROM "plans"[0m
+  Rendered plans/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 48ms (Views: 43.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/plans/7" for ::1 at 2016-01-21 12:31:24 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.2ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered plans/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 50ms (Views: 47.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-01-21 12:31:24 -0800
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (67.2ms)
+
+
+Started GET "/plans/7/edit" for ::1 at 2016-01-21 12:31:25 -0800
+Processing by PlansController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered plans/_form.html.erb (4.3ms)
+  Rendered plans/edit.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 54ms (Views: 52.3ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/plans/7" for ::1 at 2016-01-21 12:33:13 -0800
+Processing by PlansController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kTJmFSKZpEHYgY2CSlArmHK/LcfWLBc+OKld3+upvSTtoVhe+kPSUXcJkHtLf4oZqQv/3VWgtJCmRPJX2B/FSg==", "plan"=>{"date"=>"2016-07-04", "title"=>"First job in the U.S.", "caption"=>"Land a job as a junior web developer", "address"=>"New York", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f99a2b7bae0 @tempfile=#<Tempfile:/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/RackMultipart20160121-901-1fvyw34.jpg>, @original_filename="Dev.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"plan[avatar]\"; filename=\"Dev.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Save", "id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.0ms)[0m  begin transaction
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/55f37d1fd483f6a85379640fe51aafa820160121-901-u2gtt0.jpg'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/55f37d1fd483f6a85379640fe51aafa820160121-901-z0n7mk.jpg[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/55f37d1fd483f6a85379640fe51aafa820160121-901-z0n7mk.jpg[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/55f37d1fd483f6a85379640fe51aafa820160121-901-z0n7mk.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/b03b5111fe54c8801c47014e95fd8ba920160121-901-1p2puea'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/55f37d1fd483f6a85379640fe51aafa820160121-901-z0n7mk.jpg[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/55f37d1fd483f6a85379640fe51aafa820160121-901-z0n7mk.jpg[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/55f37d1fd483f6a85379640fe51aafa820160121-901-z0n7mk.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/b03b5111fe54c8801c47014e95fd8ba920160121-901-1070a2w'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/55f37d1fd483f6a85379640fe51aafa820160121-901-176solw.jpg'
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "plans" SET "avatar_file_name" = ?, "avatar_content_type" = ?, "avatar_file_size" = ?, "avatar_updated_at" = ?, "updated_at" = ? WHERE "plans"."id" = ?[0m  [["avatar_file_name", "Dev.jpg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 71116], ["avatar_updated_at", "2016-01-21 20:33:13.620467"], ["updated_at", "2016-01-21 20:33:13.858662"], ["id", 7]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/plans/7
+Completed 302 Found in 255ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/plans/7" for ::1 at 2016-01-21 12:33:13 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered plans/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 43ms (Views: 40.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-21 12:33:17 -0800
+Processing by PlansController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT "plans".* FROM "plans"
+  Rendered plans/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/5" for ::1 at 2016-01-21 12:33:19 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered plans/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-01-21 12:33:19 -0800
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.9ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (64.0ms)
+
+
+Started GET "/plans/5/edit" for ::1 at 2016-01-21 12:33:20 -0800
+Processing by PlansController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered plans/_form.html.erb (2.1ms)
+  Rendered plans/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/plans/5" for ::1 at 2016-01-21 12:34:24 -0800
+Processing by PlansController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KfLbrGTq/tqkTqSsVfGv5bXv96uCjr02e1g+H4MAB9xVYeXnvDCIygvGuVVU3g5kblslsQECHpjltZGXsLZ/sg==", "plan"=>{"date"=>"2017-01-01", "title"=>"Buy first car", "caption"=>"Preferably a hybrid with good seats for posture", "address"=>"Los Angeles", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f99a2c39270 @tempfile=#<Tempfile:/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/RackMultipart20160121-901-1gv651n.jpg>, @original_filename="Prius.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"plan[avatar]\"; filename=\"Prius.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Save", "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/571d7e5578fff58c53986351377c0c9820160121-901-1t68l94.jpg'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/571d7e5578fff58c53986351377c0c9820160121-901-exqfby.jpg[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/571d7e5578fff58c53986351377c0c9820160121-901-exqfby.jpg[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/571d7e5578fff58c53986351377c0c9820160121-901-exqfby.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/3ea593e432e8fa3439462e59388a9e6c20160121-901-5wukas'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/571d7e5578fff58c53986351377c0c9820160121-901-exqfby.jpg[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/571d7e5578fff58c53986351377c0c9820160121-901-exqfby.jpg[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/571d7e5578fff58c53986351377c0c9820160121-901-exqfby.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/3ea593e432e8fa3439462e59388a9e6c20160121-901-1ib8n78'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/571d7e5578fff58c53986351377c0c9820160121-901-u3buzf.jpg'
+  [1m[35mSQL (0.3ms)[0m  UPDATE "plans" SET "avatar_file_name" = ?, "avatar_content_type" = ?, "avatar_file_size" = ?, "avatar_updated_at" = ?, "updated_at" = ? WHERE "plans"."id" = ?  [["avatar_file_name", "Prius.jpg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 49547], ["avatar_updated_at", "2016-01-21 20:34:24.373769"], ["updated_at", "2016-01-21 20:34:25.034998"], ["id", 5]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/plans/5
+Completed 302 Found in 675ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/plans/5" for ::1 at 2016-01-21 12:34:25 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered plans/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 40ms (Views: 37.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-21 12:34:26 -0800
+Processing by PlansController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT "plans".* FROM "plans"[0m
+  Rendered plans/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/7" for ::1 at 2016-01-21 12:34:27 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered plans/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-21 12:34:28 -0800
+Processing by PlansController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.2ms)[0m  [1mSELECT "plans".* FROM "plans"[0m
+  Rendered plans/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 36ms (Views: 33.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/plans/3" for ::1 at 2016-01-21 12:34:28 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered plans/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 41ms (Views: 39.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-01-21 12:34:28 -0800
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylekwon/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (57.5ms)
+
+
+Started GET "/plans/3/edit" for ::1 at 2016-01-21 12:35:02 -0800
+Processing by PlansController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered plans/_form.html.erb (2.0ms)
+  Rendered plans/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/plans/3" for ::1 at 2016-01-21 12:35:07 -0800
+Processing by PlansController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5rbIKhEA9Mf9NFOppFAarnd2hDesFoUfG3rUprD6BJiaJfZhydqC11K8TlClf7svrMJWLS+aJrGFl3sug0x89g==", "plan"=>{"date"=>"2016-09-01", "title"=>"Move to New York", "caption"=>"For school and work", "address"=>"Manhattan, New York", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f999b97e488 @tempfile=#<Tempfile:/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/RackMultipart20160121-901-g69792.jpg>, @original_filename="NY.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"plan[avatar]\"; filename=\"NY.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Save", "id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  begin transaction
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/93a2a4ba7f0637b17eb0406c741759e820160121-901-j5d9ei.jpg'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/93a2a4ba7f0637b17eb0406c741759e820160121-901-10xlc7o.jpg[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/93a2a4ba7f0637b17eb0406c741759e820160121-901-10xlc7o.jpg[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/93a2a4ba7f0637b17eb0406c741759e820160121-901-10xlc7o.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/ef381c180b841209fcc7c563cc546ec820160121-901-1tqv99a'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/93a2a4ba7f0637b17eb0406c741759e820160121-901-10xlc7o.jpg[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/93a2a4ba7f0637b17eb0406c741759e820160121-901-10xlc7o.jpg[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/93a2a4ba7f0637b17eb0406c741759e820160121-901-10xlc7o.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/ef381c180b841209fcc7c563cc546ec820160121-901-k7na0l'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/93a2a4ba7f0637b17eb0406c741759e820160121-901-nbkl4h.jpg'
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "plans" SET "avatar_file_name" = ?, "avatar_content_type" = ?, "avatar_file_size" = ?, "avatar_updated_at" = ?, "updated_at" = ? WHERE "plans"."id" = ?[0m  [["avatar_file_name", "NY.jpg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 3818666], ["avatar_updated_at", "2016-01-21 20:35:07.734813"], ["updated_at", "2016-01-21 20:35:11.135035"], ["id", 3]]
+  [1m[35m (2.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/plans/3
+Completed 302 Found in 3419ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/plans/3" for ::1 at 2016-01-21 12:35:11 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered plans/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 38ms (Views: 35.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:35:14 -0800
+Processing by HomebaseController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 36ms (Views: 35.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-21 12:35:15 -0800
+Processing by PlansController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT "plans".* FROM "plans"[0m
+  Rendered plans/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:35:17 -0800
+Processing by HomebaseController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:35:18 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.2ms)[0m  SELECT "memories".* FROM "memories"
+  Rendered memories/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 55ms (Views: 50.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/memories/1" for ::1 at 2016-01-21 12:37:36 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.2ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered memories/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 34ms (Views: 31.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:37:37 -0800
+Processing by HomebaseController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:37:37 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories"[0m
+  Rendered memories/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 34ms (Views: 32.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories/1" for ::1 at 2016-01-21 12:37:39 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered memories/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:37:44 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories"[0m
+  Rendered memories/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 41ms (Views: 39.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories/new" for ::1 at 2016-01-21 12:37:48 -0800
+Processing by MemoriesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered memories/_form.html.erb (3.3ms)
+  Rendered memories/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 37ms (Views: 35.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:37:53 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.2ms)[0m  SELECT "memories".* FROM "memories"
+  Rendered memories/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/memories/1" for ::1 at 2016-01-21 12:37:53 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered memories/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-21 12:37:56 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories"
+  Rendered memories/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:38:01 -0800
+Processing by HomebaseController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 39ms (Views: 37.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-21 12:38:01 -0800
+Processing by PlansController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT "plans".* FROM "plans"[0m
+  Rendered plans/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/3" for ::1 at 2016-01-21 12:38:02 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered plans/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-21 12:38:05 -0800
+Processing by PlansController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.2ms)[0m  [1mSELECT "plans".* FROM "plans"[0m
+  Rendered plans/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/plans/new" for ::1 at 2016-01-21 12:38:06 -0800
+Processing by PlansController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered plans/_form.html.erb (1.7ms)
+  Rendered plans/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-21 12:38:08 -0800
+Processing by PlansController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT "plans".* FROM "plans"
+  Rendered plans/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:38:09 -0800
+Processing by HomebaseController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:38:09 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 39ms (Views: 35.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/1" for ::1 at 2016-01-21 12:38:11 -0800
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered items/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:38:12 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items/new" for ::1 at 2016-01-21 12:38:13 -0800
+Processing by ItemsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered items/_form.html.erb (1.7ms)
+  Rendered items/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 42ms (Views: 40.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items" for ::1 at 2016-01-21 12:38:15 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:38:16 -0800
+Processing by HomebaseController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for ::1 at 2016-01-21 12:38:17 -0800
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 45ms (Views: 43.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/homebase/index" for ::1 at 2016-01-21 12:38:19 -0800
+Processing by HomebaseController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.1ms)
