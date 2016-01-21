@@ -14535,3 +14535,393 @@ Processing by HomebaseController#index as
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
   Rendered homebase/index.html.erb within layouts/application (0.7ms)
 Completed 200 OK in 39ms (Views: 36.9ms | ActiveRecord: 0.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDateToPlans (20160121060320)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "plans" ADD "date" date[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160121060320"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_memories_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_memories_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plans_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plans_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/" for ::1 at 2016-01-20 22:04:39 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomebaseController#index as HTML
+Completed 401 Unauthorized in 14ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-01-20 22:04:39 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 379ms (Views: 365.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-01-20 22:04:40 -0800
+Processing by HomebaseController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-01-20 22:04:40 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (5.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 66ms (Views: 65.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-08e4e13dc376eb87c152710d12041c53bdc5a3b17a974bc3691d9f9f18bd72ba.css?body=1" for ::1 at 2016-01-20 22:04:40 -0800
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-20 22:04:40 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-20 22:04:40 -0800
+
+
+Started POST "/users/sign_in" for ::1 at 2016-01-20 22:04:42 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bRMraPC4UoXBW0HJqvZfhvG/acH0hEBVw/ZQxgr4McW+IGTPTWTrE0psIRaedyWedXgtvZBuC19Pb1uyQb0Ilw==", "user"=>{"email"=>"kyle@kyle.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "kyle@kyle.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-01-18 21:06:54.857424"], ["current_sign_in_at", "2016-01-21 06:04:42.155410"], ["sign_in_count", 11], ["updated_at", "2016-01-21 06:04:42.156612"], ["id", 2]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 95ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2016-01-20 22:04:42 -0800
+Processing by HomebaseController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-20 22:04:43 -0800
+Processing by PlansController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.2ms)[0m  SELECT "plans".* FROM "plans"
+  Rendered plans/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 45ms (Views: 39.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/plans/new" for ::1 at 2016-01-20 22:04:44 -0800
+Processing by PlansController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered plans/_form.html.erb (5.9ms)
+  Rendered plans/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 43ms (Views: 41.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-20 22:04:45 -0800
+Processing by PlansController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT "plans".* FROM "plans"[0m
+  Rendered plans/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/7" for ::1 at 2016-01-20 22:04:46 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.2ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered plans/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 49ms (Views: 43.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/plans/7" for ::1 at 2016-01-20 22:05:35 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered plans/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `date' for nil:NilClass):
+    1: <p>
+    2:   <strong>Date:</strong>
+    3:   <%= @memory.date %>
+    4: </p>
+    5: 
+    6: <p>
+  app/views/plans/show.html.erb:3:in `_app_views_plans_show_html_erb__3902761486363161600_70229374627940'
+
+
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kylekwon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (45.0ms)
+
+
+Started GET "/plans/7" for ::1 at 2016-01-20 22:05:47 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered plans/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-20 22:05:47 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-20 22:05:47 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-20 22:05:47 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-20 22:05:47 -0800
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-20 22:05:47 -0800
+
+
+Started GET "/assets/application.self-08e4e13dc376eb87c152710d12041c53bdc5a3b17a974bc3691d9f9f18bd72ba.css?body=1" for ::1 at 2016-01-20 22:05:47 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-20 22:05:47 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-20 22:05:47 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-20 22:05:47 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-20 22:05:47 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-20 22:05:47 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-20 22:05:47 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-20 22:05:47 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-20 22:05:47 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-20 22:05:47 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-01-20 22:05:47 -0800
+
+
+Started GET "/plans/7/edit" for ::1 at 2016-01-20 22:05:49 -0800
+Processing by PlansController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered plans/_form.html.erb (1.3ms)
+  Rendered plans/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/plans/7" for ::1 at 2016-01-20 22:06:05 -0800
+Processing by PlansController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EiALlvEWwU+S4zw2yu0ClVEBkQYLqQ/fxfIBqHY5U4QTBcFqzH0ypiLgpx2O9BH+E8DPMm1PZm0RWt58AYT0ng==", "plan"=>{"date"=>"2016-07-04", "title"=>"First job in the U.S.", "caption"=>"Land a job as a junior web developer"}, "commit"=>"Save", "id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 7]]
+Unpermitted parameter: date
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/plans/7
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/7" for ::1 at 2016-01-20 22:06:05 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered plans/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/7/edit" for ::1 at 2016-01-20 22:06:08 -0800
+Processing by PlansController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered plans/_form.html.erb (1.2ms)
+  Rendered plans/edit.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 34ms (Views: 32.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/plans/7" for ::1 at 2016-01-20 22:06:37 -0800
+Processing by PlansController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1tCLxJ4zE1NBPQxfsdimpnSmMqs0iuVCqHLqz8VZK2bX9UE4o1jguvE+l3T1wbXNNmdsn1JsjPB82jUbsuSMfA==", "plan"=>{"date"=>"2016-07-04", "title"=>"First job in the U.S.", "caption"=>"Land a job as a junior web developer"}, "commit"=>"Save", "id"=>"7"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.2ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "plans" SET "date" = ?, "updated_at" = ? WHERE "plans"."id" = ?[0m  [["date", "2016-07-04"], ["updated_at", "2016-01-21 06:06:37.968578"], ["id", 7]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/plans/7
+Completed 302 Found in 21ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/plans/7" for ::1 at 2016-01-20 22:06:37 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered plans/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-20 22:06:44 -0800
+Processing by PlansController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT "plans".* FROM "plans"
+  Rendered plans/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/7" for ::1 at 2016-01-20 22:06:45 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered plans/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 29ms (Views: 27.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-20 22:06:46 -0800
+Processing by PlansController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT "plans".* FROM "plans"
+  Rendered plans/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 36ms (Views: 34.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/5" for ::1 at 2016-01-20 22:06:46 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered plans/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 36ms (Views: 33.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-20 22:06:47 -0800
+Processing by PlansController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT "plans".* FROM "plans"
+  Rendered plans/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/3" for ::1 at 2016-01-20 22:06:48 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered plans/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-20 22:06:48 -0800
+Processing by PlansController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT "plans".* FROM "plans"
+  Rendered plans/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 37ms (Views: 35.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/new" for ::1 at 2016-01-20 22:06:49 -0800
+Processing by PlansController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered plans/_form.html.erb (1.3ms)
+  Rendered plans/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/plans" for ::1 at 2016-01-20 22:06:55 -0800
+Processing by PlansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gcjEJ2hwQYRyaC18tNG9L31xzNxl7G/oIFchkRD+M8GA7Q7bVRuybcJrtlfwyK5EP7CS6AMKBlr0//5FZ0OU2w==", "plan"=>{"date"=>"2016-01-01", "title"=>"1", "caption"=>"1"}, "commit"=>"Save"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "plans" ("title", "caption", "date", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "1"], ["caption", "1"], ["date", "2016-01-01"], ["user_id", 2], ["created_at", "2016-01-21 06:06:55.392348"], ["updated_at", "2016-01-21 06:06:55.392348"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/plans/9
+Completed 302 Found in 28ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/plans/9" for ::1 at 2016-01-20 22:06:55 -0800
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered plans/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-20 22:06:56 -0800
+Processing by PlansController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT "plans".* FROM "plans"[0m
+  Rendered plans/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/plans/9" for ::1 at 2016-01-20 22:06:59 -0800
+Processing by PlansController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wymg78pwsnRwvFQWWlCLqAmrwv0aOL1pCqoT8UMWnpjCDGoT9xtBncC/zz0eSZjDS2qcyXze1NveAswlNKs5gg==", "id"=>"9"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "plans" WHERE "plans"."id" = ?[0m  [["id", 9]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/plans
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-20 22:06:59 -0800
+Processing by PlansController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.1ms)[0m  SELECT "plans".* FROM "plans"
+  Rendered plans/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.2ms)
