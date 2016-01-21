@@ -28,6 +28,11 @@
     <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
   </div>
 
+  <div class="field">
+    <%= f.label :partner_email %><br />
+    <%= f.email_field :partner_email, class: 'form-control' %>
+  </div>
+<br>
   <div class="actions">
     <%= f.submit "Update", class: 'btn btn-success' %>
   </div>

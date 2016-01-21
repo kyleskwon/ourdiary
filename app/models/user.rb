@@ -11,4 +11,16 @@ class User < ActiveRecord::Base
   before_save { self.role ||= :member }
 
   enum role: [:member, :premium, :admin]
+
+  after_create :set_partner
+
+  def partner
+    User.find_by(partner_email: self.email)
+  end
+
+  private
+
+  def set_partner
+    update_attribute(:partner_email, partner.email) if partner
+  end
 end
