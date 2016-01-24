@@ -10,6 +10,8 @@ source 'https://rubygems.org'
  gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
  gem 'stripe'
  gem 'figaro'
+ gem 'fullcalendar.io-rails'
+ gem 'momentjs-rails'
 
  group :production do
    gem 'pg'
