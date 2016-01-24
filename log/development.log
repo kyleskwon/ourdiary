@@ -20347,3 +20347,264 @@ Processing by Devise::RegistrationsController#new as HTML
   Rendered devise/shared/_links.html.erb (3.2ms)
   Rendered devise/registrations/new.html.erb within layouts/application (7.0ms)
 Completed 200 OK in 41ms (Views: 40.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-01-23 21:15:05 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomebaseController#index as HTML
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-01-23 21:15:05 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (9.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 390ms (Views: 376.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-01-23 21:15:08 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-01-23 21:15:38 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:15:38 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:15:38 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:15:38 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:15:38 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:15:38 -0800
+
+
+Started GET "/assets/application.self-08e4e13dc376eb87c152710d12041c53bdc5a3b17a974bc3691d9f9f18bd72ba.css?body=1" for ::1 at 2016-01-23 21:15:38 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-23 21:15:38 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-23 21:15:38 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-23 21:15:38 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:15:38 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-23 21:15:38 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:15:38 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:15:38 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:15:38 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:15:38 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-01-23 21:15:38 -0800
+
+
+Started GET "/users/sign_up" for ::1 at 2016-01-23 21:15:55 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 51ms (Views: 49.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:15:56 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:15:56 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:15:56 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:15:56 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:15:56 -0800
+
+
+Started GET "/assets/application.self-08e4e13dc376eb87c152710d12041c53bdc5a3b17a974bc3691d9f9f18bd72ba.css?body=1" for ::1 at 2016-01-23 21:15:56 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-23 21:15:56 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-23 21:15:56 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-23 21:15:56 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-23 21:15:56 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:15:56 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:15:56 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:15:56 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:15:56 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:15:56 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-01-23 21:15:56 -0800
+
+
+Started GET "/users/sign_up" for ::1 at 2016-01-23 21:16:10 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 38ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:16:11 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:16:11 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:16:11 -0800
+
+
+Started GET "/assets/application.self-08e4e13dc376eb87c152710d12041c53bdc5a3b17a974bc3691d9f9f18bd72ba.css?body=1" for ::1 at 2016-01-23 21:16:11 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:16:11 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:16:11 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-23 21:16:11 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-23 21:16:11 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-23 21:16:11 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-23 21:16:11 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:16:11 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:16:11 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:16:11 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:16:11 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:16:11 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-01-23 21:16:11 -0800
+
+
+Started GET "/users/sign_up" for ::1 at 2016-01-23 21:16:23 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:16:23 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:16:23 -0800
+
+
+Started GET "/assets/application.self-08e4e13dc376eb87c152710d12041c53bdc5a3b17a974bc3691d9f9f18bd72ba.css?body=1" for ::1 at 2016-01-23 21:16:23 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:16:23 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:16:23 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-23 21:16:23 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-23 21:16:23 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-23 21:16:23 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-23 21:16:23 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-23 21:16:23 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:16:23 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:16:23 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:16:23 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:16:23 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-23 21:16:23 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-01-23 21:16:23 -0800
+
+
+Started GET "/users/sign_in" for ::1 at 2016-01-23 21:16:29 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-01-23 21:16:30 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-01-23 21:16:31 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 42ms (Views: 41.6ms | ActiveRecord: 0.0ms)
