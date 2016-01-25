@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
-
   <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
     <script src='lib/jquery.min.js'></script>
     <script src='lib/moment.min.js'></script>
@@ -20,7 +19,19 @@
           // put your options and callbacks here
       })
 
-  });
+  });</script>
+
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+  <script>
+  function initialize() {
+    var mapProp = {
+      center:new google.maps.LatLng(51.508742, -0.120850),
+      zoom: 7,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
   </script>
 </head>
 
@@ -37,7 +48,7 @@
        <li><%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %></li>
      <% end %>
       </ul>
-<br>
+  <br>
     <div class="flash">
       <% if flash[:notice] %>
         <div class="alert alert-success">
@@ -57,6 +68,8 @@
       <% end %>
     </div>
 
+    <div id="googleMap" style="width:500px;height:380px;"></div>
+  <br>
   <%= yield %>
 </div>
 
