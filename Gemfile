@@ -12,7 +12,7 @@ source 'https://rubygems.org'
  gem 'figaro'
  gem 'fullcalendar.io-rails'
  gem 'momentjs-rails'
- gem 'sendgrid-ruby'
+ gem 'weather-api'
 
  group :production do
    gem 'pg'

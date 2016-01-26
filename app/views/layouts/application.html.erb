@@ -3,36 +3,15 @@
 <head>
   <title>OurDiary</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
 
-  <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+  <!-- <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
     <script src='lib/jquery.min.js'></script>
     <script src='lib/moment.min.js'></script>
-    <script src='fullcalendar/fullcalendar.js'></script>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <script>$(document).ready(function() {
-
-      // page is now ready, initialize the calendar...
-
-      $('#calendar').fullCalendar({
-          // put your options and callbacks here
-      })
-
-  });</script>
-
+    <script src='fullcalendar/fullcalendar.js'></script> -->
   <script src="http://maps.googleapis.com/maps/api/js"></script>
-  <script>
-  function initialize() {
-    var mapProp = {
-      center:new google.maps.LatLng(51.508742, -0.120850),
-      zoom: 7,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
-  }
-  google.maps.event.addDomListener(window, 'load', initialize);
-  </script>
+  <%= javascript_include_tag 'application'%>
+  <%= csrf_meta_tags %>
 </head>
 
 <body>
