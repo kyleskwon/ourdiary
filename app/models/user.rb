@@ -18,6 +18,20 @@ class User < ActiveRecord::Base
     User.find_by(partner_email: self.email)
   end
 
+  def total_memories_count
+    partner_memories_count = partner ? partner.memories.count : 0
+    memories.count + partner_memories_count
+  end
+
+  def all_memories
+    partner ? memories + partner.memories : memories
+    # if partner
+    #   memories + partner.memories
+    # else
+    #   memories
+    # end
+  end
+
   private
 
   def set_partner

@@ -3,7 +3,7 @@ class MemoriesController < ApplicationController
 
   # GET /memories
   def index
-    @memories = Memory.all
+    @memories = current_user.all_memories
   end
 
   # GET /memories/1

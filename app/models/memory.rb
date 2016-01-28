@@ -4,4 +4,19 @@ class Memory < ActiveRecord::Base
   after_validation :geocode          # auto-fetch coordinates
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
+  after_create :upgrade_account, if: :account_upgradable?
+
+  MEMORY_COUNT_FOR_UPGRADE = 25  #Memory::MEMORY_COUNT_FOR_UPGRADE
+
+  private
+
+  def account_upgradable?
+    user.total_memories_count >= MEMORY_COUNT_FOR_UPGRADE
+  end
+
+  def upgrade_account
+    user.premium! unless user.admin?
+    user.partner.premium! unless user.partner.admin?
+  end
 end

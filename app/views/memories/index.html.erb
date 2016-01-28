@@ -1,3 +1,22 @@
+<% content_for :google_maps do %>
+  <script>
+    function initialize() {
+      console.log("initializing!");
+      var mapProp = {
+        center:new google.maps.LatLng(0, 0),
+        zoom: 2,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+      var marker = new google.maps.Marker({
+        position: {lat: -25.363, lng: 131.044},
+        map: map,
+        title: 'Hello World!'
+      });
+
+    }
+  </script>
+<% end %>
 <h1 align="center">OurMemories</h1>
 
 <table class="table table-hover">
@@ -20,15 +39,18 @@
     <% end %>
   </tbody>
 </table>
-
+<% if current_user.total_memories_count < Memory::MEMORY_COUNT_FOR_UPGRADE  %>
+  <p>Only <%= Memory::MEMORY_COUNT_FOR_UPGRADE - current_user.total_memories_count %> memories left for a free upgrade!</p>
+<% end %>
 <%= link_to 'Add a Memory', new_memory_path, class: 'btn btn-info' %>
-<br>
-<br>
-<br>
-<div id='calendar'></div>
+  <br>
+  <br>
+  <br>
+
 <script>$(document).ready(function() {
     // page is now ready, initialize the calendar...
     $('#calendar').fullCalendar({
         // put your options and callbacks here
     })
 });</script>
+<div id='calendar'></div>
