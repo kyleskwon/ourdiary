@@ -32,6 +32,14 @@ class User < ActiveRecord::Base
     # end
   end
 
+  def all_plans
+    partner ? plans + partner.plans : plans
+  end
+
+  def all_items
+    partner ? items + partner.items : items
+  end
+
   private
 
   def set_partner

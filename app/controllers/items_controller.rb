@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
 
   # GET /items
   def index
-    @items = current_user.items
+    @items = current_user.all_items
   end
 
   # GET /items/1

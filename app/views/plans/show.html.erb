@@ -1,11 +1,14 @@
 <div class="row">
   <div class="col-md-6">
     <p>
-      <h3 align="center"><%= @plan.title %> <small>(<%= @plan.date %>) | <%= @plan.address %></small></h3>
+      <h3 align="center"><%= @plan.title %>
+        <p><small>(<%= @plan.date %>) | <%= @plan.address %></small></p>
+        </h3>
     </p>
-<br>
-    <p>
-      <h5 align="center"><%= @plan.caption %></h5>
+    <p class="text-justify">
+      <blockquote>
+        <h5><%= @plan.caption %></h5>
+      </blockquote>
     </p>
   </div>
   <div class="col--md-6" align="center">

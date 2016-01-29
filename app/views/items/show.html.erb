@@ -1,11 +1,14 @@
 <div class="row">
   <div class="col-md-6">
     <p>
-      <h3 align="center"><%= @item.title %> <small><%= @item.address %></small></h3>
+      <h3 align="center"><%= @item.title %>
+        <p><small><%= @item.address %></small></p>
+        </h3>
     </p>
-<br>
-    <p>
-      <h5 align="center"><%= @item.caption %></h5>
+    <p class="text-justify">
+      <blockquote>
+        <h5><%= @item.caption %></h5>
+      </blockquote>
     </p>
   </div>
   <div class="col--md-6" align="center">
