@@ -9,7 +9,7 @@
       };
       var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
       var marker = new google.maps.Marker({
-        position: {lat: -25.363, lng: 131.044},
+        position: {lat: 18.7953, lng: 98.9986},
         map: map,
         title: 'Hello World!'
       });
@@ -17,6 +17,21 @@
     }
   </script>
 <% end %>
+
+<div class="row">
+  <div class="col-md-4">
+    <%= link_to "OurMemories", memories_path, class: 'btn btn-info' %>
+  </div>
+  <div class="col-md-4">
+    <%= link_to "OurPlans", plans_path, class: 'btn btn-info' %>
+  </div>
+  <div class="col-md-4">
+    <%= link_to "BucketList", items_path, class: 'btn btn-info' %>
+  </div>
+</div>
+
+<br>
+
 <h1 align="center">OurMemories</h1>
 
 <table class="table table-hover">

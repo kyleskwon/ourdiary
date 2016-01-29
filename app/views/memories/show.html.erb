@@ -14,7 +14,7 @@
 </p>
 
 <p>
-  <strong>Location or Address:</strong>
+  <strong>City:</strong>
   <%= @memory.address %>
 </p>
 
@@ -24,9 +24,11 @@
 </p>
 
 <p>
-  <strong>Photo:</strong>
   <%= image_tag @memory.avatar.url(:medium) %>
 </p>
 
 <%= link_to 'Edit', edit_memory_path(@memory), class: 'btn btn-default' %>
 <%= link_to 'Back', memories_path, class: 'btn btn-default' %>
+<br>
+<br>
+<br>

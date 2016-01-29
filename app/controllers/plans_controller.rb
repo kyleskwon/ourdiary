@@ -3,7 +3,7 @@ class PlansController < ApplicationController
 
   # GET /plans
   def index
-    @plans = Plan.all
+    @plans = current_user.plans
   end
 
   # GET /plans/1
