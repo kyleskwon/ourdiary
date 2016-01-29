@@ -46688,3 +46688,766 @@ Processing by MemoriesController#index as HTML
   [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
   Rendered memories/index.html.erb within layouts/application (9.2ms)
 Completed 200 OK in 50ms (Views: 47.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-01-29 12:26:57 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomebaseController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2301ms (Views: 2271.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-01-29 12:26:59 -0800
+Processing by HomebaseController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-29 12:27:03 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mMemory Load (0.2ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  Rendered memories/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 135ms (Views: 34.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-29 12:27:09 -0800
+Processing by PlansController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlan Load (0.2ms)[0m  SELECT "plans".* FROM "plans" WHERE "plans"."user_id" = ?  [["user_id", 2]]
+  Rendered plans/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 39ms (Views: 34.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-29 12:27:11 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered memories/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 37ms (Views: 33.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-29 12:27:14 -0800
+Processing by PlansController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT "plans".* FROM "plans" WHERE "plans"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered plans/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items" for ::1 at 2016-01-29 12:27:17 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered items/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 40ms (Views: 35.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-29 12:27:55 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  Rendered memories/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 61ms (Views: 36.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/memories/new" for ::1 at 2016-01-29 12:27:57 -0800
+Processing by MemoriesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered memories/_form.html.erb (18.9ms)
+  Rendered memories/new.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 56ms (Views: 54.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/memories" for ::1 at 2016-01-29 12:28:09 -0800
+Processing by MemoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7/BeT7s9on5OAUhyM9IU3CxgBpJtz7Ex/fAuifVeI1aYr+2Ld2BJO/5CdCAPD66MPEHGoy5Eoo/neiXO3jxP+g==", "memory"=>{"date"=>"", "title"=>"", "caption"=>"", "address"=>"", "label"=>"", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f926c9eae98 @tempfile=#<Tempfile:/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/RackMultipart20160129-881-1xtrgsc.jpg>, @original_filename="IMG_3835.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"memory[avatar]\"; filename=\"IMG_3835.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Save"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/73545b3dc910661d9d5188df2f07c98f20160129-881-5eg44j.jpg'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/73545b3dc910661d9d5188df2f07c98f20160129-881-1swmy5.jpg[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/73545b3dc910661d9d5188df2f07c98f20160129-881-1swmy5.jpg[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/73545b3dc910661d9d5188df2f07c98f20160129-881-1swmy5.jpg[0]' -auto-orient -resize "500x500>" '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/3aa6bd00aa8bac929c279f08e51b8d0520160129-881-1jmb31m'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/73545b3dc910661d9d5188df2f07c98f20160129-881-1swmy5.jpg[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/73545b3dc910661d9d5188df2f07c98f20160129-881-1swmy5.jpg[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/73545b3dc910661d9d5188df2f07c98f20160129-881-1swmy5.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/3aa6bd00aa8bac929c279f08e51b8d0520160129-881-29ywe1'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/73545b3dc910661d9d5188df2f07c98f20160129-881-13so8rl.jpg'
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "memories" ("title", "caption", "label", "address", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", ""], ["caption", ""], ["label", ""], ["address", ""], ["avatar_file_name", "IMG_3835.jpg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 150855], ["avatar_updated_at", "2016-01-29 20:28:09.596305"], ["user_id", 2], ["created_at", "2016-01-29 20:28:09.807032"], ["updated_at", "2016-01-29 20:28:09.807032"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/memories/7
+Completed 302 Found in 224ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/memories/7" for ::1 at 2016-01-29 12:28:09 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered memories/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories/7" for ::1 at 2016-01-29 12:28:27 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered memories/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 94ms (Views: 54.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:28:27 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:28:27 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:28:27 -0800
+
+
+Started GET "/assets/application-print.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:28:27 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:28:27 -0800
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:28:27 -0800
+
+
+Started GET "/assets/application.self-60fb1003ad711dec9e689e6426c112462f59fcc6bf5f9d79f5c745c9c642e5b1.css?body=1" for ::1 at 2016-01-29 12:28:27 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-29 12:28:27 -0800
+
+
+Started GET "/assets/fullcalendar.self-3bd4898d43f7f48923aead9228fcd62b484d2722d60ee1af80df976c606df5fc.css?body=1" for ::1 at 2016-01-29 12:28:27 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-29 12:28:27 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-29 12:28:27 -0800
+
+
+Started GET "/assets/moment.self-dd7e1dba8e5a8b658165e18950b4810c6e415d45abf282d3924dcfcd35a2638c.js?body=1" for ::1 at 2016-01-29 12:28:27 -0800
+
+
+Started GET "/assets/fullcalendar.self-fb4c190ed24bedb1e0d9aae0bdde6a308204d341fa9d907a0e17f54c81b3f617.js?body=1" for ::1 at 2016-01-29 12:28:27 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:28:27 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:28:27 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:28:27 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:28:27 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:28:27 -0800
+
+
+Started GET "/assets/application.self-d5021fde6efe0e9d0dcea2c64816aecb15de7b4f3141de25c3a870cff5693b5f.js?body=1" for ::1 at 2016-01-29 12:28:27 -0800
+
+
+Started GET "/memories" for ::1 at 2016-01-29 12:28:31 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  Rendered memories/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 52ms (Views: 46.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/memories/new" for ::1 at 2016-01-29 12:28:33 -0800
+Processing by MemoriesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered memories/_form.html.erb (2.8ms)
+  Rendered memories/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/memories" for ::1 at 2016-01-29 12:28:39 -0800
+Processing by MemoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uvnrmebl7aZEnCLYVSI4rnM4jX7b/FnIAWvU0Y4Ory0lplhdKrgG4/TfHopp/4L+YxlNT5h3SnYb4d+WpWzDgQ==", "memory"=>{"date"=>"", "title"=>"", "caption"=>"", "address"=>"", "label"=>"", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f926b034c88 @tempfile=#<Tempfile:/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/RackMultipart20160129-881-b6veub.jpg>, @original_filename="IMG_3835.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"memory[avatar]\"; filename=\"IMG_3835.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Save"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/73545b3dc910661d9d5188df2f07c98f20160129-881-1mllwlo.jpg'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/73545b3dc910661d9d5188df2f07c98f20160129-881-13e8ci2.jpg[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/73545b3dc910661d9d5188df2f07c98f20160129-881-13e8ci2.jpg[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/73545b3dc910661d9d5188df2f07c98f20160129-881-13e8ci2.jpg[0]' -auto-orient -resize "400x400>" '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/a94c7cfb7413220f4e05d9d836b6555520160129-881-eoieez'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/73545b3dc910661d9d5188df2f07c98f20160129-881-13e8ci2.jpg[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/73545b3dc910661d9d5188df2f07c98f20160129-881-13e8ci2.jpg[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/73545b3dc910661d9d5188df2f07c98f20160129-881-13e8ci2.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/a94c7cfb7413220f4e05d9d836b6555520160129-881-1h0x8ff'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/var/folders/88/2z86xf2s7_b0b6l0703z_8b00000gn/T/73545b3dc910661d9d5188df2f07c98f20160129-881-im24pg.jpg'
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "memories" ("title", "caption", "label", "address", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", ""], ["caption", ""], ["label", ""], ["address", ""], ["avatar_file_name", "IMG_3835.jpg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 150855], ["avatar_updated_at", "2016-01-29 20:28:39.669195"], ["user_id", 2], ["created_at", "2016-01-29 20:28:39.836862"], ["updated_at", "2016-01-29 20:28:39.836862"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/memories/8
+Completed 302 Found in 181ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/memories/8" for ::1 at 2016-01-29 12:28:39 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered memories/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 46ms (Views: 44.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-29 12:28:43 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  Rendered memories/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 55ms (Views: 52.1ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/memories/7" for ::1 at 2016-01-29 12:28:47 -0800
+Processing by MemoriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0djjnGG8cj6jGn+0kMCQ2Ydu7qDCRtACo0R7TVAgzs6mh1BYreGZexNZQ+asHSqJl08ukYHNw7y5znAKe0KiYg==", "id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "memories" WHERE "memories"."id" = ?  [["id", 7]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+[paperclip] deleting /Users/kylekwon/bloc/code/ourdiary/public/system/memories/avatars/000/000/007/original/IMG_3835.jpg
+[paperclip] deleting /Users/kylekwon/bloc/code/ourdiary/public/system/memories/avatars/000/000/007/medium/IMG_3835.jpg
+[paperclip] deleting /Users/kylekwon/bloc/code/ourdiary/public/system/memories/avatars/000/000/007/thumb/IMG_3835.jpg
+Redirected to http://localhost:3000/memories
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-29 12:28:47 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  Rendered memories/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 49ms (Views: 46.2ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/memories/8" for ::1 at 2016-01-29 12:28:50 -0800
+Processing by MemoriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mbcWnhE7s87KzsPva0mXTJnHCqFrvWmH6IsBrmOPNc/u6KVa3WZYi3qN/71XlC0ciebKkCg2ejnyAQrpSO1ZYw==", "id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.2ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "memories" WHERE "memories"."id" = ?  [["id", 8]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+[paperclip] deleting /Users/kylekwon/bloc/code/ourdiary/public/system/memories/avatars/000/000/008/original/IMG_3835.jpg
+[paperclip] deleting /Users/kylekwon/bloc/code/ourdiary/public/system/memories/avatars/000/000/008/medium/IMG_3835.jpg
+[paperclip] deleting /Users/kylekwon/bloc/code/ourdiary/public/system/memories/avatars/000/000/008/thumb/IMG_3835.jpg
+Redirected to http://localhost:3000/memories
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-29 12:28:50 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mMemory Load (0.3ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  Rendered memories/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 66ms (Views: 62.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-29 12:30:40 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered memories/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 46ms (Views: 42.8ms | ActiveRecord: 0.4ms)
+  [1m[36mMemory Load (1.4ms)[0m  [1mSELECT "memories".* FROM "memories"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+
+
+Started GET "/users/edit" for ::1 at 2016-01-29 12:31:17 -0800
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 44ms (Views: 42.2ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-01-29 12:31:37 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"gPWKPI2chsWVwEA1A+t/VZJC0aCCPmVDiwEaEY3Is9n3qjn4QcFtgCWDfGc/NsUFgmMRkcG1dv2RixFWpqrfdQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-01-29 12:31:37 -0800
+Processing by HomebaseController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-01-29 12:31:37 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 47ms (Views: 46.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-01-29 12:31:43 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FEnEUR/ggZK6reShiXLzH41SKN9640865U+J0znHLPt/IWcNuXjD5Ekv6evjPSpZi12RJp0AUnyOyFBXz6gj5w==", "user"=>{"email"=>"kwon@kwon.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "kwon@kwon.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-01-28 23:11:05.525740"], ["current_sign_in_at", "2016-01-29 20:31:43.365302"], ["sign_in_count", 4], ["updated_at", "2016-01-29 20:31:43.366353"], ["id", 3]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 83ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2016-01-29 12:31:43 -0800
+Processing by HomebaseController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered homebase/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 43ms (Views: 41.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-29 12:31:44 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kwon@kwon.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kwon@kwon.com"]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kwon@kwon.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kwon@kwon.com"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kwon@kwon.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kwon@kwon.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered memories/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 42ms (Views: 38.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/plans" for ::1 at 2016-01-29 12:31:46 -0800
+Processing by PlansController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mPlan Load (0.2ms)[0m  [1mSELECT "plans".* FROM "plans" WHERE "plans"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered plans/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 53ms (Views: 47.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/items" for ::1 at 2016-01-29 12:31:48 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered items/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 52ms (Views: 47.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-29 12:50:46 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kwon@kwon.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kwon@kwon.com"]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kwon@kwon.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kwon@kwon.com"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kwon@kwon.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kwon@kwon.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  Rendered memories/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 46ms (Views: 41.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/memories/5/edit" for ::1 at 2016-01-29 12:51:37 -0800
+Processing by MemoriesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered memories/_form.html.erb (2.4ms)
+  Rendered memories/edit.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-29 12:52:11 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kwon@kwon.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kwon@kwon.com"]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kwon@kwon.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kwon@kwon.com"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kwon@kwon.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kwon@kwon.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered memories/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 40ms (Views: 36.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-29 12:52:23 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kwon@kwon.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kwon@kwon.com"]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kwon@kwon.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kwon@kwon.com"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kwon@kwon.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kwon@kwon.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  Rendered memories/index.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 53ms (Views: 49.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application-print.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:52:24 -0800
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:52:24 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:52:24 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:52:24 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:52:24 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:52:24 -0800
+
+
+Started GET "/assets/application.self-60fb1003ad711dec9e689e6426c112462f59fcc6bf5f9d79f5c745c9c642e5b1.css?body=1" for ::1 at 2016-01-29 12:52:24 -0800
+
+
+Started GET "/assets/fullcalendar.self-3bd4898d43f7f48923aead9228fcd62b484d2722d60ee1af80df976c606df5fc.css?body=1" for ::1 at 2016-01-29 12:52:24 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-29 12:52:24 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-29 12:52:24 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-29 12:52:24 -0800
+
+
+Started GET "/assets/moment.self-dd7e1dba8e5a8b658165e18950b4810c6e415d45abf282d3924dcfcd35a2638c.js?body=1" for ::1 at 2016-01-29 12:52:24 -0800
+
+
+Started GET "/assets/fullcalendar.self-fb4c190ed24bedb1e0d9aae0bdde6a308204d341fa9d907a0e17f54c81b3f617.js?body=1" for ::1 at 2016-01-29 12:52:24 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:52:24 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:52:24 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:52:24 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:52:24 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:52:24 -0800
+
+
+Started GET "/assets/application.self-d5021fde6efe0e9d0dcea2c64816aecb15de7b4f3141de25c3a870cff5693b5f.js?body=1" for ::1 at 2016-01-29 12:52:24 -0800
+
+
+Started GET "/memories" for ::1 at 2016-01-29 12:52:51 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kwon@kwon.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kwon@kwon.com"]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kwon@kwon.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kwon@kwon.com"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kwon@kwon.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kwon@kwon.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered memories/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 41ms (Views: 37.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:52:51 -0800
+
+
+Started GET "/assets/application-print.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:52:51 -0800
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:52:51 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:52:51 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:52:51 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:52:51 -0800
+
+
+Started GET "/assets/application.self-60fb1003ad711dec9e689e6426c112462f59fcc6bf5f9d79f5c745c9c642e5b1.css?body=1" for ::1 at 2016-01-29 12:52:51 -0800
+
+
+Started GET "/assets/fullcalendar.self-3bd4898d43f7f48923aead9228fcd62b484d2722d60ee1af80df976c606df5fc.css?body=1" for ::1 at 2016-01-29 12:52:51 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-29 12:52:51 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-29 12:52:51 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-29 12:52:51 -0800
+
+
+Started GET "/assets/moment.self-dd7e1dba8e5a8b658165e18950b4810c6e415d45abf282d3924dcfcd35a2638c.js?body=1" for ::1 at 2016-01-29 12:52:51 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:52:51 -0800
+
+
+Started GET "/assets/fullcalendar.self-fb4c190ed24bedb1e0d9aae0bdde6a308204d341fa9d907a0e17f54c81b3f617.js?body=1" for ::1 at 2016-01-29 12:52:51 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:52:51 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:52:51 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:52:51 -0800
+
+
+Started GET "/assets/application.self-d5021fde6efe0e9d0dcea2c64816aecb15de7b4f3141de25c3a870cff5693b5f.js?body=1" for ::1 at 2016-01-29 12:52:51 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:52:51 -0800
+
+
+Started GET "/plans" for ::1 at 2016-01-29 12:53:07 -0800
+Processing by PlansController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT "plans".* FROM "plans" WHERE "plans"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered plans/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 37ms (Views: 35.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items" for ::1 at 2016-01-29 12:53:10 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered items/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items" for ::1 at 2016-01-29 12:53:22 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered items/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 37ms (Views: 36.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-print.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:53:22 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:53:22 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:53:22 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:53:22 -0800
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:53:22 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-29 12:53:22 -0800
+
+
+Started GET "/assets/application.self-60fb1003ad711dec9e689e6426c112462f59fcc6bf5f9d79f5c745c9c642e5b1.css?body=1" for ::1 at 2016-01-29 12:53:22 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-29 12:53:22 -0800
+
+
+Started GET "/assets/fullcalendar.self-3bd4898d43f7f48923aead9228fcd62b484d2722d60ee1af80df976c606df5fc.css?body=1" for ::1 at 2016-01-29 12:53:22 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-29 12:53:22 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-29 12:53:22 -0800
+
+
+Started GET "/assets/moment.self-dd7e1dba8e5a8b658165e18950b4810c6e415d45abf282d3924dcfcd35a2638c.js?body=1" for ::1 at 2016-01-29 12:53:22 -0800
+
+
+Started GET "/assets/fullcalendar.self-fb4c190ed24bedb1e0d9aae0bdde6a308204d341fa9d907a0e17f54c81b3f617.js?body=1" for ::1 at 2016-01-29 12:53:22 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:53:22 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:53:22 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:53:22 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:53:22 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-29 12:53:22 -0800
+
+
+Started GET "/assets/application.self-d5021fde6efe0e9d0dcea2c64816aecb15de7b4f3141de25c3a870cff5693b5f.js?body=1" for ::1 at 2016-01-29 12:53:22 -0800
+
+
+Started GET "/plans" for ::1 at 2016-01-29 12:53:24 -0800
+Processing by PlansController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mPlan Load (0.1ms)[0m  [1mSELECT "plans".* FROM "plans" WHERE "plans"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered plans/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-29 12:53:30 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kwon@kwon.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kwon@kwon.com"]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kwon@kwon.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kwon@kwon.com"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kwon@kwon.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kwon@kwon.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  Rendered memories/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 57ms (Views: 54.4ms | ActiveRecord: 0.4ms)
