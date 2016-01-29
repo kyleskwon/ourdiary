@@ -23,10 +23,10 @@
     <%= link_to "OurMemories", memories_path, class: 'btn btn-info' %>
   </div>
   <div class="col-md-4" align="center">
-    <%= link_to "OurPlans", plans_path, class: 'btn btn-info' %>
+    <%= link_to "OurPlans", plans_path, class: 'btn btn-primary' %>
   </div>
   <div class="col-md-4" align="center">
-    <%= link_to "BucketList", items_path, class: 'btn btn-info' %>
+    <%= link_to "BucketList", items_path, class: 'btn btn-warning' %>
   </div>
 </div>
 
@@ -57,7 +57,7 @@
 <% if current_user.total_memories_count < Memory::MEMORY_COUNT_FOR_UPGRADE  %>
   <p>Only <%= Memory::MEMORY_COUNT_FOR_UPGRADE - current_user.total_memories_count %> memories left for a free upgrade!</p>
 <% end %>
-<%= link_to 'Add a Memory', new_memory_path, class: 'btn btn-info' %>
+<%= link_to 'Add a Memory', new_memory_path, class: 'btn btn-success' %>
   <br>
   <br>
   <br>

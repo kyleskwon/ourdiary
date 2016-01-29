@@ -4,7 +4,6 @@
   <title>OurDiary <%= @page_title %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all' %>
-
   <!-- <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
     <script src='lib/jquery.min.js'></script>
     <script src='lib/moment.min.js'></script>
@@ -48,7 +47,7 @@
       <% end %>
     </div>
     <% if @show_map %>
-      <div id="googleMap" style="width:auto;height:380px;" ></div>
+      <div id="googleMap" style="width:auto;height:300px;" ></div>
     <% end %>
 <br>
   <%= yield %>
