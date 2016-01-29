@@ -1,27 +1,19 @@
-<p>
-  <strong>Date:</strong>
-  <%= @plan.date %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @plan.title %>
-</p>
-
-<p>
-  <strong>Caption:</strong>
-  <%= @plan.caption %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @plan.address %>
-</p>
-
-<p>
-  <%= image_tag @plan.avatar.url(:medium) %>
-</p>
-
+<div class="row">
+  <div class="col-md-6">
+    <p>
+      <h3 align="center"><%= @plan.title %> <small>(<%= @plan.date %>) | <%= @plan.address %></small></h3>
+    </p>
+<br>
+    <p>
+      <h5 align="center"><%= @plan.caption %></h5>
+    </p>
+  </div>
+  <div class="col--md-6" align="center">
+    <p>
+      <%= image_tag @plan.avatar.url(:medium) %>
+    </p>
+  </div>
+</div>
 <%= link_to 'Edit', edit_plan_path(@plan), class: 'btn btn-default' %>
 <%= link_to 'Back', plans_path, class: 'btn btn-default' %>
 <br>

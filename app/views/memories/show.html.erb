@@ -1,32 +1,24 @@
-<p>
-  <strong>Date:</strong>
-  <%= @memory.date %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @memory.title %>
-</p>
-
-<p>
-  <strong>Caption:</strong>
-  <%= @memory.caption %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @memory.address %>
-</p>
-
-<p>
-  <strong>Label:</strong>
-  <%= @memory.label %>
-</p>
-
-<p>
-  <%= image_tag @memory.avatar.url(:medium) %>
-</p>
-
+<div class="row">
+  <div class="col-md-6">
+    <p>
+      <h3 align="center"><%= @memory.title %> <small>(<%= @memory.date %>) | <%= @memory.address %></small></h3>
+    </p>
+<br>
+    <p>
+      <h5 align="center"><%= @memory.caption %></h5>
+    </p>
+<br>
+<br>
+    <p>
+      [<%= @memory.label %>]
+    </p>
+  </div>
+  <div class="col--md-6" align="center">
+    <p>
+      <%= image_tag @memory.avatar.url(:medium) %>
+    </p>
+  </div>
+</div>
 <%= link_to 'Edit', edit_memory_path(@memory), class: 'btn btn-default' %>
 <%= link_to 'Back', memories_path, class: 'btn btn-default' %>
 <br>

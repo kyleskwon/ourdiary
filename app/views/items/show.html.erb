@@ -1,23 +1,19 @@
-<p>
-  <strong>Title:</strong>
-  <%= @item.title %>
-</p>
-
-<p>
-  <strong>Caption:</strong>
-  <%= @item.caption %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @item.address %>
-</p>
-
-<p>
-  <%= image_tag @item.avatar.url(:medium) %>
-</p>
-
-
+<div class="row">
+  <div class="col-md-6">
+    <p>
+      <h3 align="center"><%= @item.title %> <small><%= @item.address %></small></h3>
+    </p>
+<br>
+    <p>
+      <h5 align="center"><%= @item.caption %></h5>
+    </p>
+  </div>
+  <div class="col--md-6" align="center">
+    <p>
+      <%= image_tag @item.avatar.url(:medium) %>
+    </p>
+  </div>
+</div>
 <%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-default' %>
 <%= link_to 'Back', items_path, class: 'btn btn-default' %>
 <br>
