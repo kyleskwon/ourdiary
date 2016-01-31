@@ -1,30 +1,30 @@
-<div class="row">
-  <div class="col-md-6">
-    <p>
-      <h3 align="center"><%= @memory.title %>
-        <p><small>(<%= @memory.date %>) | <%= @memory.address %></small></p>
-        </h3>
-    </p>
-    <p class="text-justify">
-      <blockquote>
-        <h5><%= @memory.caption %></h5>
-      </blockquote>
-    </p>
-<br>
-    <p>
-      [<%= @memory.label %>]
-    </p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <p>
+        <h3 align="center"><%= @memory.title %>
+          <p><small>(<%= @memory.date %>) | <%= @memory.address %></small></p>
+          </h3>
+      </p>
+      <p class="text-justify">
+        <blockquote>
+          <h5><%= @memory.caption %></h5>
+        </blockquote>
+      </p>
+  <br>
+      <p>
+        [<%= @memory.label %>]
+      </p>
+    </div>
+    <div class="col--md-6" align="center">
+      <p>
+        <%= image_tag @memory.avatar.url(:medium) %>
+      </p>
+    </div>
   </div>
-  <div class="col--md-6" align="center">
-    <p>
-      <%= image_tag @memory.avatar.url(:medium) %>
-    </p>
-  </div>
+  <br>
+  <%= link_to 'Edit', edit_memory_path(@memory), class: 'btn btn-default' %>
+  <%= link_to 'Back', memories_path, class: 'btn btn-default' %>
+  <br>
+  <br>
 </div>
-<br>
-<%= link_to 'Edit', edit_memory_path(@memory), class: 'btn btn-default' %>
-<%= link_to 'Back', memories_path, class: 'btn btn-default' %>
-<br>
-<br>
-<br>
-<br>

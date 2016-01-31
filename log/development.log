@@ -50591,3 +50591,943 @@ Processing by ItemsController#index as HTML
   [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 2]]
   Rendered items/index.html.erb within layouts/application (1.1ms)
 Completed 200 OK in 39ms (Views: 35.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-01-30 19:28:50 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomebaseController#index as HTML
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-01-30 19:28:50 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (8.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (33.7ms)
+Completed 200 OK in 523ms (Views: 506.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application-print.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:28:50 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:28:50 -0800
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:28:50 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:28:50 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:28:50 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:28:50 -0800
+
+
+Started GET "/assets/application.self-60fb1003ad711dec9e689e6426c112462f59fcc6bf5f9d79f5c745c9c642e5b1.css?body=1" for ::1 at 2016-01-30 19:28:50 -0800
+
+
+Started GET "/assets/fullcalendar.self-3bd4898d43f7f48923aead9228fcd62b484d2722d60ee1af80df976c606df5fc.css?body=1" for ::1 at 2016-01-30 19:28:50 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-30 19:28:50 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-30 19:28:50 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-30 19:28:50 -0800
+
+
+Started GET "/assets/moment.self-dd7e1dba8e5a8b658165e18950b4810c6e415d45abf282d3924dcfcd35a2638c.js?body=1" for ::1 at 2016-01-30 19:28:50 -0800
+
+
+Started GET "/assets/fullcalendar.self-fb4c190ed24bedb1e0d9aae0bdde6a308204d341fa9d907a0e17f54c81b3f617.js?body=1" for ::1 at 2016-01-30 19:28:50 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:28:50 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:28:50 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:28:50 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:28:50 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:28:50 -0800
+
+
+Started GET "/assets/application.self-d5021fde6efe0e9d0dcea2c64816aecb15de7b4f3141de25c3a870cff5693b5f.js?body=1" for ::1 at 2016-01-30 19:28:50 -0800
+
+
+Started POST "/users/sign_in" for ::1 at 2016-01-30 19:28:52 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f1/9rlw+gUHrbK73b0EYKw5Wdov01UkYUjFokrXgD/DhCw+QEPliCoaqPD33krdqtfkxf0oa6Y/YYkdrru6Njw==", "user"=>{"email"=>"kyle@kyle.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "kyle@kyle.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-01-29 21:20:43.430149"], ["current_sign_in_at", "2016-01-31 03:28:52.536115"], ["sign_in_count", 34], ["updated_at", "2016-01-31 03:28:52.537175"], ["id", 2]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 100ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2016-01-30 19:28:52 -0800
+Processing by HomebaseController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-01-30 19:31:01 -0800
+Processing by HomebaseController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered homebase/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:31:01 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:31:01 -0800
+
+
+Started GET "/assets/application-print.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:31:01 -0800
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:31:01 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:31:01 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:31:01 -0800
+
+
+Started GET "/assets/application.self-60fb1003ad711dec9e689e6426c112462f59fcc6bf5f9d79f5c745c9c642e5b1.css?body=1" for ::1 at 2016-01-30 19:31:01 -0800
+
+
+Started GET "/assets/fullcalendar.self-3bd4898d43f7f48923aead9228fcd62b484d2722d60ee1af80df976c606df5fc.css?body=1" for ::1 at 2016-01-30 19:31:01 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-30 19:31:01 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-30 19:31:01 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-30 19:31:01 -0800
+
+
+Started GET "/assets/moment.self-dd7e1dba8e5a8b658165e18950b4810c6e415d45abf282d3924dcfcd35a2638c.js?body=1" for ::1 at 2016-01-30 19:31:01 -0800
+
+
+Started GET "/assets/fullcalendar.self-fb4c190ed24bedb1e0d9aae0bdde6a308204d341fa9d907a0e17f54c81b3f617.js?body=1" for ::1 at 2016-01-30 19:31:01 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:31:01 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:31:01 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:31:01 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:31:01 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:31:01 -0800
+
+
+Started GET "/assets/application.self-d5021fde6efe0e9d0dcea2c64816aecb15de7b4f3141de25c3a870cff5693b5f.js?body=1" for ::1 at 2016-01-30 19:31:01 -0800
+
+
+Started GET "/memories" for ::1 at 2016-01-30 19:31:37 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mMemory Load (0.2ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mMemory Load (0.2ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  Rendered memories/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 88ms (Views: 41.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-30 19:34:00 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered memories/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 40ms (Views: 37.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:34:01 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:34:01 -0800
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:34:01 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:34:01 -0800
+
+
+Started GET "/assets/application-print.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:34:01 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:34:01 -0800
+
+
+Started GET "/assets/application.self-60fb1003ad711dec9e689e6426c112462f59fcc6bf5f9d79f5c745c9c642e5b1.css?body=1" for ::1 at 2016-01-30 19:34:01 -0800
+
+
+Started GET "/assets/fullcalendar.self-3bd4898d43f7f48923aead9228fcd62b484d2722d60ee1af80df976c606df5fc.css?body=1" for ::1 at 2016-01-30 19:34:01 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-30 19:34:01 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-30 19:34:01 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-30 19:34:01 -0800
+
+
+Started GET "/assets/moment.self-dd7e1dba8e5a8b658165e18950b4810c6e415d45abf282d3924dcfcd35a2638c.js?body=1" for ::1 at 2016-01-30 19:34:01 -0800
+
+
+Started GET "/assets/fullcalendar.self-fb4c190ed24bedb1e0d9aae0bdde6a308204d341fa9d907a0e17f54c81b3f617.js?body=1" for ::1 at 2016-01-30 19:34:01 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:34:01 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:34:01 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:34:01 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:34:01 -0800
+
+
+Started GET "/assets/application.self-d5021fde6efe0e9d0dcea2c64816aecb15de7b4f3141de25c3a870cff5693b5f.js?body=1" for ::1 at 2016-01-30 19:34:01 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:34:01 -0800
+
+
+Started GET "/memories/new" for ::1 at 2016-01-30 19:35:27 -0800
+Processing by MemoriesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered memories/_form.html.erb (9.0ms)
+  Rendered memories/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 51ms (Views: 48.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/memories/new" for ::1 at 2016-01-30 19:35:59 -0800
+Processing by MemoriesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered memories/_form.html.erb (2.0ms)
+  Rendered memories/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 37ms (Views: 36.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-print.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:00 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:00 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:00 -0800
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:00 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:00 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:00 -0800
+
+
+Started GET "/assets/application.self-60fb1003ad711dec9e689e6426c112462f59fcc6bf5f9d79f5c745c9c642e5b1.css?body=1" for ::1 at 2016-01-30 19:36:00 -0800
+
+
+Started GET "/assets/fullcalendar.self-3bd4898d43f7f48923aead9228fcd62b484d2722d60ee1af80df976c606df5fc.css?body=1" for ::1 at 2016-01-30 19:36:00 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-30 19:36:00 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-30 19:36:00 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-30 19:36:00 -0800
+
+
+Started GET "/assets/moment.self-dd7e1dba8e5a8b658165e18950b4810c6e415d45abf282d3924dcfcd35a2638c.js?body=1" for ::1 at 2016-01-30 19:36:00 -0800
+
+
+Started GET "/assets/fullcalendar.self-fb4c190ed24bedb1e0d9aae0bdde6a308204d341fa9d907a0e17f54c81b3f617.js?body=1" for ::1 at 2016-01-30 19:36:00 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:00 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:00 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:00 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:00 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:00 -0800
+
+
+Started GET "/assets/application.self-d5021fde6efe0e9d0dcea2c64816aecb15de7b4f3141de25c3a870cff5693b5f.js?body=1" for ::1 at 2016-01-30 19:36:00 -0800
+
+
+Started GET "/memories/new" for ::1 at 2016-01-30 19:36:07 -0800
+Processing by MemoriesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered memories/_form.html.erb (1.9ms)
+  Rendered memories/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 39ms (Views: 37.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:07 -0800
+
+
+Started GET "/assets/application-print.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:07 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:07 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:07 -0800
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:07 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:07 -0800
+
+
+Started GET "/assets/application.self-60fb1003ad711dec9e689e6426c112462f59fcc6bf5f9d79f5c745c9c642e5b1.css?body=1" for ::1 at 2016-01-30 19:36:07 -0800
+
+
+Started GET "/assets/fullcalendar.self-3bd4898d43f7f48923aead9228fcd62b484d2722d60ee1af80df976c606df5fc.css?body=1" for ::1 at 2016-01-30 19:36:07 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-30 19:36:07 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-30 19:36:07 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-30 19:36:07 -0800
+
+
+Started GET "/assets/moment.self-dd7e1dba8e5a8b658165e18950b4810c6e415d45abf282d3924dcfcd35a2638c.js?body=1" for ::1 at 2016-01-30 19:36:07 -0800
+
+
+Started GET "/assets/fullcalendar.self-fb4c190ed24bedb1e0d9aae0bdde6a308204d341fa9d907a0e17f54c81b3f617.js?body=1" for ::1 at 2016-01-30 19:36:07 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:07 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:07 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:07 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:07 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:07 -0800
+
+
+Started GET "/assets/application.self-d5021fde6efe0e9d0dcea2c64816aecb15de7b4f3141de25c3a870cff5693b5f.js?body=1" for ::1 at 2016-01-30 19:36:07 -0800
+
+
+Started GET "/memories/new" for ::1 at 2016-01-30 19:36:41 -0800
+Processing by MemoriesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered memories/_form.html.erb (1.7ms)
+  Rendered memories/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-print.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:41 -0800
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:41 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:41 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:41 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:41 -0800
+
+
+Started GET "/assets/application.self-60fb1003ad711dec9e689e6426c112462f59fcc6bf5f9d79f5c745c9c642e5b1.css?body=1" for ::1 at 2016-01-30 19:36:41 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:41 -0800
+
+
+Started GET "/assets/fullcalendar.self-3bd4898d43f7f48923aead9228fcd62b484d2722d60ee1af80df976c606df5fc.css?body=1" for ::1 at 2016-01-30 19:36:41 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-30 19:36:41 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-30 19:36:41 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-30 19:36:41 -0800
+
+
+Started GET "/assets/moment.self-dd7e1dba8e5a8b658165e18950b4810c6e415d45abf282d3924dcfcd35a2638c.js?body=1" for ::1 at 2016-01-30 19:36:41 -0800
+
+
+Started GET "/assets/fullcalendar.self-fb4c190ed24bedb1e0d9aae0bdde6a308204d341fa9d907a0e17f54c81b3f617.js?body=1" for ::1 at 2016-01-30 19:36:41 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:41 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:41 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:41 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:41 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:41 -0800
+
+
+Started GET "/assets/application.self-d5021fde6efe0e9d0dcea2c64816aecb15de7b4f3141de25c3a870cff5693b5f.js?body=1" for ::1 at 2016-01-30 19:36:41 -0800
+
+
+Started GET "/memories/new" for ::1 at 2016-01-30 19:36:49 -0800
+Processing by MemoriesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered memories/_form.html.erb (1.9ms)
+  Rendered memories/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:49 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:49 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:49 -0800
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:49 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:49 -0800
+
+
+Started GET "/assets/application-print.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:36:49 -0800
+
+
+Started GET "/assets/application.self-60fb1003ad711dec9e689e6426c112462f59fcc6bf5f9d79f5c745c9c642e5b1.css?body=1" for ::1 at 2016-01-30 19:36:49 -0800
+
+
+Started GET "/assets/fullcalendar.self-3bd4898d43f7f48923aead9228fcd62b484d2722d60ee1af80df976c606df5fc.css?body=1" for ::1 at 2016-01-30 19:36:49 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-30 19:36:49 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-30 19:36:49 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-30 19:36:49 -0800
+
+
+Started GET "/assets/moment.self-dd7e1dba8e5a8b658165e18950b4810c6e415d45abf282d3924dcfcd35a2638c.js?body=1" for ::1 at 2016-01-30 19:36:49 -0800
+
+
+Started GET "/assets/fullcalendar.self-fb4c190ed24bedb1e0d9aae0bdde6a308204d341fa9d907a0e17f54c81b3f617.js?body=1" for ::1 at 2016-01-30 19:36:49 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:49 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:49 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:49 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:49 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:36:49 -0800
+
+
+Started GET "/assets/application.self-d5021fde6efe0e9d0dcea2c64816aecb15de7b4f3141de25c3a870cff5693b5f.js?body=1" for ::1 at 2016-01-30 19:36:49 -0800
+
+
+Started GET "/memories" for ::1 at 2016-01-30 19:37:15 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered memories/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/memories/11" for ::1 at 2016-01-30 19:37:18 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered memories/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 36ms (Views: 33.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories/11/edit" for ::1 at 2016-01-30 19:37:20 -0800
+Processing by MemoriesController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered memories/_form.html.erb (2.4ms)
+  Rendered memories/edit.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 46ms (Views: 44.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories/11/edit" for ::1 at 2016-01-30 19:38:15 -0800
+Processing by MemoriesController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered memories/_form.html.erb (2.2ms)
+  Rendered memories/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 37ms (Views: 35.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-print.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:38:15 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:38:15 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:38:15 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:38:15 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:38:15 -0800
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:38:15 -0800
+
+
+Started GET "/assets/application.self-60fb1003ad711dec9e689e6426c112462f59fcc6bf5f9d79f5c745c9c642e5b1.css?body=1" for ::1 at 2016-01-30 19:38:15 -0800
+
+
+Started GET "/assets/fullcalendar.self-3bd4898d43f7f48923aead9228fcd62b484d2722d60ee1af80df976c606df5fc.css?body=1" for ::1 at 2016-01-30 19:38:15 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-30 19:38:15 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-30 19:38:15 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-30 19:38:15 -0800
+
+
+Started GET "/assets/moment.self-dd7e1dba8e5a8b658165e18950b4810c6e415d45abf282d3924dcfcd35a2638c.js?body=1" for ::1 at 2016-01-30 19:38:15 -0800
+
+
+Started GET "/assets/fullcalendar.self-fb4c190ed24bedb1e0d9aae0bdde6a308204d341fa9d907a0e17f54c81b3f617.js?body=1" for ::1 at 2016-01-30 19:38:15 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:38:15 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:38:15 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:38:15 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:38:15 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:38:15 -0800
+
+
+Started GET "/assets/application.self-d5021fde6efe0e9d0dcea2c64816aecb15de7b4f3141de25c3a870cff5693b5f.js?body=1" for ::1 at 2016-01-30 19:38:15 -0800
+
+
+Started GET "/memories/11" for ::1 at 2016-01-30 19:38:20 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered memories/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 48ms (Views: 46.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-30 19:38:22 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  Rendered memories/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 40ms (Views: 36.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/memories/5" for ::1 at 2016-01-30 19:38:24 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered memories/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories/5/edit" for ::1 at 2016-01-30 19:38:26 -0800
+Processing by MemoriesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered memories/_form.html.erb (2.1ms)
+  Rendered memories/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 43ms (Views: 41.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-30 19:38:28 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered memories/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 53ms (Views: 49.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/memories/5" for ::1 at 2016-01-30 19:38:30 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered memories/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/memories" for ::1 at 2016-01-30 19:38:51 -0800
+Processing by MemoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  Rendered memories/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 42ms (Views: 39.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/memories/5" for ::1 at 2016-01-30 19:39:10 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered memories/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 40ms (Views: 38.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/memories/5" for ::1 at 2016-01-30 19:39:30 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered memories/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 44ms (Views: 42.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-print.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:39:30 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:39:30 -0800
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:39:30 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:39:30 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:39:30 -0800
+
+
+Started GET "/assets/application.self-60fb1003ad711dec9e689e6426c112462f59fcc6bf5f9d79f5c745c9c642e5b1.css?body=1" for ::1 at 2016-01-30 19:39:30 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:39:30 -0800
+
+
+Started GET "/assets/fullcalendar.self-3bd4898d43f7f48923aead9228fcd62b484d2722d60ee1af80df976c606df5fc.css?body=1" for ::1 at 2016-01-30 19:39:30 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-30 19:39:30 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-30 19:39:30 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-30 19:39:30 -0800
+
+
+Started GET "/assets/moment.self-dd7e1dba8e5a8b658165e18950b4810c6e415d45abf282d3924dcfcd35a2638c.js?body=1" for ::1 at 2016-01-30 19:39:30 -0800
+
+
+Started GET "/assets/fullcalendar.self-fb4c190ed24bedb1e0d9aae0bdde6a308204d341fa9d907a0e17f54c81b3f617.js?body=1" for ::1 at 2016-01-30 19:39:30 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:39:30 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:39:30 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:39:30 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:39:30 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:39:30 -0800
+
+
+Started GET "/assets/application.self-d5021fde6efe0e9d0dcea2c64816aecb15de7b4f3141de25c3a870cff5693b5f.js?body=1" for ::1 at 2016-01-30 19:39:30 -0800
+
+
+Started GET "/memories/5" for ::1 at 2016-01-30 19:39:37 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered memories/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:39:37 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:39:37 -0800
+
+
+Started GET "/assets/application-print.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:39:37 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:39:37 -0800
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:39:37 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:39:37 -0800
+
+
+Started GET "/assets/application.self-60fb1003ad711dec9e689e6426c112462f59fcc6bf5f9d79f5c745c9c642e5b1.css?body=1" for ::1 at 2016-01-30 19:39:37 -0800
+
+
+Started GET "/assets/fullcalendar.self-3bd4898d43f7f48923aead9228fcd62b484d2722d60ee1af80df976c606df5fc.css?body=1" for ::1 at 2016-01-30 19:39:37 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-30 19:39:37 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-30 19:39:37 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-30 19:39:37 -0800
+
+
+Started GET "/assets/moment.self-dd7e1dba8e5a8b658165e18950b4810c6e415d45abf282d3924dcfcd35a2638c.js?body=1" for ::1 at 2016-01-30 19:39:37 -0800
+
+
+Started GET "/assets/fullcalendar.self-fb4c190ed24bedb1e0d9aae0bdde6a308204d341fa9d907a0e17f54c81b3f617.js?body=1" for ::1 at 2016-01-30 19:39:37 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:39:37 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:39:37 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:39:37 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:39:37 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:39:37 -0800
+
+
+Started GET "/assets/application.self-d5021fde6efe0e9d0dcea2c64816aecb15de7b4f3141de25c3a870cff5693b5f.js?body=1" for ::1 at 2016-01-30 19:39:37 -0800
+
+
+Started GET "/memories/5" for ::1 at 2016-01-30 19:39:51 -0800
+Processing by MemoriesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT  "memories".* FROM "memories" WHERE "memories"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered memories/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-print.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:39:51 -0800
+
+
+Started GET "/assets/homebase.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:39:51 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:39:51 -0800
+
+
+Started GET "/assets/memories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:39:51 -0800
+
+
+Started GET "/assets/plans.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:39:51 -0800
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-30 19:39:51 -0800
+
+
+Started GET "/assets/application.self-60fb1003ad711dec9e689e6426c112462f59fcc6bf5f9d79f5c745c9c642e5b1.css?body=1" for ::1 at 2016-01-30 19:39:51 -0800
+
+
+Started GET "/assets/fullcalendar.self-3bd4898d43f7f48923aead9228fcd62b484d2722d60ee1af80df976c606df5fc.css?body=1" for ::1 at 2016-01-30 19:39:51 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-30 19:39:51 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-30 19:39:51 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-30 19:39:51 -0800
+
+
+Started GET "/assets/moment.self-dd7e1dba8e5a8b658165e18950b4810c6e415d45abf282d3924dcfcd35a2638c.js?body=1" for ::1 at 2016-01-30 19:39:51 -0800
+
+
+Started GET "/assets/fullcalendar.self-fb4c190ed24bedb1e0d9aae0bdde6a308204d341fa9d907a0e17f54c81b3f617.js?body=1" for ::1 at 2016-01-30 19:39:51 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:39:51 -0800
+
+
+Started GET "/assets/homebase.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:39:51 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:39:51 -0800
+
+
+Started GET "/assets/memories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:39:51 -0800
+
+
+Started GET "/assets/plans.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-30 19:39:51 -0800
+
+
+Started GET "/assets/application.self-d5021fde6efe0e9d0dcea2c64816aecb15de7b4f3141de25c3a870cff5693b5f.js?body=1" for ::1 at 2016-01-30 19:39:51 -0800
+
+
+Started GET "/memories" for ::1 at 2016-01-30 19:40:00 -0800
+Processing by MemoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mMemory Load (0.1ms)[0m  SELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 2]]
+  [1m[36mMemory Load (0.1ms)[0m  [1mSELECT "memories".* FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1  [["partner_email", "kyle@kyle.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."partner_email" = ? LIMIT 1[0m  [["partner_email", "kyle@kyle.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "memories" WHERE "memories"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered memories/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 37ms (Views: 34.2ms | ActiveRecord: 0.4ms)
