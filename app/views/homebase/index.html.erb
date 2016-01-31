@@ -1,14 +1,33 @@
+<% content_for :google_maps do %>
+  <script>
+    function initialize() {
+      console.log("initializing!");
+      var mapProp = {
+        center:new google.maps.LatLng(20, 10),
+        zoom: 2,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+      var marker = new google.maps.Marker({
+        position: {lat: 37.0000, lng: -120.0000},
+        map: map,
+        title: 'Hello World!'
+      });
+    }
+  </script>
+<% end %>
+
 <% @page_title = " | HomeBase" %>
-<div class="container">
-  <div class="row">
-    <div class="col-md-4 box" align="center">
-      <%= link_to "OurMemories", memories_path, class: 'btn btn-info' %>
-    </div>
-    <div class="col-md-4 box" align="center">
-      <%= link_to "OurPlans", plans_path, class: 'btn btn-primary' %>
-    </div>
-    <div class="col-md-4 box" align="center">
-      <%= link_to "BucketList", items_path, class: 'btn btn-warning' %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 box" align="center">
+        <%= link_to "OurMemories", memories_path, class: 'btn btn-info' %>
+      </div>
+      <div class="col-md-4 box" align="center">
+        <%= link_to "OurPlans", plans_path, class: 'btn btn-primary' %>
+      </div>
+      <div class="col-md-4 box" align="center">
+        <%= link_to "BucketList", items_path, class: 'btn btn-warning' %>
+      </div>
     </div>
   </div>
-</div>
