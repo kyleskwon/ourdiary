@@ -30,6 +30,10 @@
       </ul>
     </div>
 
+    <% if @show_map %>
+      <div id="googleMap" style="width:auto;height:300px;"></div>
+    <% end %>
+
   <div class="container">
     <div class="flash">
       <% if flash[:notice] %>
@@ -50,10 +54,10 @@
       <% end %>
     </div>
   </div>
-      <% if @show_map %>
-        <div id="googleMap" style="width:auto;height:300px;"></div>
-      <% end %>
+
 <br>
+  <div class="container">
     <%= yield %>
+  </div>
 </body>
 </html>
