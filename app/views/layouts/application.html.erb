@@ -15,19 +15,26 @@
 </head>
 
 <body>
-  <br>
+<br>
+  <div class="navbar navbar-default">
     <div class="container">
-      <ul class="nav nav-tabs">
+    <div class="navbar-header">
+    <ul>
       <% if user_signed_in? %>
-       <li><%= link_to 'HomeBase', homebase_index_path %></li>
+        <li><%= link_to 'HomeBase', homebase_index_path %></li>
         <!-- Signed in as: <strong><%= current_user.email %></strong> -->
-        <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li><li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
-     <% else %>
-       <li><%= link_to "Sign In", new_user_session_path, :class => 'navbar-link' %></li>
-       <li><%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %></li>
-     <% end %>
-      </ul>
-  <br>
+        <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
+      <% else %>
+        <li><%= link_to "Sign In", new_user_session_path, :class => 'navbar-link' %></li>
+        <li><%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %></li>
+      <% end %>
+    </ul>
+    </div>
+    </div>
+  </div>
+
+  <div class="container">
     <div class="flash">
       <% if flash[:notice] %>
         <div class="alert alert-success">
@@ -37,7 +44,7 @@
       <% elsif flash[:error] %>
         <div class="alert alert-danger">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <%= flash[:error] %>
+            <%= flash[:error] %>
         </div>
       <% elsif flash[:alert] %>
         <div class="alert alert-warning">
@@ -46,12 +53,14 @@
         </div>
       <% end %>
     </div>
+
     <% if @show_map %>
       <div id="googleMap" style="width:auto;height:300px;" ></div>
     <% end %>
-<br>
-  <%= yield %>
-</div>
 
+<br>
+    <%= yield %>
+  </div>
+</div>
 </body>
 </html>
