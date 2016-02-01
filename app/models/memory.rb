@@ -7,6 +7,17 @@ class Memory < ActiveRecord::Base
 
   after_create :upgrade_account, if: :account_upgradable?
 
+  # def previous_memory
+  #   self.class.first(:conditions => ["title < ?", title], :order => "title desc")
+  # end
+  #
+  # def next_memory
+  #   self.class.first(:conditions => ["title > ?", title], :order => "title asc")
+  # end
+
+  #   <!-- <%= link_to("Previous", @memory.previous_memory) if @memory.previous_memory %> -->
+  #   <!-- <%= link_to("Next", @memory.next_memory) if @memory.next_memory %> -->
+
   MEMORY_COUNT_FOR_UPGRADE = 25  #Memory::MEMORY_COUNT_FOR_UPGRADE
 
   private
