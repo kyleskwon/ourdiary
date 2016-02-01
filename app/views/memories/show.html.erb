@@ -13,7 +13,7 @@
           <h5><%= @memory.caption %></h5>
         </blockquote>
       </p>
-  <br>
+<br>
       <p>
         [<%= @memory.label %>]
       </p>
@@ -24,10 +24,10 @@
       </p>
     </div>
   </div>
-  <br>
+<br>
   <%= link_to 'Edit', edit_memory_path(@memory), class: 'btn btn-default' %>
   <%= link_to 'Delete', memory_path, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
   <%= link_to 'Back', memories_path, class: 'btn btn-default' %>
-  <br>
-  <br>
+<br>
+<br>
 </div>
