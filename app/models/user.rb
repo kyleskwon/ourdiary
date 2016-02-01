@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
   before_save { self.role ||= :member }
 
+  validate :partner_email_cannot_be_self_email
+
   enum role: [:member, :premium, :admin]
 
   after_create :set_partner
@@ -43,6 +45,16 @@ class User < ActiveRecord::Base
   private
 
   def set_partner
-    update_attribute(:partner_email, partner.email) if partner
+    if partner
+      update_attribute(:partner_email, partner.email)
+    else
+      #send partner invitiation email
+    end
+  end
+
+  def partner_email_cannot_be_self_email
+    if email == partner_email
+      errors.add :partner_email, "can't be the same as your email"
+    end
   end
 end

@@ -61868,3 +61868,20 @@ Processing by HomebaseController#index as HTML
   [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
   Rendered homebase/index.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2016-02-01 15:29:08 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 466ms (Views: 440.7ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/users" for ::1 at 2016-02-01 15:29:19 -0800
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6Z5vczhr91GAfCchHQY4X34stBsuJdrC1/cjYmKPxFuGZ47sfcn38vTpHu/oUwcqGeOSwYy/C05DUp30PRN3Nw==", "user"=>{"email"=>"kyle@kyle.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]", "partner_email"=>"kyle@kyle.com"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 131ms (Views: 44.0ms | ActiveRecord: 0.2ms)
