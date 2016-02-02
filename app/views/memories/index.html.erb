@@ -22,13 +22,19 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4" align="center">
-      <%= link_to "OurMemories", memories_path, class: 'btn btn-info' %>
+      <%= link_to memories_path, class: 'btn btn-info' do %>
+        <i class="glyphicon glyphicon-book"> OurMemories</i>
+      <% end %>
     </div>
     <div class="col-md-4" align="center">
-      <%= link_to "OurPlans", plans_path, class: 'btn btn-primary' %>
+      <%= link_to plans_path, class: 'btn btn-primary' do %>
+        <i class="glyphicon glyphicon-list-alt"> OurPlans</i>
+      <% end %>
     </div>
     <div class="col-md-4" align="center">
-      <%= link_to "BucketList", items_path, class: 'btn btn-warning' %>
+      <%= link_to items_path, class: 'btn btn-warning' do %>
+        <i class="glyphicon glyphicon-globe"> BucketList</i>
+      <% end %>
     </div>
   </div>
 
