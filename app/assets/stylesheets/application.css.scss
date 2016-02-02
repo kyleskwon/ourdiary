@@ -17,6 +17,9 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+.container {
+}
+
  .form-control {
    &.date {
      width: 50%;
