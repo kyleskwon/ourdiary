@@ -19,23 +19,23 @@
     <div class="container">
       <ul class="nav nav-tabs">
         <% if user_signed_in? %>
-          <%= link_to homebase_index_path, class: "btn btn-default" do %>
+          <%= link_to homebase_index_path do %>
             <i class="glyphicon glyphicon-home"> HomeBase</i>
           <% end %>
           <!-- Signed in as: <strong><%= current_user.email %></strong> -->
-          <%= link_to edit_user_registration_path, class: "btn btn-default" do %>
+          <%= link_to edit_user_registration_path do %>
             <i class="glyphicon glyphicon-user"> EditProfile</i>
           <% end %>
-          <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-default" do %>
+          <%= link_to destroy_user_session_path, method: :delete do %>
             <i class="glyphicon glyphicon-hourglass"> SignOut</i>
           <% end %>
         <% else %>
           <li><%= link_to "Sign In", new_user_session_path, :class => 'navbar-link' %></li>
           <li><%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %></li>
         <% end %>
+
       </ul>
     </div>
-
     <% if @show_map %>
       <div id="googleMap" style="width:auto;height:300px;"></div>
     <% end %>
