@@ -5,6 +5,8 @@ class Memory < ActiveRecord::Base
   has_attached_file :avatar, styles: { medium: "400x400>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
+  validates_length_of :title, :minimum => 3
+  validates_length_of :address, :minimum => 3
   default_scope { order('date ASC') }
 
   after_create :upgrade_account, if: :account_upgradable?

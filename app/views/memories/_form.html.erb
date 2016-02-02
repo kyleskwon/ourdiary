@@ -1,45 +1,43 @@
-<div class="container">
-  <%= form_for(@memory) do |f| %>
-    <% if @memory.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@memory.errors.count, "error") %> prohibited this memory from being saved:</h2>
+<%= form_for(@memory) do |f| %>
+  <% if @memory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@memory.errors.count, "error") %> prohibited this memory from being saved:</h2>
 
-        <ul>
-        <% @memory.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <form role="form">
-      <div class="form-group">
-        <%= f.label :date %><br>
-        <%= f.date_field :date, class: 'form-control date' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :title %><br>
-        <%= f.text_field :title, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :caption %><br>
-        <%= f.text_area :caption, rows: 4, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :city %><br>
-        <%= f.text_field :address, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :label %><br>
-        <%= f.text_field :label, class: 'form-control date' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :photo %><br>
-        <%= f.file_field :avatar, class: 'form-control' %>
-      </div>
-      <div class="actions">
-        <%= f.submit "Save", class: 'btn btn-success' %>
-      </div>
-    </form>
+      <ul>
+      <% @memory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
   <% end %>
-</div>
+
+  <form role="form">
+    <div class="form-group">
+      <%= f.label :date %> (If you remember)<br>
+      <%= f.date_field :date, class: 'form-control date' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :title %>*<br>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :caption %> (Tell your story)<br>
+      <%= f.text_area :caption, rows: 4, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :location %>* (City, state, country or full address)<br>
+      <%= f.text_field :address, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :tag %><br>
+      <%= f.text_field :label, class: 'form-control date' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :photo %><br>
+      <%= f.file_field :avatar, class: 'form-control' %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Save", class: 'btn btn-success' %>
+    </div>
+  </form>
+<% end %>
