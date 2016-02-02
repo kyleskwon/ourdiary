@@ -18,8 +18,10 @@
       <% end %>
     </div>
   </div>
-
 <br>
+  <p>You have <%= current_user.total_plans_count %> plans, bet you can't wait!</p>
+
+  <%= link_to 'Add a Plan', new_plan_path, class: 'btn btn-success', align: "center" %>
 
 <h1 align="center">OurPlans</h1>
 
@@ -44,8 +46,6 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to 'Add a Plan', new_plan_path, class: 'btn btn-success' %>
 
 <br>
 <br>

@@ -25,6 +25,16 @@ class User < ActiveRecord::Base
     memories.count + partner_memories_count
   end
 
+  def total_plans_count
+    partner_plans_count = partner ? partner.plans.count : 0
+    plans.count + partner_plans_count
+  end
+
+  def total_items_count
+    partner_items_count = partner ? partner.items.count : 0
+    items.count + partner_items_count
+  end
+
   def all_memories
     partner ? memories + partner.memories : memories
     # if partner
