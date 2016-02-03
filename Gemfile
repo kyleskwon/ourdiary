@@ -13,6 +13,7 @@ source 'https://rubygems.org'
  gem 'fullcalendar.io-rails'
  gem 'momentjs-rails'
  gem 'weather-api'
+ gem 'mailgun_rails'
 
  group :production do
    gem 'pg'

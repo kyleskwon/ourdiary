@@ -101,6 +101,10 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mailgun_rails (0.8.0)
+      actionmailer (>= 3.2.13)
+      json (>= 1.7.7)
+      rest-client (>= 1.6.7)
     map (6.5.5)
     mime-types (2.99)
     mimemagic (0.3.1)
@@ -218,6 +222,7 @@ DEPENDENCIES
   fullcalendar.io-rails
   geocoder
   jquery-rails
+  mailgun_rails
   momentjs-rails
   paperclip!
   pg
