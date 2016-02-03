@@ -9,8 +9,10 @@ class MemoriesController < ApplicationController
   # GET /memories/1
   def show
     @memory = Memory.find(params[:id])
-    @previous = Memory.where("id < ?", params[:id]).order(:id).first
-    @next = Memory.where("id > ?", params[:id]).order(:id).first
+    memories = current_user.all_memories.map(&:id)
+    current = memories.index(@memory.id)
+    @previous = Memory.find(memories[current - 1]) unless current == 0
+    @next = Memory.find(memories[current + 1]) unless current == memories.length - 1
   end
 
   # GET /memories/new

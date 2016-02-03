@@ -56,9 +56,10 @@ class User < ActiveRecord::Base
 
   def set_partner
     if partner
-      update_attribute(:partner_email, partner.email)
+      Rails.logger.info ">>>> partner confirmed"
     else
-      #send partner invitiation email
+      Rails.logger.info ">>>> sending email to partner"
+      PartnerMailer.new_partner(self, partner_email).deliver_now
     end
   end
 

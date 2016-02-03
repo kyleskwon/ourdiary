@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+   </head>
+   <body>
+     <h1><%= @partner.name %> has requested that you confirm your parnership</h1>
+     <p>
+       Please click the link below to confirm your partnership with <%= @partner.name %>
+     </p>
+     <p>
+       <%= link_to "Confirm", confirm_partner_url(@user, @partner), method: :post %>
+     </p>
+   </body>
+ </html>

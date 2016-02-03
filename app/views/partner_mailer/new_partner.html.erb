@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+   </head>
+   <body>
+     <h1><%= @user.email %> has requested you to join OurDiary</h1>
+     <p>
+       Please click the link below to join.
+     </p>
+     <p>
+       <%= link_to "Join", new_user_registration_url %>
+     </p>
+   </body>
+ </html>
