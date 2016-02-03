@@ -18,36 +18,9 @@
         <% end %>
       </div>
     </div>
-<br />
-    <p>You have <%= current_user.total_items_count %> items in your BucketList, why not add another?</p>
-
-    <%= link_to 'Add an Item', new_item_path, class: 'btn btn-success' %>
 
   <h1 align="center">BucketList</h1>
-    <div class="col-md-10 col-md-offset-1">
-      <table class="table table-hover">
-        <!-- <thead>
-          <tr>
-            <th>Title</th>
-            <th>Caption</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead> -->
 
-        <tbody>
-          <% @items.each do |item| %>
-            <tr>
-              <td><%= link_to item.title, item %></td>
-              <td><%= link_to item.caption.first(60), item %></td>
-              <!-- <td><%= link_to 'Edit', edit_item_path(item) %></td> -->
-              <td><%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-<br />
-<br />
     <div class="col-md-6 col-md-offset-3">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -77,6 +50,35 @@
         </a>
       </div>
     </div>
+  </div>
+<br />
+  <div class="container">
+    <p>You have <%= current_user.total_items_count %> items in your BucketList, why not add another?</p>
+      <%= link_to 'Add an Item', new_item_path, class: 'btn btn-success' %>
+    <div class="col-md-10 col-md-offset-1">
+      <table class="table table-hover">
+        <!-- <thead>
+          <tr>
+            <th>Title</th>
+            <th>Caption</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead> -->
+
+        <tbody>
+          <% @items.each do |item| %>
+            <tr>
+              <td><%= link_to item.title, item %></td>
+              <td><%= link_to item.caption.first(60), item %></td>
+              <!-- <td><%= link_to 'Edit', edit_item_path(item) %></td> -->
+              <td><%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+<br />
+<br />
   </div>
 <br />
 <br />

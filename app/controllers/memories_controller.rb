@@ -8,6 +8,9 @@ class MemoriesController < ApplicationController
 
   # GET /memories/1
   def show
+    @memory = Memory.find(params[:id])
+    @previous = Memory.where("id < ?", params[:id]).order(:id).first
+    @next = Memory.where("id > ?", params[:id]).order(:id).first
   end
 
   # GET /memories/new

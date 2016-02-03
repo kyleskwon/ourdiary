@@ -2,6 +2,20 @@
 
   <div class="container">
     <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <% if @previous %>
+          <%= link_to "Previous", @previous, class: 'btn btn-default' %>
+        <% end %>
+        <% if @next %>
+          <%= link_to "Next", @next, class:'btn btn-default', align: "right" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
       <div class="col-md-5">
         <p>
           <h3 align="center"><%= @memory.title %>
@@ -32,6 +46,7 @@
     <%= link_to 'Edit', edit_memory_path(@memory), class: 'btn btn-default' %>
     <%= link_to 'Delete', memory_path, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
     <%= link_to 'Back', memories_path, class: 'btn btn-default' %>
+
 <br />
 <br />
   </div>
