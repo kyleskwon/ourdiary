@@ -8,11 +8,15 @@
           <p><small>(<%= @memory.date %>) | <%= @memory.address %></small></p>
           </h3>
       </p>
-      <p class="text-justify">
-        <blockquote>
-          <h5><%= @memory.caption %></h5>
-        </blockquote>
-      </p>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <p class="text-justify">
+            <blockquote>
+              <h5><%= @memory.caption %></h5>
+            </blockquote>
+          </p>
+        </div>
+      </div>
 <br>
       <p>
         [<%= @memory.label %>]
