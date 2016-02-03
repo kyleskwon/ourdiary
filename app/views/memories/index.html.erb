@@ -48,37 +48,72 @@
   <%= link_to 'Add a Memory', new_memory_path, class: 'btn btn-success' %>
 
   <h1 align="center">OurMemories</h1>
-
-  <table class="table table-hover">
-    <!-- <thead>
-      <tr>
-        <th>Title</th>
-        <th>Caption</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead> -->
-    <tbody>
-      <% @memories.each do |memory| %>
+  <div class="col-md-10 col-md-offset-1">
+    <table class="table table-hover">
+      <!-- <thead>
         <tr>
-          <td><%= link_to memory.date, memory %></td>
-          <td><%= link_to memory.title, memory %></td>
-          <td><%= link_to memory.caption.first(60), memory %></td>
-          <!-- <td><%= link_to 'Edit', edit_memory_path(memory) %></td> -->
-          <td><%= link_to 'Delete', memory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <th>Title</th>
+          <th>Caption</th>
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-<br>
-<br>
-<br>
-    <script>$(document).ready(function() {
-        // page is now ready, initialize the calendar...
-        $('#calendar').fullCalendar({
-            // put your options and callbacks here
-        })
-    });
-    </script>
-
-  <div id='calendar'></div>
+      </thead> -->
+      <tbody>
+        <% @memories.each do |memory| %>
+          <tr>
+            <td><%= link_to memory.date, memory %></td>
+            <td><%= link_to memory.title, memory %></td>
+            <td><%= link_to memory.caption.first(60), memory %></td>
+            <!-- <td><%= link_to 'Edit', edit_memory_path(memory) %></td> -->
+            <td><%= link_to 'Delete', memory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
+<br />
+<br />
+  <div class="col-md-6 col-md-offset-3">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active", align="center">
+          <img src="/system/memories/avatars/000/000/022/medium/IMG_3765.jpg?1454475184" alt="Tarsier Monkey">
+        </div>
+        <div class="item", align="center">
+          <img src="/system/memories/avatars/000/000/023/medium/IMG_4941.jpg?1454475527" alt="Petronas Towers">
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+<br />
+<br />
+  <div class="container">
+    <div class="row">
+      <script>$(document).ready(function() {
+          // page is now ready, initialize the calendar...
+          $('#calendar').fullCalendar({
+              // put your options and callbacks here
+          })
+      });
+      </script>
+    </div>
+<br/>
+    <div id='calendar'></div>
+  </div>

@@ -1,39 +1,37 @@
 <% @page_title = " | OurMemories" %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <p>
-        <h3 align="center"><%= @memory.title %>
-          <p><small>(<%= @memory.date %>) | <%= @memory.address %></small></p>
-          </h3>
-      </p>
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <p class="text-justify">
-            <blockquote>
-              <h5><%= @memory.caption %></h5>
-            </blockquote>
-          </p>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <p>
+          <h3 align="center"><%= @memory.title %>
+            <p><small>(<%= @memory.date %>) | <%= @memory.address %></small></p>
+            </h3>
+        </p>
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <p class="text-justify">
+              <blockquote>
+                <h5><%= @memory.caption %></h5>
+              </blockquote>
+            </p>
+          </div>
         </div>
+<br />
+        <p>
+          [<%= @memory.label %>]
+        </p>
       </div>
-<br>
-      <p>
-        [<%= @memory.label %>]
-      </p>
+      <div class="col--md-7" align="center">
+        <p>
+          <%= image_tag @memory.avatar.url(:medium) %>
+        </p>
+      </div>
     </div>
-    <div class="col--md-6" align="center">
-      <p>
-        <%= image_tag @memory.avatar.url(:medium) %>
-      </p>
-    </div>
+
+    <%= link_to 'Edit', edit_memory_path(@memory), class: 'btn btn-default' %>
+    <%= link_to 'Delete', memory_path, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Back', memories_path, class: 'btn btn-default' %>
+<br />
+<br />
   </div>
-<br>
-
-  <%= link_to 'Edit', edit_memory_path(@memory), class: 'btn btn-default' %>
-  <%= link_to 'Delete', memory_path, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
-  <%= link_to 'Back', memories_path, class: 'btn btn-default' %>
-
-<br>
-<br>
-</div>
