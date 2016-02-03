@@ -38,14 +38,15 @@
     </div>
   </div>
 <br>
-  <% if current_user.total_memories_count < Memory::MEMORY_COUNT_FOR_UPGRADE  %>
-    <p>Only <%= Memory::MEMORY_COUNT_FOR_UPGRADE - current_user.total_memories_count %> memories left for a free upgrade!</p>
-  <% end %>
-  <% if current_user.total_memories_count >= Memory::MEMORY_COUNT_FOR_UPGRADE  %>
-    <p>You have <%= current_user.total_memories_count %> memories, keep making more!</p>
-  <% end %>
-
-  <%= link_to 'Add a Memory', new_memory_path, class: 'btn btn-success' %>
+  <div class="col-md-8 col-md-offset-2">
+    <% if current_user.total_memories_count < Memory::MEMORY_COUNT_FOR_UPGRADE  %>
+      <p>Only <%= Memory::MEMORY_COUNT_FOR_UPGRADE - current_user.total_memories_count %> memories left for a free upgrade!</p>
+    <% end %>
+    <% if current_user.total_memories_count >= Memory::MEMORY_COUNT_FOR_UPGRADE  %>
+      <p>You have <%= current_user.total_memories_count %> memories, keep making more!</p>
+    <% end %>
+      <%= link_to 'Add a Memory', new_memory_path, class: 'btn btn-success' %>
+  </div>
 
   <h1 align="center">OurMemories</h1>
   <div class="col-md-10 col-md-offset-1">

@@ -19,37 +19,40 @@
     </div>
   </div>
 <br>
-  <p>You have <%= current_user.total_plans_count %> plans, bet you can't wait!</p>
-
-  <%= link_to 'Add a Plan', new_plan_path, class: 'btn btn-success', align: "center" %>
-
-<h1 align="center">OurPlans</h1>
-  <div class="col-md-10 col-md-offset-1">
-    <table class="table table-hover">
-      <!-- <thead>
-        <tr>
-          <th>Title</th>
-          <th>Caption</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead> -->
-
-      <tbody>
-        <% @plans.each do |plan| %>
+  <h1 align="center">OurPlans</h1>
+    <div class="col-md-10 col-md-offset-1">
+      <table class="table table-hover">
+        <!-- <thead>
           <tr>
-            <td><%= link_to plan.date, plan %></td>
-            <td><%= link_to plan.title, plan %></td>
-            <td><%= link_to plan.caption.first(60), plan %></td>
-            <!-- <td><%= link_to 'Edit', edit_plan_path(plan) %></td> -->
-            <td><%= link_to 'Delete', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <th>Title</th>
+            <th>Caption</th>
+            <th colspan="3"></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead> -->
+
+        <tbody>
+          <% @plans.each do |plan| %>
+            <tr>
+              <td><%= link_to plan.date, plan %></td>
+              <td><%= link_to plan.title, plan %></td>
+              <td><%= link_to plan.caption.first(60), plan %></td>
+              <!-- <td><%= link_to 'Edit', edit_plan_path(plan) %></td> -->
+              <td><%= link_to 'Delete', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+<br>
+<br>
+<br>
+  <div class="col-md-8 col-md-offset-2", align="center">
+    <p>You have <%= current_user.total_plans_count %> plans, bet you can't wait!</p>
+      <%= link_to 'Add a Plan', new_plan_path, class: 'btn btn-success', align: "center" %>
   </div>
-<br>
-<br>
-<br>
+<br />
+<br />
+<br />
 
 <div id='calendar'></div>
 <script>$(document).ready(function() {
