@@ -7,6 +7,11 @@ class Memory < ActiveRecord::Base
 
   validates :title, :address, presence: true
 
+  def self.search(query)
+      # where(:title, query) -> This would return an exact match of the query
+      where("title like ?", "%#{query}%")
+  end
+
   default_scope { order('date ASC') }
 
   after_create :upgrade_account, if: :account_upgradable?

@@ -1,9 +1,14 @@
 class MemoriesController < ApplicationController
-  before_action :set_memory, only: [:show, :edit, :update, :destroy]
+  before_action :set_memory, only: [:show, :edit, :search, :update, :destroy]
 
   # GET /memories
   def index
     @memories = current_user.all_memories
+    if params[:search]
+      @memories = Memory.search(params[:search]).order("created_at DESC")
+    else
+      @memories = Memory.order("created_at DESC")
+    end
   end
 
   # GET /memories/1
