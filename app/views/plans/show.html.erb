@@ -1,24 +1,39 @@
 <% @page_title = " | OurPlans" %>
 
-<div class="row">
-  <div class="col-md-6">
-    <p>
-      <h3 align="center"><%= @plan.title %>
-        <p><small>(<%= @plan.date %>) | <%= @plan.address %></small></p>
-        </h3>
-    </p>
-    <p class="text-justify">
-      <blockquote>
-        <h5><%= @plan.caption %></h5>
-      </blockquote>
-    </p>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <% if @previous %>
+          <%= link_to "Previous", @previous, class: 'btn btn-default' %>
+        <% end %>
+      </div>
+      <div class="col-md-2 col-md-offset-1" align="right">
+        <% if @next %>
+          <%= link_to "Next", @next, class:'btn btn-default', align: "right" %>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <div class="col--md-6" align="center">
-    <p>
-      <%= image_tag @plan.avatar.url(:medium) %>
-    </p>
+
+  <div class="row">
+    <div class="col-md-6">
+      <p>
+        <h3 align="center"><%= @plan.title %>
+          <p><small>(<%= @plan.date %>) | <%= @plan.address %></small></p>
+          </h3>
+      </p>
+      <p class="text-justify">
+        <blockquote>
+          <h5><%= @plan.caption %></h5>
+        </blockquote>
+      </p>
+    </div>
+    <div class="col--md-6" align="center">
+      <p>
+        <%= image_tag @plan.avatar.url(:medium) %>
+      </p>
+    </div>
   </div>
-</div>
 <br>
   <%= link_to 'Edit', edit_plan_path(@plan), class: 'btn btn-default' %>
   <%= link_to 'Delete', plan_path, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>

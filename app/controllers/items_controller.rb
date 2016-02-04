@@ -8,6 +8,11 @@ class ItemsController < ApplicationController
 
   # GET /items/1
   def show
+    @item = Item.find(params[:id])
+    items = current_user.all_items.map(&:id)
+    current = items.index(@item.id)
+    @previous = Item.find(items[current - 1]) unless current == 0
+    @next = Item.find(items[current + 1]) unless current == items.length - 1
   end
 
   # GET /items/new

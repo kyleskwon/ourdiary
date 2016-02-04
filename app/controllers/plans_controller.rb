@@ -8,6 +8,11 @@ class PlansController < ApplicationController
 
   # GET /plans/1
   def show
+    @plan = Plan.find(params[:id])
+    plans = current_user.all_plans.map(&:id)
+    current = plans.index(@plan.id)
+    @previous = Plan.find(plans[current - 1]) unless current == 0
+    @next = Plan.find(plans[current + 1]) unless current == plans.length - 1
   end
 
   # GET /plans/new
