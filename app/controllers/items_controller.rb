@@ -4,6 +4,11 @@ class ItemsController < ApplicationController
   # GET /items
   def index
     @items = current_user.all_items
+    if params[:search]
+      @items = Item.search(params[:search]).order("created_at DESC")
+    else
+      @items = Item.order("created_at DESC")
+    end
   end
 
   # GET /items/1

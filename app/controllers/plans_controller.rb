@@ -4,6 +4,11 @@ class PlansController < ApplicationController
   # GET /plans
   def index
     @plans = current_user.all_plans
+    if params[:search]
+      @plans = Plan.search(params[:search]).order("created_at DESC")
+    else
+      @plans = Plan.order("created_at DESC")
+    end
   end
 
   # GET /plans/1

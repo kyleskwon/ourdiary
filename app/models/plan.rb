@@ -7,5 +7,10 @@ class Plan < ActiveRecord::Base
 
   validates :title, presence: true
 
+  def self.search(query)
+      # where(:title, query) -> This would return an exact match of the query
+      where("title like ?", "%#{query}%")
+  end
+
   default_scope { order('date ASC') }
 end

@@ -6,4 +6,11 @@ class Item < ActiveRecord::Base
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   validates :title, presence: true
+
+  def self.search(query)
+      # where(:title, query) -> This would return an exact match of the query
+      where("title like ?", "%#{query}%")
+  end
+
+  default_scope { order('title ASC') }
 end
