@@ -2,10 +2,12 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-10 col-md-offset-1">
+      <div class="col-md-2">
         <% if @previous %>
           <%= link_to "Previous", @previous, class: 'btn btn-default' %>
         <% end %>
+      </div>
+      <div class="col-md-2 col-md-offset-1" align="right">
         <% if @next %>
           <%= link_to "Next", @next, class:'btn btn-default', align: "right" %>
         <% end %>
