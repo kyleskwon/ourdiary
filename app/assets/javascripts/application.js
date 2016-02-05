@@ -25,8 +25,15 @@ function initialize() {
     zoom: 2,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
-  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+  window.googleMap = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
+}
+function setMarker(lat, long, title) {
+  var marker = new google.maps.Marker({
+    position: {lat: lat, lng: long},
+    map: window.googleMap,
+    title: title
+  });
 }
 $(document).ready(function() {
   console.log("loaded!");

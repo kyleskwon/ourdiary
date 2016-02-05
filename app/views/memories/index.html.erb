@@ -2,20 +2,13 @@
 
 <% content_for :google_maps do %>
   <script>
-    function initialize() {
-      console.log("initializing!");
-      var mapProp = {
-        center:new google.maps.LatLng(30, 30),
-        zoom: 2,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      };
-      var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
-      var marker = new google.maps.Marker({
-        position: {lat: 18.7953, lng: 98.9986},
-        map: map,
-        title: 'Hello World!'
-      });
-    }
+    $(document).ready(function() {
+      console.log("loaded!");
+      <% @memory_markers.each do |marker| %>
+        setMarker(<%= marker[:lat] %>, <%= marker[:long] %>, "<%= marker[:title] %>");
+      <% end %>
+    });
+
   </script>
 <% end %>
 
@@ -91,18 +84,21 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <% @memories.each_with_index do |memory, index| %>
+          <% active = "active" if index == 0 %>
+          <li data-target="#myCarousel" data-slide-to="<%= index %>" class="<%= active %>"></li>
+        <% end %>
       </ol>
 
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
-        <div class="item active", align="center">
-          <img src="/system/memories/avatars/000/000/022/medium/IMG_3765.jpg?1454475184" alt="Tarsier Monkey">
-        </div>
-        <div class="item", align="center">
-          <img src="/system/memories/avatars/000/000/023/medium/IMG_4941.jpg?1454475527" alt="Petronas Towers">
-        </div>
+        <% @memories.each_with_index do |memory, index| %>
+          <% active = "active" if index == 0 %>
+          <div class="item <%= active %>", align="center" >
+            <%= image_tag memory.avatar.url(:medium) %>
+            <p class="memory-title"><%= memory.title %></p>
+          </div>
+        <% end %>
       </div>
 
       <!-- Left and right controls -->
