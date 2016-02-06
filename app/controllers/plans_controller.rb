@@ -9,6 +9,7 @@ class PlansController < ApplicationController
     else
       @plans = Plan.order("created_at DESC")
     end
+    @plan_markers =  current_user.all_plans.map {|plan| {lat: plan.latitude, long: plan.longitude, title: plan.title}}.flatten
   end
 
   # GET /plans/1

@@ -10,7 +10,6 @@ class MemoriesController < ApplicationController
       @memories = Memory.order("created_at DESC")
     end
     @memory_markers =  current_user.all_memories.map {|memory| {lat: memory.latitude, long: memory.longitude, title: memory.title}}.flatten
-    
   end
 
   # GET /memories/1
