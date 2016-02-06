@@ -1,9 +1,19 @@
 <% @page_title = " | OurPlans" %>
 
-<h1>Add a Plan</h1>
+  <% content_for :google_maps do %>
+    <script>
+      $(document).ready(function() {
+        console.log("loaded!");
+        <% @plan_markers.each do |marker| %>
+          setMarker(<%= marker[:lat] %>, <%= marker[:long] %>, "<%= marker[:title] %>");
+        <% end %>
+      });
+    </script>
+  <% end %>
 
-<%= render 'form' %>
+  <h1>Add a Plan</h1>
+    <%= render 'form' %>
 <br>
-<%= link_to 'Back', plans_path, class: 'btn btn-default' %>
+    <%= link_to 'Back', plans_path, class: 'btn btn-default' %>
 <br>
 <br>

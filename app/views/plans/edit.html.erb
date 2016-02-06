@@ -1,11 +1,22 @@
 <% @page_title = " | OurPlans" %>
 
-<div class="container">
+  <% content_for :google_maps do %>
+    <script>
+      $(document).ready(function() {
+        console.log("loaded!");
+        <% @plan_markers.each do |marker| %>
+          setMarker(<%= marker[:lat] %>, <%= marker[:long] %>, "<%= marker[:title] %>");
+        <% end %>
+      });
+    </script>
+  <% end %>
+
+  <div class="container">
     <h1>Edit Plan</h1>
       <%= render 'form' %>
-  <br>
-    <%= link_to 'Show', @plan, class: 'btn btn-default' %>
-    <%= link_to 'Cancel', plans_path, class: 'btn btn-default' %>
-  <br>
-  <br>
-</div>
+<br>
+      <%= link_to 'Show', @plan, class: 'btn btn-default' %>
+      <%= link_to 'Cancel', plans_path, class: 'btn btn-default' %>
+<br>
+<br>
+  </div>

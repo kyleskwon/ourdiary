@@ -19,15 +19,18 @@ class PlansController < ApplicationController
     current = plans.index(@plan.id)
     @previous = Plan.find(plans[current - 1]) unless current == 0
     @next = Plan.find(plans[current + 1]) unless current == plans.length - 1
+    @plan_markers =  current_user.all_plans.map {|plan| {lat: plan.latitude, long: plan.longitude, title: plan.title}}.flatten
   end
 
   # GET /plans/new
   def new
     @plan = Plan.new
+    @plan_markers =  current_user.all_plans.map {|plan| {lat: plan.latitude, long: plan.longitude, title: plan.title}}.flatten
   end
 
   # GET /plans/1/edit
   def edit
+    @plan_markers =  current_user.all_plans.map {|plan| {lat: plan.latitude, long: plan.longitude, title: plan.title}}.flatten
   end
 
   # POST /plans

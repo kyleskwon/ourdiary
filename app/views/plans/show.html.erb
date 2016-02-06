@@ -1,5 +1,16 @@
 <% @page_title = " | OurPlans" %>
 
+  <% content_for :google_maps do %>
+    <script>
+      $(document).ready(function() {
+        console.log("loaded!");
+        <% @plan_markers.each do |marker| %>
+          setMarker(<%= marker[:lat] %>, <%= marker[:long] %>, "<%= marker[:title] %>");
+        <% end %>
+      });
+    </script>
+  <% end %>
+  
   <div class="container">
     <div class="row">
       <div class="col-md-2">
