@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
     else
       @items = Item.order("created_at DESC")
     end
+    @item_markers =  current_user.all_items.map {|item| {lat: item.latitude, long: item.longitude, title: item.title}}.flatten
   end
 
   # GET /items/1
