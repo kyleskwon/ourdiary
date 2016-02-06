@@ -10,6 +10,9 @@
       <% @plan_markers.each do |marker| %>
         setMarker(<%= marker[:lat] %>, <%= marker[:long] %>, "<%= marker[:title] %>");
       <% end %>
+      <% @item_markers.each do |marker| %>
+        setMarker(<%= marker[:lat] %>, <%= marker[:long] %>, "<%= marker[:title] %>");
+      <% end %>
     });
 
   </script>
