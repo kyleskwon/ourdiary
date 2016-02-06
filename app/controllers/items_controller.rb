@@ -19,15 +19,18 @@ class ItemsController < ApplicationController
     current = items.index(@item.id)
     @previous = Item.find(items[current - 1]) unless current == 0
     @next = Item.find(items[current + 1]) unless current == items.length - 1
+    @item_markers =  current_user.all_items.map {|item| {lat: item.latitude, long: item.longitude, title: item.title}}.flatten
   end
 
   # GET /items/new
   def new
     @item = Item.new
+    @item_markers =  current_user.all_items.map {|item| {lat: item.latitude, long: item.longitude, title: item.title}}.flatten
   end
 
   # GET /items/1/edit
   def edit
+    @item_markers =  current_user.all_items.map {|item| {lat: item.latitude, long: item.longitude, title: item.title}}.flatten
   end
 
   # POST /items

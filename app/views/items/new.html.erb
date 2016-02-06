@@ -1,9 +1,19 @@
 <% @page_title = " | BucketList" %>
 
-<h1>Add an Item</h1>
+  <% content_for :google_maps do %>
+    <script>
+      $(document).ready(function() {
+        console.log("loaded!");
+        <% @item_markers.each do |marker| %>
+          setMarker(<%= marker[:lat] %>, <%= marker[:long] %>, "<%= marker[:title] %>");
+        <% end %>
+      });
+    </script>
+  <% end %>
 
-<%= render 'form' %>
+  <h1>Add an Item</h1>
+    <%= render 'form' %>
 <br>
-<%= link_to 'Back', items_path, class: 'btn btn-default' %>
+    <%= link_to 'Back', items_path, class: 'btn btn-default' %>
 <br>
 <br>
