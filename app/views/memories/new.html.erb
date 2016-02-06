@@ -1,11 +1,21 @@
 <% @page_title = " | OurMemories" %>
 
-<div class="container">
-    <h1>Add a Memory</h1>
+  <% content_for :google_maps do %>
+    <script>
+      $(document).ready(function() {
+        console.log("loaded!");
+        <% @memory_markers.each do |marker| %>
+          setMarker(<%= marker[:lat] %>, <%= marker[:long] %>, "<%= marker[:title] %>");
+        <% end %>
+      });
+    </script>
+  <% end %>
 
-    <%= render 'form' %>
-  <br>
-    <%= link_to 'Back', memories_path, class: 'btn btn-default' %>
-  <br>
-  <br>
-</div>
+  <div class="container">
+    <h1>Add a Memory</h1>
+      <%= render 'form' %>
+<br>
+      <%= link_to 'Back', memories_path, class: 'btn btn-default' %>
+<br>
+<br>
+  </div>

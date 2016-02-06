@@ -1,5 +1,16 @@
 <% @page_title = " | OurMemories" %>
 
+  <% content_for :google_maps do %>
+    <script>
+      $(document).ready(function() {
+        console.log("loaded!");
+        <% @memory_markers.each do |marker| %>
+          setMarker(<%= marker[:lat] %>, <%= marker[:long] %>, "<%= marker[:title] %>");
+        <% end %>
+      });
+    </script>
+  <% end %>
+
   <div class="container">
     <div class="row">
       <div class="col-md-2">
@@ -43,11 +54,9 @@
         </p>
       </div>
     </div>
-
     <%= link_to 'Edit', edit_memory_path(@memory), class: 'btn btn-default' %>
     <%= link_to 'Delete', memory_path, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
     <%= link_to 'Back', memories_path, class: 'btn btn-default' %>
-
 <br>
 <br>
   </div>

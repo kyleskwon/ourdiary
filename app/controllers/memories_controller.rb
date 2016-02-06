@@ -19,15 +19,18 @@ class MemoriesController < ApplicationController
     current = memories.index(@memory.id)
     @previous = Memory.find(memories[current - 1]) unless current == 0
     @next = Memory.find(memories[current + 1]) unless current == memories.length - 1
+    @memory_markers =  current_user.all_memories.map {|memory| {lat: memory.latitude, long: memory.longitude, title: memory.title}}.flatten
   end
 
   # GET /memories/new
   def new
     @memory = Memory.new
+    @memory_markers =  current_user.all_memories.map {|memory| {lat: memory.latitude, long: memory.longitude, title: memory.title}}.flatten
   end
 
   # GET /memories/1/edit
   def edit
+    @memory_markers =  current_user.all_memories.map {|memory| {lat: memory.latitude, long: memory.longitude, title: memory.title}}.flatten
   end
 
   # POST /memories
