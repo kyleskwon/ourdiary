@@ -1,5 +1,6 @@
 class HomebaseController < ApplicationController
   def index
+    @memories = current_user.all_memories
     #  @show_map = false
     @memory_markers =  current_user.all_memories.map {|memory| {lat: memory.latitude, long: memory.longitude, title: memory.title}}.flatten
     @plan_markers =  current_user.all_plans.map {|plan| {lat: plan.latitude, long: plan.longitude, title: plan.title}}.flatten
