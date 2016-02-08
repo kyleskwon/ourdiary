@@ -1,2 +1,12 @@
-<h1>Labels#show</h1>
-<p>Find me in app/views/labels/show.html.erb</p>
+  <div class="row">
+    <div class="col-md-8">
+      <h3>Label: <%= @label.name %></h3>
+        <% @label.memories.each do |memory| %>
+          <div>
+            Memory: <%= link_to memory.title, memory %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+<br>
+    <%= link_to 'Back', memories_path, class: 'btn btn-default' %>
