@@ -42,6 +42,7 @@ class MemoriesController < ApplicationController
     else
       render :new
     end
+    @memory.labels = Label.update_labels(params[:memory][:labels])
   end
 
   # PATCH/PUT /memories/1
@@ -51,6 +52,7 @@ class MemoriesController < ApplicationController
     else
       render :edit
     end
+    @memory.labels = Label.update_labels(params[:memory][:labels])
   end
 
   # DELETE /memories/1

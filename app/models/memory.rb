@@ -7,6 +7,9 @@ class Memory < ActiveRecord::Base
 
   validates :title, :address, presence: true
 
+  has_many :labelings, as: :labelable
+  has_many :labels, through: :labelings
+
   def self.search(query)
       # where(:title, query) -> This would return an exact match of the query
       where("title like ? or caption like ? or date like ?", "%#{query}%", "%#{query}%", "%#{query}%")

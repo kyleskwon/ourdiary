@@ -33,6 +33,9 @@
       <%= f.text_field :label, class: 'form-control date' %>
     </div>
     <div class="form-group">
+      <%= render partial: 'labels/form', locals: { f: f, labels: @memory.labels } %>
+    </div>
+    <div class="form-group">
       <%= f.label :photo %><br>
       <%= f.file_field :avatar, class: 'form-control' %>
     </div>
