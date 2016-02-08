@@ -9,7 +9,7 @@ class Item < ActiveRecord::Base
 
   def self.search(query)
       # where(:title, query) -> This would return an exact match of the query
-      where("title like ? or caption like ?", "%#{query}%", "%#{query}%")
+      where("title like ? or caption like ? or address like ?", "%#{query}%", "%#{query}%", "%#{query}%")
   end
 
   default_scope { order('title ASC') }

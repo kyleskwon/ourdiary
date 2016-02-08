@@ -12,7 +12,7 @@ class Memory < ActiveRecord::Base
 
   def self.search(query)
       # where(:title, query) -> This would return an exact match of the query
-      where("title like ? or caption like ? or date like ?", "%#{query}%", "%#{query}%", "%#{query}%")
+      where("title like ? or caption like ? or date like ? or address like ? or label like ?", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%")
   end
 
   default_scope { order('date ASC') }
