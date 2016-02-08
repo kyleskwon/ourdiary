@@ -38,7 +38,7 @@ class MemoriesController < ApplicationController
     @memory = current_user.memories.create(memory_params)
 
     if @memory.save
-      redirect_to @memory, notice: 'Item was successfully created.'
+      redirect_to @memory, notice: 'Memory was successfully created.'
     else
       render :new
     end
@@ -58,7 +58,7 @@ class MemoriesController < ApplicationController
   # DELETE /memories/1
   def destroy
     @memory.destroy
-    redirect_to memories_url, notice: 'Memory was successfully destroyed.'
+    redirect_to memories_url, notice: 'Memory was successfully erased.'
   end
 
   private

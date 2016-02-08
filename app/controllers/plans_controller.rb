@@ -56,7 +56,7 @@ class PlansController < ApplicationController
   # DELETE /plans/1
   def destroy
     @plan.destroy
-    redirect_to plans_url, notice: 'Plan was successfully destroyed.'
+    redirect_to plans_url, notice: 'Plan was successfully cancelled.'
   end
 
   private
