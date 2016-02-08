@@ -67,6 +67,25 @@
   </div>
 
   <div class="container">
+    <div class="row">
+      <div class="col-md-4" align="right">
+        <%= link_to memories_path, class: 'btn btn-info' do %>
+          <i class="glyphicon glyphicon-book"> OurMemories</i>
+        <% end %>
+      </div>
+      <div class="col-md-4" align="center">
+        <%= link_to plans_path, class: 'btn btn-primary' do %>
+          <i class="glyphicon glyphicon-list-alt"> OurPlans</i>
+        <% end %>
+      </div>
+      <div class="col-md-4" align="left">
+        <%= link_to items_path, class: 'btn btn-warning' do %>
+          <i class="glyphicon glyphicon-globe"> BucketList</i>
+        <% end %>
+      </div>
+    </div>
+<br>
+  <div class="container">
     <%= yield %>
   </div>
 </body>
