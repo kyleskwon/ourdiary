@@ -1,6 +1,4 @@
 Rails.application.configure do
-  Paperclip.options[:image_magick_path] = "/opt/ImageMagick/bin"
-  Paperclip.options[:command_path] = "/opt/ImageMagick/bin"
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -78,4 +76,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  Paperclip.options[:image_magick_path] = "/opt/ImageMagick/bin"
+  Paperclip.options[:command_path] = "/opt/ImageMagick/bin"
+  Rails.application.routes.default_url_options[:host] = '???'
 end
