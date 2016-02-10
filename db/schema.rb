@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160208184845) do
 
-# Could not dump table "homebases" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
-
   create_table "items", force: :cascade do |t|
     t.string   "title"
     t.text     "caption"
