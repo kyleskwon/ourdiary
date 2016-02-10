@@ -7,6 +7,12 @@ class Plan < ActiveRecord::Base
 
   validates :title, presence: true
 
+  scope :for_user, -> (user) {
+    user_ids = [user.id]
+    user_ids << user.partner.id if user.partner
+    where(user_id: user_ids)
+  }
+
   def self.search(query)
       # where(:title, query) -> This would return an exact match of the query
       where("title like ? or caption like ? or date like ? or address like ?", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%")

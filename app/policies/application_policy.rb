@@ -7,23 +7,23 @@ class ApplicationPolicy
   end
 
   def index?
-    false
+    premium_user?
   end
 
   def show?
-    scope.where(:id => record.id).exists?
+    false
   end
 
   def create?
-    user.present?
+    premium_user?
   end
 
   def new?
-    create?
+    premium_user?
   end
 
   def update?
-    user.present?
+    show?
   end
 
   def edit?
@@ -31,7 +31,11 @@ class ApplicationPolicy
   end
 
   def destroy?
-    user.present?
+    update?
+  end
+
+  def premium_user?
+    user && user.premium?
   end
 
   def scope

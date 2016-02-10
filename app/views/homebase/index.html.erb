@@ -20,38 +20,46 @@
   <div class="col-md-3" align="center">
     <%= current_user.email %>
   </div>
-  <div class="col-md-6">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <% @memories.each_with_index do |memory, index| %>
-          <% active = "active" if index == 0 %>
-          <li data-target="#myCarousel" data-slide-to="<%= index %>" class="<%= active %>"></li>
-        <% end %>
-      </ol>
+  <% if @memories.any? %>
+    <div class="col-md-6">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <% @memories.each_with_index do |memory, index| %>
+            <% unless memory.avatar.blank? %>
+              <% active = "active" if index == 0 %>
+              <li data-target="#myCarousel" data-slide-to="<%= index %>" class="<%= active %>"></li>
+            <% end %>
+          <% end %>
+        </ol>
 
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <% @memories.each_with_index do |memory, index| %>
-          <% active = "active" if index == 0 %>
-          <div class="item <%= active %>", align="center" >
-            <%= image_tag memory.avatar.url(:medium) %>
-            <p class="memory-title"><%= memory.title %></p>
-          </div>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <% @memories.each_with_index do |memory, index| %>
+            <% unless memory.avatar.blank? %>
+              <% active = "active" if index == 0 %>
+              <div class="item <%= active %>", align="center" >
+                <%= image_tag memory.avatar.url(:medium) %>
+                <p class="memory-title"><%= memory.title %></p>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+        <!-- Left and right controls -->
+        <% if @memories.map(&:avatar_file_name).flatten.any? %>
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         <% end %>
       </div>
-
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
-  </div>
+  <% end %>
   <div class="col-md-3" align="center">
-    <%= current_user.partner.email %>
+    <%= current_user.partner.email if current_user.partner %>
   </div>

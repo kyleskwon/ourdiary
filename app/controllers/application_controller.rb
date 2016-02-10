@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   include Pundit
@@ -19,6 +20,15 @@ class ApplicationController < ActionController::Base
 
   def show_map
     @show_map = true
+  end
+
+  private
+
+  def user_not_authorized(exception)
+    policy_name = exception.policy.class.to_s.underscore
+
+    flash[:error] = "You need to be a premium user to access that feature"
+    redirect_to(request.referrer || root_path)
   end
 
 

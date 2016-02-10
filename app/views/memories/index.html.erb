@@ -96,9 +96,22 @@
     <div class="row">
       <script>$(document).ready(function() {
 
-          $('#calendar').fullCalendar({
+        $('#calendar').fullCalendar({
+  events: [
+    <% @memories.each_with_index do |memory, index| %>
+      <% if memory.title.present? && memory.date.present?  %>
+         <% if index > 0 %>
+         ,
+         <% end %>
+          {
+            title: "<%= memory.title %>",
+            start: "<%= memory.date %>"
 
-          })
+          }
+      <% end %>
+    <% end %>
+  ]
+});
       });
       </script>
     </div>

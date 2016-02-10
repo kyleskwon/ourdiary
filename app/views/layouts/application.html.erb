@@ -67,23 +67,26 @@
   </div>
 
   <% if user_signed_in? %>
+    <% class_name = current_user.premium? ? "col-md-4" : "col-md-12 centered" %>
     <div class="container">
       <div class="row">
-        <div class="col-md-4" align="right">
+        <div class="<%= class_name %> memories-button">
           <%= link_to memories_path, class: 'btn btn-info' do %>
             <i class="glyphicon glyphicon-book"> OurMemories</i>
           <% end %>
         </div>
-        <div class="col-md-4" align="center">
-          <%= link_to plans_path, class: 'btn btn-primary' do %>
-            <i class="glyphicon glyphicon-list-alt"> OurPlans</i>
-          <% end %>
-        </div>
-        <div class="col-md-4" align="left">
-          <%= link_to items_path, class: 'btn btn-warning' do %>
-            <i class="glyphicon glyphicon-globe"> BucketList</i>
-          <% end %>
-        </div>
+        <% if current_user.premium? %>
+          <div class="<%= class_name %> plans-button">
+            <%= link_to plans_path, class: 'btn btn-primary' do %>
+              <i class="glyphicon glyphicon-list-alt"> OurPlans</i>
+            <% end %>
+          </div>
+          <div class="<%= class_name %> bucket-list-button">
+            <%= link_to items_path, class: 'btn btn-warning' do %>
+              <i class="glyphicon glyphicon-globe"> BucketList</i>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     <% end %>
 <br>

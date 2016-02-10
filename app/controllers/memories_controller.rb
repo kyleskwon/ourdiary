@@ -3,11 +3,10 @@ class MemoriesController < ApplicationController
 
   # GET /memories
   def index
-    @memories = current_user.all_memories
     if params[:search]
-      @memories = Memory.search(params[:search]).order("created_at DESC")
+      @memories = Memory.for_user(current_user).search(params[:search]).order("created_at DESC")
     else
-      @memories = Memory.order("created_at DESC")
+      @memories =  Memory.for_user(current_user).order("created_at DESC")
     end
     @memory_markers =  current_user.all_memories.map {|memory| {lat: memory.latitude, long: memory.longitude, title: memory.title}}.flatten
   end

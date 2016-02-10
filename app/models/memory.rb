@@ -17,6 +17,12 @@ class Memory < ActiveRecord::Base
 
   default_scope { order('date ASC') }
 
+  scope :for_user, -> (user) {
+    user_ids = [user.id]
+    user_ids << user.partner.id if user.partner
+    where(user_id: user_ids)
+  }
+
   after_create :upgrade_account, if: :account_upgradable?
 
   # def previous_memory
