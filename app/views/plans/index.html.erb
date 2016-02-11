@@ -55,12 +55,27 @@
 <br>
 <br>
   <div class="container">
-    <div id='calendar'></div>
-    <script>$(document).ready(function() {
-        // page is now ready, initialize the calendar...
+    <div class="row">
+      <script>$(document).ready(function() {
+
         $('#calendar').fullCalendar({
-            // put your options and callbacks here
-        })
-    });
-    </script>
+          events: [
+            <% @plans.each_with_index do |plan, index| %>
+              <% if plan.title.present? && plan.date.present?  %>
+                 <% if index > 0 %>
+                 ,
+                 <% end %>
+                  {
+                    title: "<%= plan.title %>",
+                    start: "<%= plan.date %>"
+                  }
+              <% end %>
+            <% end %>
+          ]
+        });
+      });
+      </script>
     </div>
+<br>
+    <div id='calendar'></div>
+  </div>
