@@ -46,6 +46,7 @@ class MemoriesController < ApplicationController
 
   # PATCH/PUT /memories/1
   def update
+    @memory_markers =  current_user.all_memories.map {|memory| {lat: memory.latitude, long: memory.longitude, title: memory.title}}.flatten
     if @memory.update(memory_params)
       redirect_to @memory, notice: 'Memory was successfully updated.'
     else
