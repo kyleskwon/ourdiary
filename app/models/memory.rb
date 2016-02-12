@@ -10,6 +10,19 @@ class Memory < ActiveRecord::Base
   has_many :labelings, as: :labelable
   has_many :labels, through: :labelings
 
+  def self.dedupe
+      # find all models and group them on keys which should be common
+      grouped = all.group_by{|memory| [memory.user_id] }
+      grouped.values.each do |duplicates|
+        # the first one we want to keep right?
+        first_one = duplicates.shift # or pop for last one
+        # if there are any more left, they are duplicates
+        # so delete all of them
+        duplicates.each{|double| double.destroy} # duplicates can now be destroyed
+  end
+
+  Memory.dedupe
+
   def self.search(query)
       # where(:title, query) -> This would return an exact match of the query
       where("title like ? or caption like ? or date like ? or address like ? or label like ?", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%")
