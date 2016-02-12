@@ -5,7 +5,7 @@ class Item < ActiveRecord::Base
   has_attached_file :avatar, styles: { medium: "480x800>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
-  validates :title, presence: true
+  validates :title, :caption, :avatar, presence: true
 
   scope :for_user, -> (user) {
     user_ids = [user.id]

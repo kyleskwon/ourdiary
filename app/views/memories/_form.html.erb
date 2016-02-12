@@ -13,15 +13,15 @@
 
   <form role="form">
     <div class="form-group">
-      <%= f.label :date %>* (Required)<br>
+      <%= f.label :date %>*<br>
       <%= f.date_field :date, class: 'form-control date' %>
     </div>
     <div class="form-group">
-      <%= f.label :title %>* (Required)<br>
+      <%= f.label :title %>*<br>
       <%= f.text_field :title, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= f.label :caption %> (Tell your story)<br>
+      <%= f.label :description %> (Tell your story)<br>
       <%= f.text_area :caption, rows: 4, class: 'form-control' %>
     </div>
     <div class="form-group">
@@ -32,7 +32,7 @@
       <%= render partial: 'labels/form', locals: { f: f, labels: @memory.labels } %>(separated by commas)
     </div>
     <div class="form-group">
-      <%= f.label :photo %>* (Required)<br>
+      <%= f.label :photo %>*<br>
       <%= f.file_field :avatar, class: 'form-control' %>
     </div>
     <div class="actions">

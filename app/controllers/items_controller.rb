@@ -39,9 +39,9 @@ class ItemsController < ApplicationController
 
   # POST /items
   def create
-    authorize(@item)
     @item = current_user.items.create(item_params)
-
+    authorize(@item)
+    @item_markers =  current_user.all_items.map {|item| {lat: item.latitude, long: item.longitude, title: item.title}}.flatten
     if @item.save
       redirect_to @item, notice: 'Item was successfully created.'
     else
@@ -52,6 +52,7 @@ class ItemsController < ApplicationController
   # PATCH/PUT /items/1
   def update
     authorize(@item)
+    @item_markers =  current_user.all_items.map {|item| {lat: item.latitude, long: item.longitude, title: item.title}}.flatten
     if @item.update(item_params)
       redirect_to @item, notice: 'Item was successfully updated.'
     else
