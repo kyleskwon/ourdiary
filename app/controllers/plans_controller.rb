@@ -41,7 +41,7 @@ class PlansController < ApplicationController
   def create
     @plan = current_user.plans.create(plan_params)
     authorize(@plan)
-
+    @plan_markers =  current_user.all_plans.map {|plan| {lat: plan.latitude, long: plan.longitude, title: plan.title}}.flatten
     if @plan.save
       redirect_to @plan, notice: 'Plan was successfully created.'
     else
@@ -52,6 +52,7 @@ class PlansController < ApplicationController
   # PATCH/PUT /plans/1
   def update
     authorize(@plan)
+    @plan_markers =  current_user.all_plans.map {|plan| {lat: plan.latitude, long: plan.longitude, title: plan.title}}.flatten
     if @plan.update(plan_params)
       redirect_to @plan, notice: 'Plan was successfully updated.'
     else

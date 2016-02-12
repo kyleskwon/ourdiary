@@ -35,7 +35,7 @@ class MemoriesController < ApplicationController
   # POST /memories
   def create
     @memory = current_user.memories.create(memory_params)
-
+    @memory_markers =  current_user.all_memories.map {|memory| {lat: memory.latitude, long: memory.longitude, title: memory.title}}.flatten
     if @memory.save
       redirect_to @memory, notice: 'Memory was successfully created.'
     else
