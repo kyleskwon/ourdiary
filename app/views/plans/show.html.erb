@@ -26,30 +26,38 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-6">
-      <p>
-        <h3 align="center"><%= @plan.title %>
-          <p><small>(<%= @plan.date %>) | <%= @plan.address %></small></p>
-          </h3>
-      </p>
-      <p class="text-justify" word-wrap="break-word">
-        <blockquote>
-          <h5><%= @plan.caption %></h5>
-        </blockquote>
-      </p>
-    </div>
-    <div class="col--md-6" align="center">
-      <p>
-        <%= image_tag @plan.avatar.url(:medium) %>
-      </p>
-    </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <p>
+          <h3 align="center"><%= @plan.title %>
+            <p><small>(<%= @plan.date %>) | <%= @plan.address %></small></p>
+            </h3>
+        </p>
+
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <p class="text-justify" word-wrap="break-word">
+              <blockquote><h5><%= @plan.caption %></h5></blockquote>
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-7" align="center">
+            <% if @plan.avatar.file? %>
+              <%= image_tag @plan.avatar.url(:medium) %>
+            <% else %>
+
+            <% end %>
+          </div>
+        </div>
+<br>
+    <%= link_to 'Edit', edit_plan_path(@plan), class: 'btn btn-default' %>
+    <%= link_to 'Delete', plan_path, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Back', plans_path, class: 'btn btn-default' %>
+<br>
+<br>
+<br>
+<br>
   </div>
-<br>
-  <%= link_to 'Edit', edit_plan_path(@plan), class: 'btn btn-default' %>
-  <%= link_to 'Delete', plan_path, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
-  <%= link_to 'Back', plans_path, class: 'btn btn-default' %>
-<br>
-<br>
-<br>
-<br>

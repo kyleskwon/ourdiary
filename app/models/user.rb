@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   before_save { self.role ||= :member }
 
   validate :partner_email_cannot_be_self_email
+  validates :partner_email, presence: true
 
   enum role: [:member, :premium, :admin]
 

@@ -34,12 +34,11 @@
             <p><small>(<%= @memory.date %>) | <%= @memory.address %></small></p>
             </h3>
         </p>
+
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
             <p class="text-justify" word-wrap="break-word">
-              <blockquote>
-                <h5><%= @memory.caption %></h5>
-              </blockquote>
+              <blockquote><h5><%= @memory.caption %></h5></blockquote>
             </p>
           </div>
         </div>
@@ -50,10 +49,9 @@
         </div>
       </div>
       </div>
-      <div class="col--md-7" align="center">
-        <p>
-          <%= image_tag @memory.avatar.url(:medium) %>
-        </p>
+
+      <div class="col-md-7" align="center">
+        <p><%= image_tag @memory.avatar.url(:medium) %></p>
       </div>
     </div>
 <br>

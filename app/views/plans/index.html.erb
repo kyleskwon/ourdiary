@@ -40,11 +40,11 @@
         <tbody>
           <% @plans.each do |plan| %>
             <tr>
-              <td><%= link_to plan.date, plan %></td>
-              <td><%= link_to plan.title, plan %></td>
-              <td><%= link_to plan.caption.first(60), plan %></td>
+              <td><h6><%= link_to plan.date, plan %></h6></td>
+              <td><h4><%= link_to plan.title, plan %></h4></td>
+              <td><h5><%= link_to plan.caption.first(60), plan %></h5></td>
               <!-- <td><%= link_to 'Edit', edit_plan_path(plan) %></td> -->
-              <td><%= link_to 'Delete', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><h6><%= link_to 'Delete', plan, method: :delete, data: { confirm: 'Are you sure?' } %></h6></td>
             </tr>
           <% end %>
         </tbody>

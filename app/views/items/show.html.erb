@@ -26,30 +26,34 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-6">
-      <p>
-        <h3 align="center"><%= @item.title %>
-          <p><small><%= @item.address %></small></p>
-          </h3>
-      </p>
-      <p class="text-justify" word-wrap="break-word">
-        <blockquote>
-          <h5><%= @item.caption %></h5>
-        </blockquote>
-      </p>
-    </div>
-    <div class="col--md-6" align="center">
-      <p>
-        <%= image_tag @item.avatar.url(:medium) %>
-      </p>
-    </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <p>
+          <h3 align="center"><%= @item.title %>
+            <p><small><%= @item.address %></small></p>
+            </h3>
+        </p>
+
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <p class="text-justify" word-wrap="break-word">
+            <blockquote><h5><%= @item.caption %></h5></blockquote>
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7" align="center">
+          <p><%= image_tag @item.avatar.url(:medium) %></p>
+        </div>
+      </div>
+<br>
+    <%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-default' %>
+    <%= link_to 'Delete', item_path, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Back', items_path, class: 'btn btn-default' %>
+<br>
+<br>
+<br>
+<br>
   </div>
-<br>
-  <%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-default' %>
-  <%= link_to 'Delete', item_path, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
-  <%= link_to 'Back', items_path, class: 'btn btn-default' %>
-<br>
-<br>
-<br>
-<br>
