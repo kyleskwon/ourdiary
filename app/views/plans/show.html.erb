@@ -44,6 +44,12 @@
         </div>
 
         <div class="row">
+          <div class="col-md-5">
+              <%= render partial: "labels/list", locals: { labels: @plan.labels } %>
+          </div>
+        </div>
+        </div>
+
           <div class="col-md-7" align="center">
             <% if @plan.avatar.file? %>
               <%= image_tag @plan.avatar.url(:medium) %>
@@ -56,8 +62,6 @@
     <%= link_to 'Edit', edit_plan_path(@plan), class: 'btn btn-default' %>
     <%= link_to 'Delete', plan_path, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
     <%= link_to 'Back', plans_path, class: 'btn btn-default' %>
-<br>
-<br>
 <br>
 <br>
   </div>

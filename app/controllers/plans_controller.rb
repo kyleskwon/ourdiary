@@ -47,6 +47,7 @@ class PlansController < ApplicationController
     else
       render :new
     end
+    @plan.labels = Label.update_labels(params[:plan][:labels])
   end
 
   # PATCH/PUT /plans/1
@@ -58,6 +59,7 @@ class PlansController < ApplicationController
     else
       render :edit
     end
+    @plan.labels = Label.update_labels(params[:plan][:labels])
   end
 
   # DELETE /plans/1

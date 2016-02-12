@@ -7,6 +7,9 @@ class Item < ActiveRecord::Base
 
   validates :title, :caption, :avatar, presence: true
 
+  has_many :labelings, as: :labelable
+  has_many :labels, through: :labelings
+
   scope :for_user, -> (user) {
     user_ids = [user.id]
     user_ids << user.partner.id if user.partner

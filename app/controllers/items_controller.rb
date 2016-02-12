@@ -47,6 +47,7 @@ class ItemsController < ApplicationController
     else
       render :new
     end
+    @item.labels = Label.update_labels(params[:item][:labels])
   end
 
   # PATCH/PUT /items/1
@@ -58,6 +59,7 @@ class ItemsController < ApplicationController
     else
       render :edit
     end
+    @item.labels = Label.update_labels(params[:item][:labels])
   end
 
   # DELETE /items/1
