@@ -17,8 +17,8 @@
     </script>
   <% end %>
 
-  <div class="col-md-3" align="center">
-    <%= current_user.email %>
+  <div class="col-md-3">
+    <%= current_user.name %>
   </div>
 
   <% if @memories.any? %>
@@ -61,6 +61,6 @@
       </div>
     </div>
   <% end %>
-  <div class="col-md-3" align="center">
-    <%= current_user.partner.email if current_user.partner %>
+  <div class="col-md-3">
+    <%= current_user.partner.name if current_user.partner %>
   </div>
