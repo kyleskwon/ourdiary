@@ -15,7 +15,7 @@
     <div class="col-md-8 col-md-offset-2">
       <p>You have <%= current_user.total_plans_count %> plans, bet you can't wait!</p>
         <%= link_to 'Add a Plan', new_plan_path, class: 'btn btn-success' %>
-
+<br>
       <form role="form">
         <div class="form-group", align="right">
           <%= form_tag(memories_path, :method => "get", id: "search-form") do %>
@@ -29,11 +29,6 @@
         </div>
       </form>
     </div>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
     <div class="col-md-10 col-md-offset-1">
       <table class="table table-hover">
@@ -51,9 +46,7 @@
       </table>
     </div>
   </div>
-<br>
-<br>
-<br>
+
   <div class="container">
     <div class="row">
       <script>$(document).ready(function() {
@@ -76,6 +69,7 @@
       });
       </script>
     </div>
+<br>
 <br>
     <div id='calendar'></div>
   </div>

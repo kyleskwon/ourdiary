@@ -70,11 +70,11 @@
     <% class_name = current_user.premium? ? "col-md-4" : "col-md-12 centered" %>
     <div class="container">
       <div class="row">
-        <div class="<%= class_name %> memories-button">
-          <%= link_to memories_path, class: 'btn btn-info' do %>
-            <i class="glyphicon glyphicon-book"> OurMemories</i>
-          <% end %>
-        </div>
+          <div class="<%= class_name %> memories-button">
+            <%= link_to memories_path, class: 'btn btn-info' do %>
+              <i class="glyphicon glyphicon-book"> OurMemories</i>
+            <% end %>
+          </div>
         <% if current_user.premium? %>
           <div class="<%= class_name %> plans-button">
             <%= link_to plans_path, class: 'btn btn-primary' do %>
