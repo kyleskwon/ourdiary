@@ -1,4 +1,5 @@
 Rails.application.configure do
+  config.action_mailer.default_url_options = { host: 'https://floating-plains-80135.herokuapp.com' }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -78,5 +79,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   Paperclip.options[:image_magick_path] = "/opt/ImageMagick/bin"
   Paperclip.options[:command_path] = "/opt/ImageMagick/bin"
-  config.action_mailer.default_url_options = { host: 'floating-plains-80135.herokuapp.com' }
+
 end
