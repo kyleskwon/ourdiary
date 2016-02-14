@@ -11,7 +11,7 @@
     </script>
   <% end %>
 
-  <h1 align="center">BucketList</h1>
+  <h1 class="lato" align="center">BucketList</h1>
     <div class="col-md-8 col-md-offset-2">
       <p>You have <%= current_user.total_items_count %> items in your BucketList, why not add another?</p>
         <%= link_to 'Add an Item', new_item_path, class: 'btn btn-success' %>
@@ -31,7 +31,7 @@
       </div>
 <br>
     <div class="col-md-10 col-md-offset-1">
-      <table class="table table-hover">
+      <table class="table table-hover lato">
         <tbody>
           <% @items.each do |item| %>
             <tr>

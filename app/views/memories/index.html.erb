@@ -11,7 +11,7 @@
     </script>
   <% end %>
 
-  <h1 align="center">OurMemories</h1>
+  <h1 class="lato" align="center">OurMemories</h1>
     <div class="col-md-8 col-md-offset-2">
       <% if current_user.total_memories_count < Memory::MEMORY_COUNT_FOR_UPGRADE  %>
         <p>Only <%= Memory::MEMORY_COUNT_FOR_UPGRADE - current_user.total_memories_count %> memories left for a free upgrade!</p>
@@ -36,7 +36,7 @@
     </div>
 <br>
     <div class="col-md-10 col-md-offset-1">
-      <table class="table table-hover">
+      <table class="table table-hover lato">
         <tbody>
           <% @memories.each do |memory| %>
             <tr>
