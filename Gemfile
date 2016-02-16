@@ -7,7 +7,7 @@ source 'https://rubygems.org'
  gem 'bootstrap-sass'
  gem 'pundit'
  gem 'geocoder'
- gem "paperclip"
+ gem "paperclip", :git=> 'https://github.com/thoughtbot/paperclip'
  gem 'aws-sdk', '< 2.0'
  gem 'stripe'
  gem 'figaro'
