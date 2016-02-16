@@ -8,7 +8,7 @@ source 'https://rubygems.org'
  gem 'pundit'
  gem 'geocoder'
  gem "paperclip"
- gem 'aws-sdk'
+ gem 'aws-sdk', '< 2.0'
  gem 'stripe'
  gem 'figaro'
  gem 'fullcalendar.io-rails'
