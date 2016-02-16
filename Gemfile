@@ -7,7 +7,8 @@ source 'https://rubygems.org'
  gem 'bootstrap-sass'
  gem 'pundit'
  gem 'geocoder'
- gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+ gem "paperclip"
+ gem 'aws-sdk'
  gem 'stripe'
  gem 'figaro'
  gem 'fullcalendar.io-rails'
