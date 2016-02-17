@@ -26,10 +26,7 @@ class ApplicationController < ActionController::Base
 
   def user_not_authorized(exception)
     policy_name = exception.policy.class.to_s.underscore
-
     flash[:error] = "You need to be a premium user to access that feature"
     redirect_to(request.referrer || root_path)
   end
-
-
 end
