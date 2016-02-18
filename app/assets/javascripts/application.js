@@ -21,7 +21,7 @@
 function initialize() {
   console.log("initializing!");
   var mapProp = {
-    center:new google.maps.LatLng(0, 0),
+    center:new google.maps.LatLng(10, 0),
     zoom: 2,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
