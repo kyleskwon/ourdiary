@@ -28,7 +28,7 @@
 
   <div class="container lato">
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-md-6">
         <p>
           <h3 align="center"><%= @memory.title %>
             <p><small>(<%= @memory.date %>) | <%= @memory.address %></small></p>
@@ -44,13 +44,13 @@
       </div>
 
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-6">
             <%= render partial: "labels/list", locals: { labels: @memory.labels } %>
         </div>
       </div>
       </div>
-
-        <div class="col-md-7" align="center">
+<br>
+        <div class="col-md-6 avatar">
           <p><%= image_tag @memory.avatar.url(:medium, timestamp:false) %></p>
         </div>
       </div>
