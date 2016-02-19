@@ -13,10 +13,13 @@
 
   <h1 class="lato" align="center">OurMemories</h1>
     <div class="col-md-8 col-md-offset-2">
-      <% if current_user.total_memories_count < Memory::MEMORY_COUNT_FOR_UPGRADE  %>
-        <p>Only <%= Memory::MEMORY_COUNT_FOR_UPGRADE - current_user.total_memories_count %> memories left for a free upgrade!</p>
-      <% end %>
-      <% if current_user.total_memories_count >= Memory::MEMORY_COUNT_FOR_UPGRADE  %>
+      <% if current_user.total_memories_count < 1 %>
+        <p>You have no memories, get to 25 and earn a free premium account!</p>
+      <% elsif current_user.total_memories_count == 1 %>
+        <p>You have 1 memory, that can't be all that you remember...</p>
+      <% elsif 1 < current_user.total_memories_count && current_user.total_memories_count < Memory::MEMORY_COUNT_FOR_UPGRADE  %>
+        <p>Only <%= Memory::MEMORY_COUNT_FOR_UPGRADE - current_user.total_memories_count %> memories left for a free account upgrade!</p>
+      <% elsif current_user.total_memories_count >= Memory::MEMORY_COUNT_FOR_UPGRADE  %>
         <p>You have <%= current_user.total_memories_count %> memories, keep making more!</p>
       <% end %>
         <%= link_to 'Add a Memory', new_memory_path, class: 'btn btn-success' %>
