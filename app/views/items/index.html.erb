@@ -13,7 +13,13 @@
 
   <h1 class="lato" align="center">BucketList</h1>
     <div class="col-md-8 col-md-offset-2">
-      <p>You have <%= current_user.total_items_count %> items in your BucketList, why not add another?</p>
+      <% if current_user.total_items_count > 1 %>
+        <p>You have <%= current_user.total_items_count %> items before you kick the bucket.</p>
+      <% elsif current_user.total_items_count < 1 %>
+        <p>You don't have any items yet, why are you lagging?</p>
+      <% else %>
+        <p>You have 1 item so far... but it's a start!</p>
+      <% end %>
         <%= link_to 'Add an Item', new_item_path, class: 'btn btn-success' %>
 <br>
         <form role="form">
