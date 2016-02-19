@@ -13,7 +13,14 @@
 
   <h1 class="lato" align="center">OurPlans</h1>
     <div class="col-md-8 col-md-offset-2">
-      <p>You have <%= current_user.total_plans_count %> plans, bet you can't wait!</p>
+      <% if current_user.total_plans_count > 1 %>
+        <p>You have <%= current_user.total_plans_count %> plans, bet you can't wait!</p>
+      <% elsif current_user.total_plans_count < 1 %>
+        <p>You don't have any plans yet, What are you waiting for?</p>
+      <% else %>
+        <p>You have 1 plan so far... but it's a start!</p>
+      <% end %>
+
         <%= link_to 'Add a Plan', new_plan_path, class: 'btn btn-success' %>
 <br>
       <form role="form">
