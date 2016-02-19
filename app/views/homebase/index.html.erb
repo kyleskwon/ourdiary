@@ -17,12 +17,14 @@
     </script>
   <% end %>
 
-  <div class="col-md-3 lato">
-    <%= current_user.name %>
+  <div class="row">
+    <div class="col-md-12 lato center">
+    <%= current_user.name %> & <%= current_user.partner.name if current_user.partner %>
   </div>
-
+  </div>
+<br>
   <% if @memories.any? %>
-    <div class="col-md-6">
+    <div class="col-md-12 center">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -61,7 +63,3 @@
       </div>
     </div>
   <% end %>
-
-  <div class="col-md-3 lato">
-    <%= current_user.partner.name if current_user.partner %>
-  </div>

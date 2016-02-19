@@ -14,7 +14,7 @@
   <h1 class="lato" align="center">OurMemories</h1>
     <div class="col-md-8 col-md-offset-2">
       <% if current_user.total_memories_count < 1 %>
-        <p>You have no memories, get to 25 and earn a free premium account!</p>
+        <p>You have <%= current_user.total_memories_count %> memories so far, earn a free premium account once you reach <%= Memory::MEMORY_COUNT_FOR_UPGRADE %>!</p>
       <% elsif current_user.total_memories_count == 1 %>
         <p>You have 1 memory, that can't be all that you remember...</p>
       <% elsif 1 < current_user.total_memories_count && current_user.total_memories_count < Memory::MEMORY_COUNT_FOR_UPGRADE  %>
