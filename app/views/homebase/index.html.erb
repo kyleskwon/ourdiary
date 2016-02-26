@@ -19,8 +19,8 @@
 
   <div class="row">
     <div class="col-md-12 lato center">
-      <% if current_user.name.any? %>
-        <%= current_user.name %> & <%= current_user.partner.name if current_user.partner %>
+      <% if current_user.name && current_user.partner %>
+        <%= current_user.name %> & <%= current_user.partner.name %>
       <% end %>
   </div>
   </div>
