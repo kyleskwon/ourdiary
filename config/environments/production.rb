@@ -1,5 +1,5 @@
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: 'floating-plains-80135.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'ourdiary.herokuapp.com' }
 
   config.paperclip_defaults = {
     :storage => :s3,
