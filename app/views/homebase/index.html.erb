@@ -16,7 +16,25 @@
       });
     </script>
   <% end %>
+<script>$(document).ready(function() {
 
+        $('#calendar').fullCalendar({
+          events: [
+            <% @memories.each_with_index do |memory, index| %>
+              <% if memory.title.present? && memory.date.present?  %>
+                 <% if index > 0 %>
+                 ,
+                 <% end %>
+                  {
+                    title: "<%= memory.title %>",
+                    start: "<%= memory.date %>"
+                  }
+              <% end %>
+            <% end %>
+          ]
+        });
+      });
+      </script>
 <!--
   <div class="row">
     <div class="col-md-12 lato center">
@@ -28,7 +46,8 @@
 -->
 <br>
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-6">
+      <div id='calendar'></div>
   </div>
   <div class="col-md-6">
     <% if @memories.any? %>
