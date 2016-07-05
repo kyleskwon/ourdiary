@@ -16,6 +16,65 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> 
+                </button>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <div class="navbar-brand">
+                        <%= link_to homebase_index_path do %>
+                            <i class="glyphicon glyphicon-home"> OurDiary</i>
+                        <% end %>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <% if user_signed_in? %>
+                            <li>
+                                <%= link_to memories_path, class: 'btn btn-info' do %>
+                                    <i class="glyphicon glyphicon-book"> OurMemories</i>
+                                <% end %>
+                            </li>
+                        <% if current_user.premium? %>
+                            <li>
+                                <%= link_to plans_path, class: 'btn btn-primary' do %>
+                                  <i class="glyphicon glyphicon-list-alt"> OurPlans</i>
+                                <% end %>
+                            </li>
+                            <li>
+                                <%= link_to items_path, class: 'btn btn-warning' do %>
+                                  <i class="glyphicon glyphicon-globe"> BucketList</i>
+                                <% end %>
+                            </li>
+                        <% end %>
+                            <li>
+                                <%= link_to edit_user_registration_path do %>
+                                    <i class="glyphicon glyphicon-user"> EditProfile</i>
+                                <% end %>
+                            </li>
+                            <li>
+                                <%= link_to destroy_user_session_path, method: :delete do %>
+                                    <i class="glyphicon glyphicon-hourglass"> SignOut</i>
+                                <% end %>
+                            </li>
+                        <% else %>
+                            <li>
+                                <%= link_to "Log In", new_user_session_path, :class => 'navbar-link' %>
+                            </li>
+                            <li>
+                                <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %>
+                            </li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    
+<!--
     <div class="container">
       <ul class="nav nav-tabs">
         <% if user_signed_in? %>
@@ -24,7 +83,7 @@
               <i class="glyphicon glyphicon-home"> OurDiary</i>
             <% end %>
           </li>
-          <!-- Signed in as: <strong><%= current_user.email %></strong> -->
+           Signed in as: <strong><%= current_user.email %></strong> 
           <li>
             <%= link_to edit_user_registration_path do %>
               <i class="glyphicon glyphicon-user"> EditProfile</i>
@@ -39,12 +98,16 @@
           <li><%= link_to "Log In", new_user_session_path, :class => 'navbar-link' %></li>
           <li><%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %></li>
         <% end %>
+-->
 
       </ul>
     </div>
+<!--
     <% if @show_map %>
       <div id="googleMap" style="width:auto;height:225px;"></div>
     <% end %>
+-->
+<!--
 <br>
   <div class="container">
     <div class="flash">
@@ -66,7 +129,9 @@
       <% end %>
     </div>
   </div>
+-->
 
+<!--
   <% if user_signed_in? %>
     <% class_name = current_user.premium? ? "col-md-4" : "col-md-12 centered" %>
     <div class="container">
@@ -90,8 +155,11 @@
         <% end %>
       </div>
     <% end %>
+-->
 <br>
   <div class="container">
+      <br>
+      <br>
     <%= yield %>
   </div>
 </body>
