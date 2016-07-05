@@ -25,30 +25,30 @@
                     <span class="icon-bar"></span> 
                 </button>
                 <div class="collapse navbar-collapse" id="myNavbar">
-                    <div class="navbar-brand">
-                        <%= link_to homebase_index_path do %>
-                            <i class="glyphicon glyphicon-home"> OurDiary</i>
-                        <% end %>
-                    </div>
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <%= link_to homebase_index_path do %>
+                                <i class="glyphicon glyphicon-home"> OurDiary</i>
+                            <% end %>
+                        </li>
                         <% if user_signed_in? %>
                             <li>
-                                <%= link_to memories_path, class: 'btn btn-info' do %>
+                                <%= link_to memories_path do %>
                                     <i class="glyphicon glyphicon-book"> OurMemories</i>
                                 <% end %>
                             </li>
-                        <% if current_user.premium? %>
-                            <li>
-                                <%= link_to plans_path, class: 'btn btn-primary' do %>
-                                  <i class="glyphicon glyphicon-list-alt"> OurPlans</i>
-                                <% end %>
-                            </li>
-                            <li>
-                                <%= link_to items_path, class: 'btn btn-warning' do %>
-                                  <i class="glyphicon glyphicon-globe"> BucketList</i>
-                                <% end %>
-                            </li>
-                        <% end %>
+                            <% if current_user.premium? %>
+                                <li>
+                                    <%= link_to plans_path do %>
+                                      <i class="glyphicon glyphicon-list-alt"> OurPlans</i>
+                                    <% end %>
+                                </li>
+                                <li>
+                                    <%= link_to items_path do %>
+                                      <i class="glyphicon glyphicon-globe"> BucketList</i>
+                                    <% end %>
+                                </li>
+                            <% end %>
                             <li>
                                 <%= link_to edit_user_registration_path do %>
                                     <i class="glyphicon glyphicon-user"> EditProfile</i>
