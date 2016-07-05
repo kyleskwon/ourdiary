@@ -17,13 +17,15 @@
     </script>
   <% end %>
 
+<!--
   <div class="row">
     <div class="col-md-12 lato center">
       <% if current_user.name && current_user.partner %>
         <%= current_user.name %> & <%= current_user.partner.name %>
       <% end %>
+    </div>
   </div>
-  </div>
+-->
 <br>
 <div class="row">
   <div class="col-md-3">
@@ -68,4 +70,8 @@
       </div>
     </div>
   </div>
+<% end %>
+<br>
+<% if @show_map %>
+  <div id="googleMap"></div>
 <% end %>

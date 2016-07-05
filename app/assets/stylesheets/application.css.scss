@@ -17,15 +17,19 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- .form-control {
-   &.date {
-     width: 50%;
-   }
- }
+.form-control {
+    &.date {
+        width: 50%;
+    }
+}
+
+#myCarousel {
+    width: auto;
+}
 
 #googleMap {
-  margin-left: auto;
-  margin-right: auto;
+    width: auto;
+    height: 325px;
 }
 
 .memories-button {
