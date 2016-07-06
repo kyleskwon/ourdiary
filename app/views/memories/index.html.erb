@@ -10,8 +10,9 @@
       });
     </script>
   <% end %>
-
+<br>
   <h1 class="lato" align="center">OurMemories</h1>
+<br>
     <div class="col-md-6">
         <% if current_user.total_memories_count < 1 %>
         <p>You have <%= current_user.total_memories_count %> memories so far, earn a free premium account once you reach <%= Memory::MEMORY_COUNT_FOR_UPGRADE %>!</p>
@@ -69,18 +70,19 @@
                     <% active = "active" if index == 0 %>
                     <div class="item <%= active %>", align="center" >
                       <%= image_tag memory.avatar.url(:medium) %>
-                      <p class="memory-title"><%= memory.title %></p>
+                        <br>
+                      <p class="carousel-title"><%= memory.title %></p>
                     </div>
                   <% end %>
                 </div>
 
                 <!-- Left and right controls -->
                 <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+<!--                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
                   <span class="sr-only">Previous</span>
                 </a>
                 <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+<!--                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
                   <span class="sr-only">Next</span>
                 </a>
               </div>

@@ -45,7 +45,8 @@
     </div>
   </div>
 -->
-
+<br>
+    <h1 class="lato" align="center">HomeBase</h1>
 <br>
 
 <div class="row">
@@ -69,7 +70,8 @@
               <% active = "active" if index == 0 %>
               <div class="item <%= active %>", align="center" >
                 <%= image_tag memory.avatar.url(:medium) %>
-                <p class="memory-title"><%= memory.title %></p>
+                  <br>
+                <p class="carousel-title"><%= memory.title %></p>
               </div>
             <% end %>
           <% end %>
@@ -77,14 +79,14 @@
 
         <!-- Left and right controls -->
         <% if @memories.map(&:avatar_file_name).flatten.any? %>
-          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+<!--                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+<!--                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+                  <span class="sr-only">Next</span>
+                </a>
         <% end %>
       </div>
     </div>
