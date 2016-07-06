@@ -55,12 +55,12 @@
 
     <div class="col-md-6">
         <% if @memories.any? %>
-              <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <div id="myCarouselNonHB" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                   <% @memories.each_with_index do |memory, index| %>
                     <% active = "active" if index == 0 %>
-                    <li data-target="#myCarousel" data-slide-to="<%= index %>" class="<%= active %>"></li>
+                    <li data-target="#myCarouselNonHB" data-slide-to="<%= index %>" class="<%= active %>"></li>
                   <% end %>
                 </ol>
 
@@ -77,11 +77,11 @@
                 </div>
 
                 <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <a class="left carousel-control" href="#myCarouselNonHB" role="button" data-slide="prev">
 <!--                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
                   <span class="sr-only">Previous</span>
                 </a>
-                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <a class="right carousel-control" href="#myCarouselNonHB" role="button" data-slide="next">
 <!--                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
                   <span class="sr-only">Next</span>
                 </a>
@@ -91,10 +91,12 @@
 <br>
         <div id='calendar'></div>
 <br>        
+    </div>
+
+    <div class="col-md-12">
         <% if @show_map %>
           <div id="googleMap"></div>
         <% end %>
-
     </div>
 
 
