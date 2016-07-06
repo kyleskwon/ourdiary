@@ -16,7 +16,7 @@
       });
     </script>
   <% end %>
-<script>$(document).ready(function() {
+    <script>$(document).ready(function() {
 
         $('#calendar').fullCalendar({
           events: [
@@ -35,6 +35,7 @@
         });
       });
       </script>
+
 <!--
   <div class="row">
     <div class="col-md-12 lato center">
@@ -44,11 +45,10 @@
     </div>
   </div>
 -->
+
 <br>
+
 <div class="row">
-  <div class="col-md-6">
-      <div id='calendar'></div>
-  </div>
   <div class="col-md-6">
     <% if @memories.any? %>
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -88,9 +88,15 @@
         <% end %>
       </div>
     </div>
+    
+    <div class="col-md-6">
+      <div id='calendar'></div>
+    </div>
   </div>
 <% end %>
+
 <br>
+
 <% if @show_map %>
   <div id="googleMap"></div>
 <% end %>
