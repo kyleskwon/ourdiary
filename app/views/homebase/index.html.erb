@@ -16,25 +16,37 @@
       });
     </script>
   <% end %>
-    <script>$(document).ready(function() {
 
-        $('#calendar').fullCalendar({
-          events: [
-            <% @memories.each_with_index do |memory, index| %>
-              <% if memory.title.present? && memory.date.present?  %>
-                 <% if index > 0 %>
-                 ,
-                 <% end %>
-                  {
-                    title: "<%= memory.title %>",
-                    start: "<%= memory.date %>"
-                  }
-              <% end %>
+  <script>$(document).ready(function() {
+
+      $('#calendar').fullCalendar({
+        events: [
+          <% @memories.each_with_index do |memory, index| %>
+            <% if memory.title.present? && memory.date.present?  %>
+               <% if index > 0 %>
+               ,
+               <% end %>
+                {
+                  title: "<%= memory.title %>",
+                  start: "<%= memory.date %>"
+                }
             <% end %>
-          ]
-        });
+          <% end %>,
+          <% @plans.each_with_index do |plan, index| %>
+            <% if plan.title.present? && plan.date.present?  %>
+               <% if index > 0 %>
+               ,
+               <% end %>
+                {
+                  title: "<%= plan.title %>",
+                  start: "<%= plan.date %>"
+                }
+            <% end %>
+          <% end %>
+        ]
       });
-      </script>
+    });
+  </script>
 
 <!--
   <div class="row">
@@ -90,7 +102,7 @@
         <% end %>
       </div>
     </div>
-    
+
     <div class="col-md-6">
       <div id='calendar'></div>
     </div>
