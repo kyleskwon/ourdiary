@@ -9,118 +9,119 @@
         <% end %>
       });
     </script>
+
+    <script>$(document).ready(function() {
+
+      $('#calendar').fullCalendar({
+        events: [
+          <% @memories.each_with_index do |memory, index| %>
+            <% if memory.title.present? && memory.date.present?  %>
+               <% if index > 0 %>
+               ,
+               <% end %>
+                {
+                  title: "<%= memory.title %>",
+                  start: "<%= memory.date %>"
+                }
+            <% end %>
+          <% end %>
+        ]
+      });
+    });
+    </script>
   <% end %>
+
 <br>
   <h1 class="lato" align="center">OurMemories</h1>
 <br>
-    <div class="col-md-6">
-        <% if current_user.total_memories_count < 1 %>
-        <p>You have <%= current_user.total_memories_count %> memories so far, earn a free premium account once you reach <%= Memory::MEMORY_COUNT_FOR_UPGRADE %>!</p>
-      <% elsif current_user.total_memories_count == 1 %>
-        <p>You have 1 memory, that can't be all that you remember...</p>
-      <% elsif 1 < current_user.total_memories_count && current_user.total_memories_count < Memory::MEMORY_COUNT_FOR_UPGRADE  %>
-        <p>Only <%= Memory::MEMORY_COUNT_FOR_UPGRADE - current_user.total_memories_count %> memories left for a free account upgrade!</p>
-      <% elsif current_user.total_memories_count >= Memory::MEMORY_COUNT_FOR_UPGRADE  %>
-        <p>You have <%= current_user.total_memories_count %> memories, keep making more!</p>
-      <% end %>
-        <%= link_to 'Add a Memory', new_memory_path, class: 'btn btn-success' %>
+
+<div class="col-md-6">
+  <% if current_user.total_memories_count < 1 %>
+    <p>You have <%= current_user.total_memories_count %> memories so far, earn a free premium account once you reach <%= Memory::MEMORY_COUNT_FOR_UPGRADE %>!</p>
+  <% elsif current_user.total_memories_count == 1 %>
+    <p>You have 1 memory, that can't be all that you remember...</p>
+  <% elsif 1 < current_user.total_memories_count && current_user.total_memories_count < Memory::MEMORY_COUNT_FOR_UPGRADE  %>
+    <p>Only <%= Memory::MEMORY_COUNT_FOR_UPGRADE - current_user.total_memories_count %> memories left for a free account upgrade!</p>
+  <% elsif current_user.total_memories_count >= Memory::MEMORY_COUNT_FOR_UPGRADE  %>
+    <p>You have <%= current_user.total_memories_count %> memories, keep making more!</p>
+  <% end %>
+    <%= link_to 'Add a Memory', new_memory_path, class: 'btn btn-success' %>
+
 <br>
-      <form role="form">
-        <div class="form-group", align="right">
-          <%= form_tag(memories_path, :method => "get", id: "search-form") do %>
-            <div class="input-append">
-              <%= text_field_tag :search, params[:search], class: "btn btn-default", placeholder: "Search Memories" %>
-              <!-- In order to have the "search" icon int the button, we need to use plain HTML instead
-                   of using a Rails form helper -->
-              <button class="btn" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-            </div>
-          <% end %>
+
+  <form role="form">
+    <div class="form-group", align="right">
+      <%= form_tag(memories_path, :method => "get", id: "search-form") do %>
+        <div class="input-append">
+          <%= text_field_tag :search, params[:search], class: "btn btn-default", placeholder: "Search Memories" %>
+          <!-- In order to have the "search" icon int the button, we need to use plain HTML instead
+               of using a Rails form helper -->
+          <button class="btn" type="submit"><i class="glyphicon glyphicon-search"></i></button>
         </div>
-      </form>
-<br>
-      <table class="table table-hover lato">
-        <tbody>
-          <% @memories.each do |memory| %>
-            <tr>
-              <td><h6><%= link_to memory.date, memory %></h6></td>
-              <td><h4><%= link_to memory.title, memory %></h4></td>
-              <td><h5><%= link_to memory.caption.first(60), memory %></h5></td>
-              <!-- <td><%= link_to 'Edit', edit_memory_path(memory) %></td> -->
-              <td><h6><%= link_to 'Delete', memory, method: :delete, data: { confirm: 'Are you sure?' } %></h6></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+      <% end %>
     </div>
+  </form>
 
-    <div class="col-md-6">
-        <% if @memories.any? %>
-              <div id="myCarouselNonHB" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                  <% @memories.each_with_index do |memory, index| %>
-                    <% active = "active" if index == 0 %>
-                    <li data-target="#myCarouselNonHB" data-slide-to="<%= index %>" class="<%= active %>"></li>
-                  <% end %>
-                </ol>
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                  <% @memories.each_with_index do |memory, index| %>
-                    <% active = "active" if index == 0 %>
-                    <div class="item <%= active %>", align="center" >
-                      <%= image_tag memory.avatar.url(:medium) %>
-                        <br>
-                      <p class="carousel-title"><%= memory.title %></p>
-                    </div>
-                  <% end %>
-                </div>
-
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarouselNonHB" role="button" data-slide="prev">
-<!--                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarouselNonHB" role="button" data-slide="next">
-<!--                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
-          <% end %>
-        
 <br>
-        <div id='calendar'></div>
-<br>        
-    </div>
 
-    <div class="col-md-12">
-        <% if @show_map %>
-          <div id="googleMap"></div>
+  <table class="table table-hover lato">
+    <tbody>
+      <% @memories.each do |memory| %>
+        <tr>
+          <td><h6><%= link_to memory.date, memory %></h6></td>
+          <td><h4><%= link_to memory.title, memory %></h4></td>
+          <td><h5><%= link_to memory.caption.first(60), memory %></h5></td>
+          <!-- <td><%= link_to 'Edit', edit_memory_path(memory) %></td> -->
+          <td><h6><%= link_to 'Delete', memory, method: :delete, data: { confirm: 'Are you sure?' } %></h6></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="col-md-6">
+  <% if @memories.any? %>
+    <div id="myCarouselNonHB" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <% @memories.each_with_index do |memory, index| %>
+          <% active = "active" if index == 0 %>
+          <li data-target="#myCarouselNonHB" data-slide-to="<%= index %>" class="<%= active %>"></li>
         <% end %>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <% @memories.each_with_index do |memory, index| %>
+          <% active = "active" if index == 0 %>
+          <div class="item <%= active %>", align="center" >
+            <%= image_tag memory.avatar.url(:medium) %>
+              <br>
+            <p class="carousel-title"><%= memory.title %></p>
+          </div>
+        <% end %>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarouselNonHB" role="button" data-slide="prev">
+<!--                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarouselNonHB" role="button" data-slide="next">
+<!--                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+        <span class="sr-only">Next</span>
+      </a>
     </div>
+  <% end %>
 
+<br>
+  <div id='calendar'></div>
+<br>
+</div>
 
-
-  
-
-
-
-      <script>$(document).ready(function() {
-
-        $('#calendar').fullCalendar({
-          events: [
-            <% @memories.each_with_index do |memory, index| %>
-              <% if memory.title.present? && memory.date.present?  %>
-                 <% if index > 0 %>
-                 ,
-                 <% end %>
-                  {
-                    title: "<%= memory.title %>",
-                    start: "<%= memory.date %>"
-                  }
-              <% end %>
-            <% end %>
-          ]
-        });
-      });
-      </script>
+<div class="col-md-12">
+    <% if @show_map %>
+      <div id="googleMap"></div>
+    <% end %>
+</div>
+<br>
