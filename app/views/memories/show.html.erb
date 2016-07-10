@@ -13,20 +13,22 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-2">
-        <% if @previous %>
-          <%= link_to "Previous", @previous, class: 'btn btn-default' %>
-        <% end %>
-      </div>
-      <div class="col-md-2 col-md-offset-1" align="right">
-        <% if @next %>
-          <%= link_to "Next", @next, class:'btn btn-default', align: "right" %>
-        <% end %>
+      <div class="">
+        <div class="col-md-2 previous-and-next-buttons">
+          <% if @previous %>
+            <%= link_to "Previous", @previous, class: 'btn btn-default' %>
+          <% end %>
+        </div>
+        <div class="col-md-2 col-md-offset-1 previous-and-next-buttons" align="right">
+          <% if @next %>
+            <%= link_to "Next", @next, class:'btn btn-default', align: "right" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="container lato">
+  <div class="container">
     <div class="row">
       <div class="col-md-6">
         <p>
@@ -57,7 +59,7 @@
 <br>
     <%= link_to 'Edit', edit_memory_path(@memory), class: 'btn btn-default' %>
     <%= link_to 'Delete', memory_path, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%= link_to 'Back', memories_path, class: 'btn btn-default' %>
+    <%= link_to 'Back', memories_path %>
 <br>
 <br>
   </div>

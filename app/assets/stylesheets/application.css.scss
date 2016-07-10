@@ -57,10 +57,6 @@
 //     background-color: white;
 // }
 
-.carousel-title {
-  font-family: 'Lato', sans-serif;
-}
-
 #calendar {
   width: auto;
 }
@@ -70,7 +66,20 @@
   height: 400px;
 }
 
-.lato {
+body {
+  font-family: 'Muli', sans-serif;
+}
+
+.page-title {
+  font-family: 'Libre Baskerville', serif;
+}
+
+.avatar {
+  text-align: center;
+  width: auto;
+}
+
+.carousel-title {
   font-family: 'Lato', sans-serif;
 }
 
@@ -78,7 +87,10 @@
   text-align: center;
 }
 
-.avatar {
-  text-align: center;
-  width: auto;
+.label-show {
+  padding-top: 10px;
+}
+
+.previous-and-next-buttons {
+  padding-top: 50px;
 }

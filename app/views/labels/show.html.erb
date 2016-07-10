@@ -1,18 +1,20 @@
 <div class="row">
-  <div class="col-md-8 col-md-offset-2">
-    <h2><%= @label.name %></h2>
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-6">
+    <h1 class="text-center"><%= @label.name %></h1>
       <% @label.memories.each do |memory| %>
-        <div>
+        <div class="label-show">
           <h4>Memory: <%= link_to memory.title, memory %></h4>
         </div>
       <% end %>
       <% @label.plans.each do |plan| %>
         <div>
-          <h4>Plan: <%= link_to plan.title, plan %></h4>
+          <h4 class="label-show">Plan: <%= link_to plan.title, plan %></h4>
         </div>
       <% end %>
       <% @label.items.each do |item| %>
-        <div>
+        <div class="label-show">
           <h4>Item: <%= link_to item.title, item %></h4>
         </div>
       <% end %>
