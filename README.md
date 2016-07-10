@@ -1,9 +1,6 @@
 <h1>OurDiary</h1>
-<hr>
-<h3>Helping couples remember the past and never forget</h3>
-<br>
+<h4>Helping couples remember the past and never forget</h4>
 <h2>User Stories</h2>
-<br>
   <ol>
     <li>Install Rspec gem before scaffolding</li>
     <li>As a user, I want to sign up for a free account by providing name, email and password</li>
@@ -18,9 +15,7 @@
     <li>As a user, I want to see a map of all the locations we’ve been to together</li>
     <li>As a user, I want to view a photo slideshow of OurMemories in HomeBase</li>
   </ol>
-<br>
 <h2>Built With</h2>
-<br>
   <ul>
     <li>Ruby (language)</li>
     <li>Rails (Backend MVC Framework)</li>
