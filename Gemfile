@@ -15,6 +15,7 @@ source 'https://rubygems.org'
  gem 'momentjs-rails'
  gem 'weather-api'
  gem 'mailgun_rails'
+ gem 'carrierwave'
 
  group :production do
    gem 'pg'
