@@ -39,7 +39,6 @@ class Memory < ActiveRecord::Base
   MEMORY_COUNT_FOR_UPGRADE = 25  #Memory::MEMORY_COUNT_FOR_UPGRADE
 
   private
-
   def account_upgradable?
     user.total_memories_count >= MEMORY_COUNT_FOR_UPGRADE
   end
